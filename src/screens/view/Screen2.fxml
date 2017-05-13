@@ -2,6 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.layout.HBox?>
@@ -11,8 +14,27 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ProgressBar prefHeight="40.0" prefWidth="600.0" progress="0.33" />
-      <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: rgba(153, 153, 153, 0.5);">
+      <MenuBar prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ProgressBar layoutY="25.0" prefHeight="40.0" prefWidth="600.0" progress="0.33" />
+      <HBox alignment="TOP_CENTER" layoutY="25.0" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: rgba(153, 153, 153, 0.5);">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -43,11 +65,11 @@
             </Text>
          </children>
       </HBox>
-      <ScrollBar layoutX="586.0" layoutY="40.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="14.0" />
-      <Pane layoutY="40.0" prefHeight="360.0" prefWidth="586.0" style="-fx-background-color: white;">
+      <ScrollBar disable="true" layoutX="586.0" layoutY="65.0" orientation="VERTICAL" prefHeight="335.0" prefWidth="14.0" />
+      <Pane layoutY="65.0" prefHeight="335.0" prefWidth="586.0" style="-fx-background-color: white;">
          <children>
-            <ListView layoutX="14.0" layoutY="14.0" prefHeight="335.0" prefWidth="200.0" style="-fx-border-color: white;" />
-            <ListView layoutX="372.0" layoutY="14.0" prefHeight="335.0" prefWidth="200.0" style="-fx-border-color: white;" />
+            <ListView layoutX="14.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
+            <ListView layoutX="372.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
          </children>
       </Pane>
    </children>
