@@ -1,58 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.ProgressBar?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="93.0" layoutY="38.0" prefHeight="337.0" prefWidth="414.0" style="-fx-background-color: ivory;">
+      <ProgressBar prefHeight="40.0" prefWidth="600.0" progress="0.33" />
+      <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: rgba(153, 153, 153, 0.5);">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
          <children>
-            <VBox layoutX="253.0" layoutY="98.0" prefHeight="191.0" prefWidth="85.0" style="-fx-background-color: ivory;">
-               <children>
-                  <TextField style="-fx-background-color: ivory;" text="  Target">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </VBox>
-            <VBox layoutX="42.0" layoutY="98.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: ivory;">
-               <children>
-                  <TextField style="-fx-background-color: ivory;" text="  Source">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </VBox>
-            <ProgressBar prefHeight="70.0" prefWidth="414.0" progress="0.0" />
-            <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Create Connection" translateY="5.0" wrappingWidth="115.03515625">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link databases" textAlignment="CENTER" wrappingWidth="200.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Text>
-            <Text layoutX="336.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Done" translateX="-5.0" translateY="-5.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" textAlignment="CENTER" wrappingWidth="200.0">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font size="14.0" />
                </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
             </Text>
-            <Text layoutX="131.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2. Database Mapping" translateX="-5.0" wrappingWidth="179.0419921875">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Done" textAlignment="CENTER" wrappingWidth="200.0">
                <font>
-                  <Font name="Arial Bold" size="18.0" />
+                  <Font size="14.0" />
                </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
             </Text>
-            <Line endX="100.0" layoutX="600.0" layoutY="69.0" startX="-310.0" strokeWidth="2.0" translateX="-290.0" />
          </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
+      </HBox>
+      <ScrollBar layoutX="586.0" layoutY="40.0" orientation="VERTICAL" prefHeight="359.0" prefWidth="14.0" />
+      <Pane layoutY="40.0" prefHeight="360.0" prefWidth="586.0" style="-fx-background-color: white;">
+         <children>
+            <ListView layoutX="14.0" layoutY="14.0" prefHeight="335.0" prefWidth="200.0" style="-fx-border-color: white;" />
+            <ListView layoutX="372.0" layoutY="14.0" prefHeight="335.0" prefWidth="200.0" style="-fx-border-color: white;" />
+         </children>
       </Pane>
    </children>
 </Pane>

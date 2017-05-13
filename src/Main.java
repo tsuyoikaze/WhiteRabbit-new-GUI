@@ -21,6 +21,8 @@ public class Main extends Application{
 	private Stage primaryStage;
 	private BorderPane mainLayout;
 	
+	
+	
 	public void start(final Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Rabbit Catcher");
@@ -31,8 +33,6 @@ public class Main extends Application{
 		newProjectBtn = (Button) scene.lookup("#new_project_btn");
 		openExcelBtn = (Button) scene.lookup("#new_project_btn");
 		openProjectBtn = (Button) scene.lookup("#new_project_btn");
-		
-		final Scene finalScene = scene;
 		
 		newProjectBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
