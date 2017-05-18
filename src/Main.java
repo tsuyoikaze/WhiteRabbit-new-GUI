@@ -28,9 +28,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
-import jxl.Sheet;
-import jxl.Workbook;
-import jxl.read.biff.BiffException;
 import javafx.application.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -96,12 +93,10 @@ public class Main extends Application{
 				//todo
 				listviewSource = (ListView<String>) newScene.lookup("#listView_src");
 				listviewTarget = (ListView<String>) newScene.lookup("#listView_target");
+				
 				System.out.println("1");
 				loadListViewSecondScreen();
 				System.out.println("2");
-				
-				
-				
 				
 				
 				
@@ -151,6 +146,26 @@ public class Main extends Application{
 			public void handle(MouseEvent arg0) {
 				System.out.println("ind ");
 				doOpenScanReport(chooseFile(false, new FileChooser.ExtensionFilter("Excel spreadsheet", "*.xlsx")));
+				listviewSource.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			        @Override
+			        public void handle(MouseEvent event) {
+			            System.out.println("clicked on " + listviewSource.getSelectionModel().getSelectedItem());
+			            loadListViewWithDetail(listviewSource.getSelectionModel().getSelectedItem(), "source");
+			            
+			        }
+			        
+			    });
+				listviewTarget.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			        @Override
+			        public void handle(MouseEvent event) {
+			            System.out.println("clicked on " + listviewTarget.getSelectionModel().getSelectedItem());
+			            loadListViewWithDetail(listviewTarget.getSelectionModel().getSelectedItem(), "target");
+			            
+			        }
+			        
+			    });
 			}
 			
 		});
@@ -193,6 +208,44 @@ public class Main extends Application{
 		}
 		listviewSource.setItems(observableListSource);
 		listviewTarget.setItems(observableListTarget);
+	}
+	
+	private void loadListViewWithDetail(String click, String version) {
+		if (version == "source") {
+			ObservableList<String> observableListSource = FXCollections.observableArrayList();
+		
+			List<Table> sourceTableDetail = ObjectExchange.etl.getSourceDatabase().getTables();
+			for (Table t: sourceTableDetail) {
+				observableListSource.add(t.getName());
+				if (t.getName() == click) {
+					int i = 0;
+					for (i = 0; i < t.getFields().size(); i++) {
+						observableListSource.add(t.getFields().get(i).getName());
+					}
+			
+				}
+			
+			}
+			listviewSource.setItems(observableListSource);
+		}
+		else {
+			ObservableList<String> observableListTarget = FXCollections.observableArrayList();
+		
+			List<Table> targetTableDetail = ObjectExchange.etl.getTargetDatabase().getTables();
+			for (Table t: targetTableDetail) {
+				observableListTarget.add(t.getName());
+				if (t.getName() == click) {
+					System.out.println("Here");
+					int i = 0;
+					for (i = 0; i < t.getFields().size(); i++) {
+						observableListTarget.add(t.getFields().get(i).getName());
+					}
+			
+				}
+			
+			}
+			listviewTarget.setItems(observableListTarget);
+		}
 	}
 	
 	
