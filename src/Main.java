@@ -92,7 +92,7 @@ public class Main extends Application{
 			
 			 mainLayout.setCursor(Cursor.DEFAULT);
 			 try {
-				Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Try-2.fxml")));
+				Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen2.fxml")));
 				//todo
 				listviewSource = (ListView<String>) newScene.lookup("#listView_src");
 				listviewTarget = (ListView<String>) newScene.lookup("#listView_target");
