@@ -17,6 +17,8 @@
  ******************************************************************************/
 package org.ohdsi.rabbitInAHat.dataModel;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,6 +28,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.GZIPInputStream;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -180,5 +183,6 @@ public class Database implements Serializable {
 			}
 		return list.toArray(new String[list.size()][2]);
 	}
+
 
 }
