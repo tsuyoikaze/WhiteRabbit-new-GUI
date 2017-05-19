@@ -145,6 +145,25 @@ public class Main extends Application{
 			
 		});
 		
+		openExcelBtn.setOnMouseEntered(new EventHandler<MouseEvent>(){
+
+			@Override
+			public void handle(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				openExcelBtn.setCursor(Cursor.HAND);
+			}
+			
+		});
+		
+		openExcelBtn.setOnMouseExited(new EventHandler<MouseEvent>(){
+
+			@Override
+			public void handle(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				openExcelBtn.setCursor(Cursor.DEFAULT);
+			}
+			
+		});
 
 		openExcelBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			
@@ -223,6 +242,7 @@ public class Main extends Application{
 		
 		
 		primaryStage.setScene(scene);
+		primaryStage.setTitle("Rabbit Catcher");
 		primaryStage.show();
 	}
 	
