@@ -22,6 +22,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Cell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -162,7 +163,7 @@ public class Main extends Application{
 			        public void handle(MouseEvent event) {
 			            System.out.println("clicked on " + listviewTarget.getSelectionModel().getSelectedItem());
 			            loadListViewWithDetail(listviewTarget.getSelectionModel().getSelectedItem(), "target");
-			            
+			            listviewSource.getSelectionModel();
 			        }
 			        
 			    });
@@ -220,7 +221,7 @@ public class Main extends Application{
 				if (t.getName() == click) {
 					int i = 0;
 					for (i = 0; i < t.getFields().size(); i++) {
-						observableListSource.add(t.getFields().get(i).getName());
+						observableListSource.add("	" + t.getFields().get(i).getName());
 					}
 			
 				}
@@ -238,7 +239,8 @@ public class Main extends Application{
 					System.out.println("Here");
 					int i = 0;
 					for (i = 0; i < t.getFields().size(); i++) {
-						observableListTarget.add(t.getFields().get(i).getName());
+						observableListTarget.add("	" + t.getFields().get(i).getName());
+						
 					}
 			
 				}
