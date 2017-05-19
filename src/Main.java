@@ -49,6 +49,10 @@ public class Main extends Application{
 	private ListView<String> listviewSource;
 	private ListView<String> listviewTarget;
 	
+	private Table currentSourceTable, currentTargetTable;
+	private Field currentSourceField, currentTargetField;
+	
+	
 	private String chooseFile(boolean saveMode, ExtensionFilter filter) {
 		
 		String result = null;
@@ -151,6 +155,17 @@ public class Main extends Application{
 
 			        @Override
 			        public void handle(MouseEvent event) {
+			        	
+			        	if (listviewSource.getSelectionModel().getSelectedItem().startsWith("	")) {
+			        		List<Field> fields = currentSourceTable.getFields();
+			        		for (Field field : fields) {
+			        			if (("	" + field.getName()).equals(listviewSource.getSelectionModel().getSelectedItem())) {
+			        				currentSourceField = field;
+			        			}
+			        		}
+			        		return;
+			        	}
+			        	
 			            System.out.println("clicked on " + listviewSource.getSelectionModel().getSelectedItem());
 			            loadListViewWithDetail(listviewSource.getSelectionModel().getSelectedItem(), "source");
 			            
@@ -161,6 +176,24 @@ public class Main extends Application{
 
 			        @Override
 			        public void handle(MouseEvent event) {
+			        	
+			        	if (listviewTarget.getSelectionModel().getSelectedItem().startsWith("	")) {
+			        		List<Field> fields = currentTargetTable.getFields();
+			        		for (Field field : fields) {
+			        			if (("	" + field.getName()).equals(listviewTarget.getSelectionModel().getSelectedItem())) {
+			        				currentTargetField = field;
+			        				if (currentSourceField != null) {
+			        					ObjectExchange.etl.getFieldToFieldMapping(currentSourceTable, currentTargetTable).addSourceToTargetMap(currentSourceField, currentTargetField);
+			        					currentTargetField.setDisplayName(currentTargetField.getName() + " <" + currentSourceTable.getName() + "." + currentSourceField.getName() + ">");
+			        					currentSourceField = null;
+			        					loadListViewWithDetail(currentTargetTable.getName(), "target");
+			        				}
+			        				break;
+			        			}
+			        		}
+			        		return;
+			        	}
+			        	
 			            System.out.println("clicked on " + listviewTarget.getSelectionModel().getSelectedItem());
 			            loadListViewWithDetail(listviewTarget.getSelectionModel().getSelectedItem(), "target");
 			            listviewSource.getSelectionModel();
@@ -213,15 +246,18 @@ public class Main extends Application{
 	
 	private void loadListViewWithDetail(String click, String version) {
 		if (version == "source") {
+			
+			currentSourceTable = ObjectExchange.etl.getSourceDatabase().getTableByName(click);
+			
 			ObservableList<String> observableListSource = FXCollections.observableArrayList();
 		
 			List<Table> sourceTableDetail = ObjectExchange.etl.getSourceDatabase().getTables();
 			for (Table t: sourceTableDetail) {
 				observableListSource.add(t.getName());
-				if (t.getName() == click) {
+				if (t.getName().equals(click)) {
 					int i = 0;
 					for (i = 0; i < t.getFields().size(); i++) {
-						observableListSource.add("	" + t.getFields().get(i).getName());
+						observableListSource.add("	" + t.getFields().get(i).getDisplayName());
 					}
 			
 				}
@@ -231,15 +267,17 @@ public class Main extends Application{
 		}
 		else {
 			ObservableList<String> observableListTarget = FXCollections.observableArrayList();
+			
+			currentTargetTable = ObjectExchange.etl.getTargetDatabase().getTableByName(click);
 		
 			List<Table> targetTableDetail = ObjectExchange.etl.getTargetDatabase().getTables();
 			for (Table t: targetTableDetail) {
 				observableListTarget.add(t.getName());
-				if (t.getName() == click) {
+				if (t.getName().equals(click)) {
 					System.out.println("Here");
 					int i = 0;
 					for (i = 0; i < t.getFields().size(); i++) {
-						observableListTarget.add("	" + t.getFields().get(i).getName());
+						observableListTarget.add("	" + t.getFields().get(i).getDisplayName());
 						
 					}
 			

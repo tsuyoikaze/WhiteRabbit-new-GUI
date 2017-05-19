@@ -30,6 +30,7 @@ public class Field implements MappableItem {
 	private String				description			= "";
 	private int					maxLength;
 	private boolean				isStem;
+	private String				displayName;
 
 	public Field(String name, Table table) {
 		this.table = table;
@@ -46,6 +47,14 @@ public class Field implements MappableItem {
 
 	public void setTable(Table table) {
 		this.table = table;
+	}
+	
+	public String getDisplayName () {
+		return displayName == null ? name : displayName;
+	}
+	
+	public void setDisplayName (String displayName) {
+		this.displayName = displayName;
 	}
 
 	public String getName() {
