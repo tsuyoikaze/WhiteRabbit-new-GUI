@@ -26,6 +26,7 @@ import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -48,6 +49,8 @@ public class Main extends Application{
 	
 	private ListView<String> listviewSource;
 	private ListView<String> listviewTarget;
+	
+	private Text confirmation;
 	
 	private Table currentSourceTable, currentTargetTable;
 	private Field currentSourceField, currentTargetField;
@@ -98,6 +101,7 @@ public class Main extends Application{
 				//todo
 				listviewSource = (ListView<String>) newScene.lookup("#listView_src");
 				listviewTarget = (ListView<String>) newScene.lookup("#listView_target");
+				confirmation = (Text) newScene.lookup("#confirm");
 				
 				System.out.println("1");
 				loadListViewSecondScreen();
@@ -219,6 +223,22 @@ public class Main extends Application{
 			        }
 			        
 			    });
+				confirmation.setOnMouseClicked(new EventHandler<MouseEvent>() {
+					
+					@Override
+					public void handle(MouseEvent event) {
+//						System.out.println("Hello this is confirmation");
+						try {
+							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3_try1.fxml")));
+						
+							primaryStage.setScene(newScene);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+					}
+				});
 			}
 			
 		});

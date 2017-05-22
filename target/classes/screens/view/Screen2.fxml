@@ -25,7 +25,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" textAlignment="CENTER" wrappingWidth="200.0">
+            <Text id="confirm" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" textAlignment="CENTER" wrappingWidth="200.0">
                <font>
                   <Font size="14.0" />
                </font>
