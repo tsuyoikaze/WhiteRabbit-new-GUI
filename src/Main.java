@@ -38,6 +38,10 @@ import javafx.event.EventHandler;
 
 public class Main extends Application{
 	
+	private static final String FXML_MAIN_SCREEN_PATH = "screens/view/Screen2.fxml";
+	private static final ExtensionFilter FILTER_XLSX = new FileChooser.ExtensionFilter("Excel spreadsheet", "*.xlsx");
+	private static final String FXML_WELCOME_SCREEN_PATH = "screens/view/Screen1.fxml";
+	private static final String DEFAULT_CDM_CSV_PATH = "src/org/ohdsi/rabbitInAHat/dataModel/CDMV5.0.1.csv";
 	private Button newProjectBtn;
 	private Button openExcelBtn;
 	private Button openProjectBtn;
@@ -71,6 +75,7 @@ public class Main extends Application{
 		return selectedFile.getAbsolutePath();
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void doOpenScanReport(String filename) {
 		//System.out.println("Reach here1");
 		if (filename != null) {
@@ -78,7 +83,7 @@ public class Main extends Application{
 			mainLayout.setCursor(Cursor.WAIT);
 			ETL etl = new ETL();
 			try {
-				InputStream dbfile = new FileInputStream("src/org/ohdsi/rabbitInAHat/dataModel/CDMV5.0.1.csv");
+				InputStream dbfile = new FileInputStream(DEFAULT_CDM_CSV_PATH);
 				
 				etl.setSourceDatabase(Database.generateModelFromScanReport(filename));
 				etl.setTargetDatabase(Database.generateModelFromCSV(dbfile, "CDM V5.0.1"));
@@ -97,7 +102,7 @@ public class Main extends Application{
 			
 			 mainLayout.setCursor(Cursor.DEFAULT);
 			 try {
-				Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen2.fxml")));
+				Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource(FXML_MAIN_SCREEN_PATH)));
 				//todo
 				listviewSource = (ListView<String>) newScene.lookup("#listView_src");
 				listviewTarget = (ListView<String>) newScene.lookup("#listView_target");
@@ -122,7 +127,7 @@ public class Main extends Application{
 		this.primaryStage = primaryStage;
 		//this.primaryStage.setTitle("Rabbit Catcher");
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("screens/view/Screen1.fxml"));
+		loader.setLocation(Main.class.getResource(FXML_WELCOME_SCREEN_PATH));
 		mainLayout = loader.load();
 		Scene scene = new Scene(mainLayout);
 		newProjectBtn = (Button) scene.lookup("#new_project_btn");
@@ -139,7 +144,7 @@ public class Main extends Application{
 				new FXMLLoader();
 				try {
 					
-					Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen2.fxml")));
+					Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource(FXML_MAIN_SCREEN_PATH)));
 					primaryStage.setScene(newScene);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -172,8 +177,7 @@ public class Main extends Application{
 		openExcelBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			
 			public void handle(MouseEvent arg0) {
-				System.out.println("ind ");
-				doOpenScanReport(chooseFile(false, new FileChooser.ExtensionFilter("Excel spreadsheet", "*.xlsx")));
+				doOpenScanReport(chooseFile(false, FILTER_XLSX));
 				listviewSource.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			        @Override
@@ -189,7 +193,6 @@ public class Main extends Application{
 			        		return;
 			        	}
 			        	
-			            System.out.println("clicked on " + listviewSource.getSelectionModel().getSelectedItem());
 			            loadListViewWithDetail(listviewSource.getSelectionModel().getSelectedItem(), "source");
 			            
 			        }
@@ -334,7 +337,6 @@ public class Main extends Application{
 
 	
 	public static void main(String[] args) {
-		System.out.println("Hello");
 		launch(args);
 
 	}
