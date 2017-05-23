@@ -31,6 +31,8 @@ import java.util.Map;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+import org.ohdsi.whiteRabbit.ObjectExchange;
+
 import com.cedarsoftware.util.io.JsonReader;
 import com.cedarsoftware.util.io.JsonWriter;
 
@@ -214,5 +216,23 @@ public class ETL implements Serializable {
 		for (Table table : sourceDb.getTables())
 			for (Field field : table.getFields())
 				field.setValueCounts(new String[0][]);
+	}
+	
+	public List<Mapping<Field>> getAllMaps () {
+		List<Mapping<Field>> result = new ArrayList<>();
+		Mapping<Table> tableMap = ObjectExchange.etl.getTableToTableMapping();
+		List<MappableItem> list = tableMap.getTargetItems();
+		for (MappableItem targetTable : list) {
+			
+			List<MappableItem> sourceList = tableMap.getSourceItemsFromTarget(targetTable);
+			
+			
+			for (MappableItem sourceTable : sourceList) {
+				result.add(ObjectExchange.etl.getFieldToFieldMapping((Table)sourceTable, (Table)targetTable));
+			}
+			
+		}
+		return result;
+		
 	}
 }

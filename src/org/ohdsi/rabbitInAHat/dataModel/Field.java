@@ -31,10 +31,19 @@ public class Field implements MappableItem {
 	private int					maxLength;
 	private boolean				isStem;
 	private String				displayName;
+	private String				conceptIDTable;
 
 	public Field(String name, Table table) {
 		this.table = table;
 		this.name = name;
+	}
+	
+	public String getConceptIDTable () {
+		return conceptIDTable;
+	}
+	
+	public void setConceptIDTable (String conceptIDTable) {
+		this.conceptIDTable = conceptIDTable;
 	}
 
 	public Database getDb() {

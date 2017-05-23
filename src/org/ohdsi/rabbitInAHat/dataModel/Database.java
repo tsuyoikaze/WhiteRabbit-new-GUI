@@ -97,6 +97,7 @@ public class Database implements Serializable {
 				field.setUnique(row.get("UNIQUE").equals("YES"));
 				field.setType(DataType.fromString(row.get("DATA_TYPE")));
 				field.setDescription(row.get("DESCRIPTION"));
+				field.setConceptIDTable(row.get("CONCEPT_ID"));
 				table.getFields().add(field);
 			}
 		} catch (IOException e) {

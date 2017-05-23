@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.ohdsi.databases.DbType;
 import org.ohdsi.rabbitInAHat.dataModel.DataType;
@@ -148,7 +150,7 @@ public class ETLSQLGenerator {
 		}
 	}
 	
-	private static void sort (List<Field> fields) {
+	public static void sort (List<Field> fields) {
 		int targetIdx = -1;
 		
 		for (int i = 0; i < fields.size(); i++) {
@@ -162,6 +164,17 @@ public class ETLSQLGenerator {
 			fields.set(targetIdx, fields.get(0));
 			fields.set(0, temp);
 		}
+	}
+	
+	public String getConceptIDMap (Field sourceField, Field targetField, Map<String, Integer> map) {
+		String result = "";
+		Iterator<Entry<String, Integer>> iter = map.entrySet().iterator();
+		while (iter.hasNext()) {
+			Entry<String, Integer> item = iter.next();
+			result += "UPDATE " + targetField.getTable().getName() + "\n";
+			
+		}
+		return result;
 	}
 	
 	private static boolean checkDuplicate (List<ItemToItemMap> maps) {

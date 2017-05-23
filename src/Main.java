@@ -2,13 +2,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Vector;
 
+import org.ohdsi.databases.DbType;
 import org.ohdsi.rabbitInAHat.dataModel.Database;
 import org.ohdsi.rabbitInAHat.dataModel.ETL;
 import org.ohdsi.rabbitInAHat.dataModel.Field;
+import org.ohdsi.rabbitInAHat.dataModel.MappableItem;
+import org.ohdsi.rabbitInAHat.dataModel.Mapping;
 import org.ohdsi.rabbitInAHat.dataModel.Table;
 import org.ohdsi.whiteRabbit.ObjectExchange;
 
@@ -341,8 +347,24 @@ public class Main extends Application{
 
 	}
 	
-	public void actionPerformed(ActionEvent evt) {
-		
+	private Map<Field, Field> extractAllFIeldsRequiringConceptID () {
+		Map<Field, Field> result = new LinkedHashMap<>();
+		List<Mapping<Field>> allMaps = ObjectExchange.etl.getAllMaps();
+		for (Mapping<Field> map : allMaps) {
+			List<MappableItem> targetFields = map.getTargetItems();
+			for (MappableItem targetField : targetFields) {
+				MappableItem sourceField = map.getSourceItemsFromTarget(targetField).get(0);
+				if (((Field) sourceField).getConceptIDTable() != null) {
+					result.put((Field)sourceField, (Field)targetField);
+				}
+			}
+		}
+		return result;
+	}
+	
+	private List<String> doScanTable (DbType type, String address, String username, String password, String database) {
+		LinkedList<String> result = new LinkedList<>();
+		return result;
 	}
 
 }
