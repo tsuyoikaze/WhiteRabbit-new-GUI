@@ -47,7 +47,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" textAlignment="CENTER" wrappingWidth="200.0">
+            <Text id="confirm" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" textAlignment="CENTER" wrappingWidth="200.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -68,8 +68,8 @@
       <ScrollBar disable="true" layoutX="586.0" layoutY="65.0" orientation="VERTICAL" prefHeight="335.0" prefWidth="14.0" />
       <Pane layoutY="65.0" prefHeight="335.0" prefWidth="586.0" style="-fx-background-color: white;">
          <children>
-            <ListView layoutX="14.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
-            <ListView layoutX="372.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
+            <ListView id="listView_src" layoutX="14.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
+            <ListView id="listView_target" layoutX="372.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
          </children>
       </Pane>
    </children>

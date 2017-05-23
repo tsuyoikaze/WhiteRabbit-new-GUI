@@ -47,6 +47,7 @@ public class Main extends Application{
 	private Button openProjectBtn;
 
 	private Stage primaryStage;
+	private Stage newWindow;
 	private BorderPane mainLayout;
 	
 	FileChooser chooser;
@@ -232,9 +233,11 @@ public class Main extends Application{
 					public void handle(MouseEvent event) {
 //						System.out.println("Hello this is confirmation");
 						try {
-							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3_try1.fxml")));
-						
-							primaryStage.setScene(newScene);
+							newWindow = new Stage();
+							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3.fxml")));
+							newWindow.setTitle("Confirmation");
+							newWindow.setScene(newScene);
+							newWindow.show();
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
