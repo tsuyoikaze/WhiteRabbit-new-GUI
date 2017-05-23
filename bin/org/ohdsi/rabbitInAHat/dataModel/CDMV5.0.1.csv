@@ -267,3 +267,4 @@ COST,PAYER_PLAN_PERIOD_ID,YES,INTEGER,"A foreign key to the PAYER_PLAN_PERIOD ta
 COST,AMOUNT_ALLOWED,YES,NUMERIC,The contracted amount agreed between the payer and provider.,,
 COST,REVENUE_CODE_CONCEPT_ID,YES,INTEGER,A foreign key referring to a Standard Concept ID in the Standardized Vocabularies for Revenue codes.,,REVENUE_CODE
 COST,REVENUE_CODE_SOURCE_VALUE,YES,CHARACTER VARYING,"The source code for the Revenue code as it appears in the source data, stored here for reference.",,
+
