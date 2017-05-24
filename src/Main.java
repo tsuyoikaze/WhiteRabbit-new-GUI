@@ -1,7 +1,13 @@
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,13 +15,21 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Vector;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import org.ohdsi.databases.DBConnector;
 import org.ohdsi.databases.DbType;
+import org.ohdsi.rabbitInAHat.ETLSQLGenerator;
 import org.ohdsi.rabbitInAHat.dataModel.Database;
 import org.ohdsi.rabbitInAHat.dataModel.ETL;
 import org.ohdsi.rabbitInAHat.dataModel.Field;
 import org.ohdsi.rabbitInAHat.dataModel.MappableItem;
 import org.ohdsi.rabbitInAHat.dataModel.Mapping;
 import org.ohdsi.rabbitInAHat.dataModel.Table;
+import org.ohdsi.utilities.exception.DuplicateTargetException;
+import org.ohdsi.utilities.exception.TypeMismatchException;
 import org.ohdsi.whiteRabbit.ObjectExchange;
 
 import javafx.fxml.FXMLLoader;
@@ -241,6 +255,7 @@ public class Main extends Application{
 						try {
 							newWindow = new Stage();
 							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3.fxml")));
+							
 							newWindow.setTitle("Confirmation");
 							newWindow.setScene(newScene);
 							newWindow.show();
@@ -365,9 +380,85 @@ public class Main extends Application{
 		return result;
 	}
 	
-	private List<String> doScanTable (DbType type, String address, String username, String password, String database) {
+	private List<String> doScanTable (DbType type, String address, String username, String password, String database, Table table, Field field) throws SQLException {
 		LinkedList<String> result = new LinkedList<>();
+		Connection con = DBConnector.connect(address, address, username, password, type);
+		ResultSet set = con.prepareStatement("SELECT DISTINCT " + field.getName() + " FROM " + table.getName() + ";").executeQuery();
+		while (set.next()) {
+			result.add(set.getString(1));
+		}
 		return result;
+	}
+	
+	private void doSaveSQL (String filename) throws FileNotFoundException {
+		//TODO
+		if (filename != null) {
+			ETL.FileFormat fileFormat = ETL.FileFormat.SQL;
+			
+			String comment = null;
+			String createTable = null;
+			String mapString = null;
+			
+			boolean needConcept = false;
+			List<Field> conceptList = new ArrayList<>();
+			
+			Mapping<Table> tableMap = ObjectExchange.etl.getTableToTableMapping();
+			List<MappableItem> list = tableMap.getTargetItems();
+			for (MappableItem targetTable : list) {
+				
+				List<MappableItem> sourceList = tableMap.getSourceItemsFromTarget(targetTable);
+				
+				
+				for (MappableItem sourceTable : sourceList) {	
+					List<Field> fields = ETLSQLGenerator.castToTable(targetTable).getFields();
+
+					for (Field targetField : fields) {
+						if (targetField.getName().toLowerCase().contains("concept")) {
+							needConcept = true;
+							conceptList.add(targetField);
+						}
+					}
+				}
+				
+			}
+			
+			if (needConcept) {
+				final JFrame parent = new JFrame();
+		        JButton button = new JButton();
+
+		        parent.add(button);
+		        parent.pack();
+		        parent.setVisible(true);
+
+		        button.addActionListener(new java.awt.event.ActionListener() {
+		            @Override
+		            public void actionPerformed(java.awt.event.ActionEvent evt) {
+		                String name = JOptionPane.showInputDialog(parent,
+		                        "What is your name?", null);
+		            }
+		        });
+			}
+			
+			try {
+				comment = ETLSQLGenerator.HEADER_COMMENT;
+				createTable = ETLSQLGenerator.getCreateTable();
+				mapString = ETLSQLGenerator.getMap();
+			}
+			catch (TypeMismatchException e) {
+				JOptionPane.showMessageDialog(null, "The data types in current mapping does not match. Please only match fields with the same data type.", "Error", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			catch (DuplicateTargetException e) {
+				JOptionPane.showMessageDialog(null, "At least one target field is associated with multiple source fields. Please remove extra mappings and try again.", "Error", JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			PrintWriter writer = new PrintWriter(filename);
+			writer.write(comment);
+			writer.write(createTable);
+			writer.write(mapString);
+			writer.close();
+		}
 	}
 
 }
