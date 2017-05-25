@@ -27,5 +27,30 @@
 	<classpathentry kind="lib" path="lib/unix4j-base-0.4.jar"/>
 	<classpathentry kind="lib" path="lib/unix4j-command-0.4.jar"/>
 	<classpathentry kind="lib" path="lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/commons-csv-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/commons-lang-2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/hsqldb-2.2.5.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/jackcess-2.1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/json-io-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/jtds-1.3.1-v20140512.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/mysql-connector-java-5.1.37-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/ojdbc5.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/poi-excelant-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/poi-ooxml-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/poi-ooxml-schemas-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/postgresql-9.4-1201.jdbc4.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/postgresql-9.4-1201.jdbc41.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/RedshiftJDBC4-1.1.10.1010.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/slf4j-api-1.6.6.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/ucanaccess-3.0.3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/unix4j-base-0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/unix4j-command-0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/cielslytherin/Desktop/Research/WhiteRabbit-new-GUI/lib/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

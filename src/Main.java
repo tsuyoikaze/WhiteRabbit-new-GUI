@@ -34,6 +34,7 @@ import org.ohdsi.whiteRabbit.ObjectExchange;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -42,7 +43,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Cell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.ComboBoxListCell;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -50,7 +54,9 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import javafx.application.*;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -75,10 +81,16 @@ public class Main extends Application{
 	private ListView<String> listviewSource;
 	private ListView<String> listviewTarget;
 	
+	private TableView<myConceptTable> conceptTable;
+	private TableColumn<myConceptTable, String> rightColumn;
+	private TableColumn<myConceptTable, String> leftColumn;
+	
 	private Text confirmation;
 	
 	private Table currentSourceTable, currentTargetTable;
 	private Field currentSourceField, currentTargetField;
+	
+	 
 	
 	
 	private String chooseFile(boolean saveMode, ExtensionFilter filter) {
@@ -251,13 +263,51 @@ public class Main extends Application{
 					
 					@Override
 					public void handle(MouseEvent event) {
-//						System.out.println("Hello this is confirmation");
 						try {
 							newWindow = new Stage();
 							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3.fxml")));
+							conceptTable = (TableView) newScene.lookup("#conceptTable");
+							
+							ObservableList<myConceptTable> data = FXCollections.observableArrayList();
+							data.add(new myConceptTable("hi", "hello"));
+							data.add(new myConceptTable("how are you doing", "my dear friend"));
+							
+//							Map<Field, Field> myMap = extractAllFIeldsRequiringConceptID();
+//							myMap.
+//							for ()
+							
+//								List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
+//									for (Table t : sourceTable) {
+//										observableListSource.add(t.getName());
+//									}
+//									
+//									List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
+//									for (Table t : targetTable) {
+//										observableListTarget.add(t.getName());
+//									}
+//									listviewSource.setItems(observableListSource);
+//									listviewTarget.setItems(observableListTarget);
+//								
+								
+								
+								
+								
 							
 							newWindow.setTitle("Confirmation");
 							newWindow.setScene(newScene);
+							
+							
+							rightColumn = (TableColumn<myConceptTable, String>) conceptTable.getColumns().get(0);
+							rightColumn.setCellValueFactory(new PropertyValueFactory<myConceptTable, String>("srcName"));
+						
+							
+							leftColumn = (TableColumn<myConceptTable, String>) conceptTable.getColumns().get(1);
+							leftColumn.setCellValueFactory(new PropertyValueFactory<myConceptTable, String>("mapName"));
+							System.out.println(data.size());
+							
+							
+							conceptTable.setItems(data);
+							
 							newWindow.show();
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
@@ -265,6 +315,7 @@ public class Main extends Application{
 						}
 						
 					}
+
 				});
 			}
 			
@@ -291,6 +342,32 @@ public class Main extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Rabbit Catcher");
 		primaryStage.show();
+	}
+	
+	
+	public static class myConceptTable {
+		
+		private final SimpleStringProperty srcName;
+		private final SimpleStringProperty mapName;
+		
+		private myConceptTable(String srcName, String mapName) {
+			this.srcName = new SimpleStringProperty(srcName);
+			this.mapName = new SimpleStringProperty(mapName);
+		}
+		
+		public String getSrcName() {
+	        return srcName.get();
+	    }
+	    public void setSrcName(String srcName) {
+	        this.srcName.set(srcName);
+	    }
+	        
+	    public String getMapName() {
+	        return mapName.get();
+	    }
+	    public void setMapName(String mapName) {
+	        this.mapName.set(mapName);
+	    }
 	}
 	
 	private void loadListViewSecondScreen() {
@@ -377,6 +454,7 @@ public class Main extends Application{
 				}
 			}
 		}
+	
 		return result;
 	}
 	

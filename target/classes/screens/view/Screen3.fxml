@@ -19,13 +19,13 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TableView layoutX="55.0" layoutY="112.0" prefHeight="156.0" prefWidth="403.0" style="-fx-background-color: whitesmoke;">
+      <TableView id="conceptTable" fx:id="conceptTable" layoutX="55.0" layoutY="112.0" prefHeight="156.0" prefWidth="403.0" style="-fx-background-color: whitesmoke;">
         <columns>
-          <TableColumn prefWidth="202.0" style="-fx-background-color: whitesmoke;" text="C1" />
-          <TableColumn prefWidth="200.0" style="-fx-background-color: whitesmoke;" text="C2" />
+          <TableColumn id="leftColumn" prefWidth="202.0" style="-fx-background-color: whitesmoke;" text="C1" />
+          <TableColumn id="rightColumn" prefWidth="200.0" style="-fx-background-color: whitesmoke;" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="118.0" layoutY="277.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: white;" text="OK">
+      <Button id="okay_button" layoutX="118.0" layoutY="277.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: white;" text="OK">
          <font>
             <Font size="14.0" />
          </font>
