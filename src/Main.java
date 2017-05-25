@@ -55,6 +55,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.Pair;
 import javafx.application.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -269,27 +270,19 @@ public class Main extends Application{
 							conceptTable = (TableView) newScene.lookup("#conceptTable");
 							
 							ObservableList<myConceptTable> data = FXCollections.observableArrayList();
-							data.add(new myConceptTable("hi", "hello"));
-							data.add(new myConceptTable("how are you doing", "my dear friend"));
+							
 							
 //							Map<Field, Field> myMap = extractAllFIeldsRequiringConceptID();
-//							myMap.
-//							for ()
-							
-//								List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
-//									for (Table t : sourceTable) {
-//										observableListSource.add(t.getName());
-//									}
-//									
-//									List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
-//									for (Table t : targetTable) {
-//										observableListTarget.add(t.getName());
-//									}
-//									listviewSource.setItems(observableListSource);
-//									listviewTarget.setItems(observableListTarget);
+//							for (Map.Entry<Field, Field> entry : myMap.entrySet())
+//							{
 //								
-								
-								
+//								//data.add(new myConceptTable(entry.getKey().getTable().getName(), entry.getValue().getTable().getName()));
+////							    System.out.println(entry.getKey() + "/" + entry.getValue());
+//							}
+
+								//TODO: add iteration here and use the example below to add to the list.
+								data.add(new myConceptTable("hi", "hello"));
+//								data.add(new myConceptTable("how are you doing", "my dear friend"));
 								
 								
 							
@@ -458,17 +451,17 @@ public class Main extends Application{
 		return result;
 	}
 	
-	private List<String> doScanTable (DbType type, String address, String username, String password, String database, Table table, Field field) throws SQLException {
-		LinkedList<String> result = new LinkedList<>();
+	private List<Pair<String, String>> doScanTable (DbType type, String address, String username, String password, String database, Table table, Field field, Table targetTable) throws SQLException {
+		LinkedList<Pair<String, String>> result = new LinkedList<>();
 		Connection con = DBConnector.connect(address, address, username, password, type);
-		ResultSet set = con.prepareStatement("SELECT DISTINCT " + field.getName() + " FROM " + table.getName() + ";").executeQuery();
+		ResultSet set = con.prepareStatement("SELECT" + ETLSQLGenerator.getUniqueSourceField(table, targetTable).getName() + "," + field.getName() + " FROM " + table.getName() + ";").executeQuery();
 		while (set.next()) {
-			result.add(set.getString(1));
+			result.add(new Pair<>(set.getString(1), set.getString(2)));
 		}
 		return result;
 	}
 	
-	private void doSaveSQL (String filename) throws FileNotFoundException {
+	private void doSaveSQL (String filename, String conceptIDSQL) throws FileNotFoundException {
 		//TODO
 		if (filename != null) {
 			ETL.FileFormat fileFormat = ETL.FileFormat.SQL;
@@ -535,6 +528,7 @@ public class Main extends Application{
 			writer.write(comment);
 			writer.write(createTable);
 			writer.write(mapString);
+			writer.write(conceptIDSQL);
 			writer.close();
 		}
 	}
