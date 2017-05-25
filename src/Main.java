@@ -68,7 +68,7 @@ public class Main extends Application{
 	private static final String FXML_MAIN_SCREEN_PATH = "screens/view/Screen2.fxml";
 	private static final ExtensionFilter FILTER_XLSX = new FileChooser.ExtensionFilter("Excel spreadsheet", "*.xlsx");
 	private static final String FXML_WELCOME_SCREEN_PATH = "screens/view/Screen1.fxml";
-	private static final String DEFAULT_CDM_CSV_PATH = "src/org/ohdsi/rabbitInAHat/dataModel/CDMV5.0.1.csv";
+	private static final String DEFAULT_CDM_CSV_PATH = "src/org/ohdsi/rabbitInAHat/dataModel/CDMV5.0.1.backup.csv";
 	private Button newProjectBtn;
 	private Button openExcelBtn;
 	private Button openProjectBtn;
@@ -243,7 +243,11 @@ public class Main extends Application{
 			        			if (("	" + field.getName()).equals(listviewTarget.getSelectionModel().getSelectedItem())) {
 			        				currentTargetField = field;
 			        				if (currentSourceField != null) {
+			        					if (ObjectExchange.etl.getTableToTableMapping().getSourceToTargetMap(currentSourceTable, currentTargetTable) == null) {
+			        						ObjectExchange.etl.getTableToTableMapping().addSourceToTargetMap(currentSourceTable, currentTargetTable);
+			        					}
 			        					ObjectExchange.etl.getFieldToFieldMapping(currentSourceTable, currentTargetTable).addSourceToTargetMap(currentSourceField, currentTargetField);
+			        					System.out.println("Clicked");
 			        					currentTargetField.setDisplayName(currentTargetField.getName() + " <" + currentSourceTable.getName() + "." + currentSourceField.getName() + ">");
 			        					currentSourceField = null;
 			        					loadListViewWithDetail(currentTargetTable.getName(), "target");
@@ -272,18 +276,14 @@ public class Main extends Application{
 							ObservableList<myConceptTable> data = FXCollections.observableArrayList();
 							
 							
-//							Map<Field, Field> myMap = extractAllFIeldsRequiringConceptID();
-//							for (Map.Entry<Field, Field> entry : myMap.entrySet())
-//							{
-//								
-//								//data.add(new myConceptTable(entry.getKey().getTable().getName(), entry.getValue().getTable().getName()));
-////							    System.out.println(entry.getKey() + "/" + entry.getValue());
-//							}
-
-								//TODO: add iteration here and use the example below to add to the list.
-								data.add(new myConceptTable("hi", "hello"));
-//								data.add(new myConceptTable("how are you doing", "my dear friend"));
+							Map<Field, Field> myMap = extractAllFIeldsRequiringConceptID();
+							System.out.println("size: " + myMap.size());
+							for (Map.Entry<Field, Field> entry : myMap.entrySet())
+							{
 								
+								data.add(new myConceptTable(entry.getKey().getTable().getName() + "." + entry.getKey().getName(), entry.getValue().getTable().getName() + "." + entry.getValue().getName()));
+							    System.out.println(entry.getKey() + "/" + entry.getValue());
+							}
 								
 							
 							newWindow.setTitle("Confirmation");
@@ -438,11 +438,17 @@ public class Main extends Application{
 	private Map<Field, Field> extractAllFIeldsRequiringConceptID () {
 		Map<Field, Field> result = new LinkedHashMap<>();
 		List<Mapping<Field>> allMaps = ObjectExchange.etl.getAllMaps();
+		System.out.println("All maps: " + allMaps.size());
 		for (Mapping<Field> map : allMaps) {
 			List<MappableItem> targetFields = map.getTargetItems();
+			System.out.println("ggg: " + targetFields.toString());
 			for (MappableItem targetField : targetFields) {
+				if (map.getSourceItemsFromTarget(targetField).isEmpty()) {
+					continue;
+				}
+				System.out.println("XXX: " + targetField + "\t" + ((Field) targetField).getConceptIDTable());
 				MappableItem sourceField = map.getSourceItemsFromTarget(targetField).get(0);
-				if (((Field) sourceField).getConceptIDTable() != null) {
+				if (((Field) targetField).getConceptIDTable() != null && !((Field) targetField).getConceptIDTable().equals("")) {
 					result.put((Field)sourceField, (Field)targetField);
 				}
 			}
@@ -491,23 +497,6 @@ public class Main extends Application{
 					}
 				}
 				
-			}
-			
-			if (needConcept) {
-				final JFrame parent = new JFrame();
-		        JButton button = new JButton();
-
-		        parent.add(button);
-		        parent.pack();
-		        parent.setVisible(true);
-
-		        button.addActionListener(new java.awt.event.ActionListener() {
-		            @Override
-		            public void actionPerformed(java.awt.event.ActionEvent evt) {
-		                String name = JOptionPane.showInputDialog(parent,
-		                        "What is your name?", null);
-		            }
-		        });
 			}
 			
 			try {

@@ -92,6 +92,7 @@ public class Database implements Serializable {
 					nameToTable.put(row.get("TABLE_NAME").toLowerCase(), table);
 					database.tables.add(table);
 				}
+				System.out.println(row.get("COLUMN_NAME"));
 				Field field = new Field(row.get("COLUMN_NAME").toLowerCase(), table);
 				field.setNullable(row.get("IS_NULLABLE").equals("YES"));
 				field.setUnique(row.get("UNIQUE").equals("YES"));
