@@ -281,7 +281,7 @@ public class Main extends Application{
 							for (Map.Entry<Field, Field> entry : myMap.entrySet())
 							{
 								
-								data.add(new myConceptTable(entry.getKey().getTable().getName() + "." + entry.getKey().getName(), entry.getValue().getTable().getName() + "." + entry.getValue().getName()));
+								data.add(new myConceptTable(entry.getKey().toString(), entry.getValue().toString()));
 							    System.out.println(entry.getKey() + "/" + entry.getValue());
 							}
 								
@@ -419,6 +419,7 @@ public class Main extends Application{
 					}
 			
 				}
+				
 			
 			}
 			listviewTarget.setItems(observableListTarget);
