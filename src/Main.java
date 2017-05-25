@@ -50,6 +50,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 import javafx.application.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -380,12 +381,12 @@ public class Main extends Application{
 		return result;
 	}
 	
-	private List<String> doScanTable (DbType type, String address, String username, String password, String database, Table table, Field field) throws SQLException {
-		LinkedList<String> result = new LinkedList<>();
+	private List<Pair<String, String>> doScanTable (DbType type, String address, String username, String password, String database, Table table, Field field, Table targetTable) throws SQLException {
+		LinkedList<Pair<String, String>> result = new LinkedList<>();
 		Connection con = DBConnector.connect(address, address, username, password, type);
-		ResultSet set = con.prepareStatement("SELECT DISTINCT " + field.getName() + " FROM " + table.getName() + ";").executeQuery();
+		ResultSet set = con.prepareStatement("SELECT" + ETLSQLGenerator.getUniqueSourceField(table, targetTable).getName() + "," + field.getName() + " FROM " + table.getName() + ";").executeQuery();
 		while (set.next()) {
-			result.add(set.getString(1));
+			result.add(new Pair<>(set.getString(1), set.getString(2)));
 		}
 		return result;
 	}

@@ -6,9 +6,11 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.ohdsi.databases.DbType;
 import org.ohdsi.rabbitInAHat.dataModel.DataType;
@@ -31,6 +33,8 @@ public class ETLSQLGenerator {
 	public static enum DataTypeFormat {
 		MySQL;
 	}
+	
+	private static DataTypeFormat dbFormat = DataTypeFormat.MySQL;
 	
 	public static String convertDataType(String rawType, DataTypeFormat format) {
 		if (format == DataTypeFormat.MySQL) {
@@ -166,15 +170,59 @@ public class ETLSQLGenerator {
 		}
 	}
 	
-	public String getConceptIDMap (Field sourceField, Field targetField, Map<String, Integer> map) {
+	public static String getConceptIDMap (Field targetField, Map<String, Integer> map, List<Pair<String, String>> list) {
 		String result = "";
-		Iterator<Entry<String, Integer>> iter = map.entrySet().iterator();
+		Iterator<Pair<String, String>> iter = list.iterator();
 		while (iter.hasNext()) {
-			Entry<String, Integer> item = iter.next();
-			result += "UPDATE " + targetField.getTable().getName() + "\n";
-			
+			Pair<String, String> item = iter.next();
+			if (map.containsKey(item.getItem2())) {
+				result += "UPDATE " + targetField.getTable().getName() + "\n";
+				result += "\tSET " + targetField.getName() + " = " + map.get(item.getItem2()) + "\n";
+				result += "WHERE " + getUniqueTargetField(targetField.getTable()).getName() + " = '" + item.getItem1() + "'\n\n";
+			}
 		}
 		return result;
+	}
+	
+	public static Field getUniqueTargetField (Table targetTable) {
+		for (Field field : targetTable.getFields()) {
+			if (field.isUnique()) {
+				return field;
+			}
+		}
+		return null;
+	}
+	
+	public static Field getUniqueSourceField (Table sourceTable, Table targetTable) {
+		Mapping<Field> map = ObjectExchange.etl.getFieldToFieldMapping(sourceTable, targetTable);
+		Field uniqueField = null;
+		for (MappableItem field : map.getTargetItems()) {
+			if (((Field)field).isUnique()) {
+				uniqueField = (Field)field;
+			}
+		}
+		if (uniqueField == null) {
+			return null;
+		}
+		Field sourceField = null;
+		List<Mapping<Field>> allMaps = ObjectExchange.etl.getAllMaps();
+		List<MappableItem> sourceFields = new ArrayList<>();
+		for (Mapping<Field> map_ : allMaps) {
+			sourceFields.addAll(map_.getSourceItemsFromTarget(uniqueField));
+		}
+		if (sourceFields.isEmpty()) {
+			return null;
+		}
+		else {
+			String name = sourceFields.get(0).getName();
+			List<Field> fields = sourceTable.getFields();
+			for (Field f : fields) {
+				if (f.getName().equals(name)) {
+					return f;
+				}
+			}
+		}
+		return null;
 	}
 	
 	private static boolean checkDuplicate (List<ItemToItemMap> maps) {
