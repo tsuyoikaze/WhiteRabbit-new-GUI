@@ -391,7 +391,7 @@ public class Main extends Application{
 		return result;
 	}
 	
-	private void doSaveSQL (String filename) throws FileNotFoundException {
+	private void doSaveSQL (String filename, String conceptIDSQL) throws FileNotFoundException {
 		//TODO
 		if (filename != null) {
 			ETL.FileFormat fileFormat = ETL.FileFormat.SQL;
@@ -458,6 +458,7 @@ public class Main extends Application{
 			writer.write(comment);
 			writer.write(createTable);
 			writer.write(mapString);
+			writer.write(conceptIDSQL);
 			writer.close();
 		}
 	}
