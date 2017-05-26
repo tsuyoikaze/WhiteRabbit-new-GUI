@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ProgressBar layoutY="25.0" prefHeight="40.0" prefWidth="600.0" progress="0.33" />
+      <HBox alignment="TOP_CENTER" layoutY="25.0" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: rgba(153, 153, 153, 0.5);">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link databases" textAlignment="CENTER" wrappingWidth="200.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text id="confirm" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" textAlignment="CENTER" wrappingWidth="200.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Done" textAlignment="CENTER" wrappingWidth="200.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <Pane layoutY="65.0" prefHeight="338.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="191.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scanning Database">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="42.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="42.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scanning: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="300.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text id="showType" layoutX="112.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.21875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text id="showIP" layoutX="322.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="234.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text id="showPath" layoutX="135.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.21874904632568">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ProgressBar layoutX="42.0" layoutY="231.0" prefHeight="20.0" prefWidth="492.0" progress="0.0" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

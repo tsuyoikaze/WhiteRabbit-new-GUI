@@ -25,12 +25,7 @@
           <TableColumn id="rightColumn" prefWidth="200.0" style="-fx-background-color: whitesmoke;" text="C2" />
         </columns>
       </TableView>
-      <Button id="okay_button" layoutX="118.0" layoutY="277.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: white;" text="OK">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="325.0" layoutY="277.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Cancel">
+      <Button id="okay_button" layoutX="220.0" layoutY="278.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: white;" text="OK">
          <font>
             <Font size="14.0" />
          </font>

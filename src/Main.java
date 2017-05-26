@@ -42,9 +42,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Cell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -72,6 +75,10 @@ public class Main extends Application{
 	private Button newProjectBtn;
 	private Button openExcelBtn;
 	private Button openProjectBtn;
+	private Button okayButton;
+	private Button inputButton;
+	
+	private MenuButton typeButton;
 
 	private Stage primaryStage;
 	private Stage newWindow;
@@ -90,6 +97,21 @@ public class Main extends Application{
 	
 	private Table currentSourceTable, currentTargetTable;
 	private Field currentSourceField, currentTargetField;
+	
+	private TextField passwordField;
+	private TextField userNameField;
+	private TextField dbNameField;
+	private TextField ipField;
+	private Text showType;
+	private Text showIP;
+	private Text showScanningPath;
+	
+	private String password;
+	private String username;
+	private String dbName;
+	private String ipName;
+	private String typeName;
+	private String type;
 	
 	 
 	
@@ -272,6 +294,7 @@ public class Main extends Application{
 							newWindow = new Stage();
 							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3.fxml")));
 							conceptTable = (TableView) newScene.lookup("#conceptTable");
+							okayButton = (Button) newScene.lookup("#okay_button");
 							
 							ObservableList<myConceptTable> data = FXCollections.observableArrayList();
 							
@@ -280,7 +303,7 @@ public class Main extends Application{
 							System.out.println("size: " + myMap.size());
 							for (Map.Entry<Field, Field> entry : myMap.entrySet())
 							{
-								
+								System.out.println("Entering the correct function");
 								data.add(new myConceptTable(entry.getKey().toString(), entry.getValue().toString()));
 							    System.out.println(entry.getKey() + "/" + entry.getValue());
 							}
@@ -307,7 +330,127 @@ public class Main extends Application{
 							e.printStackTrace();
 						}
 						
+						
+						
+						okayButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+						
+							MenuItem menuItem1;
+							MenuItem menuItem2;
+							MenuItem menuItem3;
+							MenuItem menuItem4;
+							MenuItem menuItem5;
+							MenuItem menuItem6;
+							public void handle(MouseEvent arg0) {
+								
+								//TODO:
+								newWindow.close();
+								
+								
+								try {
+									Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen4_try.fxml")));
+									passwordField = (TextField) newScene.lookup("#password_field");
+									userNameField = (TextField) newScene.lookup("#username_field");
+									dbNameField = (TextField) newScene.lookup("#dbname_field");
+									ipField = (TextField) newScene.lookup("#ip_field");
+									inputButton = (Button) newScene.lookup("#ok_button");
+									typeButton = (MenuButton) newScene.lookup("#type_button");
+									menuItem1 = new MenuItem("MYSQL");
+									menuItem2 = new MenuItem("MSSQL");
+									menuItem3 = new MenuItem("ORACLE");
+									menuItem4 = new MenuItem("POSTGRESQL");
+									menuItem5 = new MenuItem("MSACCESS");
+									menuItem6 = new MenuItem("REDSHIFT");
+									typeButton.getItems().setAll(menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6);
+									
+									
+									primaryStage.setScene(newScene);
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								menuItem1.setOnAction(new EventHandler<ActionEvent>() {
+									public void handle (ActionEvent e) {
+										type = "MYSQL";
+									}
+								});
+								menuItem2.setOnAction(new EventHandler<ActionEvent>() {
+									public void handle (ActionEvent e) {
+										type = "MSSQL";
+									}
+								});
+								menuItem3.setOnAction(new EventHandler<ActionEvent>() {
+									public void handle (ActionEvent e) {
+										type = "ORACLE";
+									}
+								});
+								menuItem4.setOnAction(new EventHandler<ActionEvent>() {
+									public void handle (ActionEvent e) {
+										type = "POSTGRESQL";
+									}
+								});
+								menuItem5.setOnAction(new EventHandler<ActionEvent>() {
+									public void handle (ActionEvent e) {
+										type = "MSACCESS";
+									}
+								});
+								menuItem6.setOnAction(new EventHandler<ActionEvent>() {
+									public void handle (ActionEvent e) {
+										type = "REDSHIFT";
+									}
+								});
+								inputButton.setOnAction(new EventHandler<ActionEvent>() {
+									public void handle (ActionEvent e) {
+										if (passwordField.getText() != null) {
+											password = passwordField.getText();
+										}
+										if (userNameField.getText() != null) {
+											username = userNameField.getText();
+										}
+										if (dbNameField.getText() != null) {
+											dbName = dbNameField.getText();
+										}
+										if (ipField.getText() != null) {
+											ipName = ipField.getText();
+										}
+										System.out.println("here is the answer: " +  password +  "  "+ username +  "  "+ dbName+ "   "+ ipName);
+									
+										try {
+											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try.fxml")));
+											showType = (Text) newScene.lookup("#showType");
+											showIP = (Text) newScene.lookup("#showIP");
+											showScanningPath = (Text) newScene.lookup("#showPath");
+											showIP.setText(ipName);
+											showType.setText(type);
+											
+											primaryStage.setScene(newScene);
+										
+										
+										} catch (IOException e1) {
+											// TODO Auto-generated catch block
+											e1.printStackTrace();
+										}
+										
+									
+									}
+								});
+								
+								
+								
+								
+								
+								primaryStage.show();
+								
+								
+							
+							}
+						
+						});
+						
 					}
+					
+					
+					
 
 				});
 			}
