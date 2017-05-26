@@ -9,17 +9,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="512.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="175.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scanning complete">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text layoutX="72.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The listed conversion requests concept ID. Query them now?">
+      <Text layoutX="56.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The listed conversion requests concept ID. Query them now?">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TableView id="conceptTable" fx:id="conceptTable" layoutX="55.0" layoutY="112.0" prefHeight="156.0" prefWidth="403.0" style="-fx-background-color: whitesmoke;">
+      <TableView id="conceptTable" fx:id="conceptTable" layoutX="56.0" layoutY="96.0" prefHeight="156.0" prefWidth="403.0" style="-fx-background-color: whitesmoke;">
         <columns>
           <TableColumn id="leftColumn" prefWidth="202.0" style="-fx-background-color: whitesmoke;" text="C1" />
           <TableColumn id="rightColumn" prefWidth="200.0" style="-fx-background-color: whitesmoke;" text="C2" />
