@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="512.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="175.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scanning complete">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="103.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The following cannot be found in the database">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TableView id="conceptTable" fx:id="conceptTable" layoutX="55.0" layoutY="112.0" prefHeight="156.0" prefWidth="403.0" style="-fx-background-color: whitesmoke;">
+        <columns>
+          <TableColumn id="leftColumn" prefWidth="202.0" style="-fx-background-color: whitesmoke;" text="C1" />
+          <TableColumn id="rightColumn" prefWidth="200.0" style="-fx-background-color: whitesmoke;" text="C2" />
+        </columns>
+      </TableView>
+      <Button id="manually_enter" layoutX="96.0" layoutY="291.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="136.0" style="-fx-background-color: white;" text="Manually Enter">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button id="ignore_button" layoutX="269.0" layoutY="292.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" style="-fx-background-color: white;" text="Ignore Entries" />
+   </children>
+</Pane>

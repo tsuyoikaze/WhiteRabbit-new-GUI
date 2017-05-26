@@ -77,6 +77,9 @@ public class Main extends Application{
 	private Button openProjectBtn;
 	private Button okayButton;
 	private Button inputButton;
+	private Button nextButton;
+	private Button manualEnterButton;
+	private Button ignoreButton;
 	
 	private MenuButton typeButton;
 
@@ -343,7 +346,7 @@ public class Main extends Application{
 							public void handle(MouseEvent arg0) {
 								
 								//TODO:
-								newWindow.close();
+								
 								
 								
 								try {
@@ -363,7 +366,7 @@ public class Main extends Application{
 									typeButton.getItems().setAll(menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6);
 									
 									
-									primaryStage.setScene(newScene);
+									newWindow.setScene(newScene);
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -417,13 +420,14 @@ public class Main extends Application{
 									
 										try {
 											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try.fxml")));
+											nextButton = (Button) newScene.lookup("#next_button");
 											showType = (Text) newScene.lookup("#showType");
 											showIP = (Text) newScene.lookup("#showIP");
 											showScanningPath = (Text) newScene.lookup("#showPath");
 											showIP.setText(ipName);
 											showType.setText(type);
 											
-											primaryStage.setScene(newScene);
+											newWindow.setScene(newScene);
 										
 										
 										} catch (IOException e1) {
@@ -431,8 +435,51 @@ public class Main extends Application{
 											e1.printStackTrace();
 										}
 										
+										nextButton.setOnAction(new EventHandler<ActionEvent>() {
+											public void handle (ActionEvent e) {
+												try {
+													Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
+													manualEnterButton = (Button) newScene.lookup("#manually_enter");
+													ignoreButton = (Button) newScene.lookup("#ignore_button");
+													newWindow.setScene(newScene);
+												} catch (IOException e1) {
+													// TODO Auto-generated catch block
+													e1.printStackTrace();
+												}
+												
+												manualEnterButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+													public void handle(MouseEvent arg0) {
+														
+														
+													}
+													
+												});
+												
+												ignoreButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+													public void handle(MouseEvent arg0) {
+														newWindow.close();
+														try {
+															Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen7_try.fxml")));
+															primaryStage.setScene(newScene);
+														} catch (IOException e) {
+															// TODO Auto-generated catch block
+															e.printStackTrace();
+														}
+														
+													}
+													
+												});
+												
+											}
+											
+										});
+										
 									
 									}
+									
+									
 								});
 								
 								

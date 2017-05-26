@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -80,7 +81,7 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text layoutX="300.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP:">
+            <Text layoutX="249.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP:">
                <font>
                   <Font size="18.0" />
                </font>
@@ -90,7 +91,7 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text id="showIP" layoutX="348.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="68.0">
+            <Text id="showIP" layoutX="271.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="319.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -101,6 +102,7 @@
                </font>
             </Text>
             <ProgressBar layoutX="42.0" layoutY="231.0" prefHeight="20.0" prefWidth="492.0" progress="0.0" />
+            <Button id="next_button" layoutX="270.0" layoutY="285.0" mnemonicParsing="false" text="NEXT" />
          </children>
       </Pane>
    </children>

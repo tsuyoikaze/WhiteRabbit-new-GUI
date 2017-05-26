@@ -108,7 +108,7 @@
             <TextField id="dbname_field" layoutX="128.0" layoutY="156.0" prefHeight="27.0" prefWidth="133.0" />
             <TextField id="username_field" layoutX="383.0" layoutY="156.0" prefHeight="27.0" prefWidth="191.0" />
             <TextField id="ip_field" layoutX="84.0" layoutY="221.0" prefHeight="27.0" prefWidth="351.0" />
-            <Button id="ok_button" layoutX="261.0" layoutY="295.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="79.0" text="OK" />
+            <Button id="ok_button" layoutX="261.0" layoutY="295.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="79.0" text="NEXT" />
          </children>
       </Pane>
    </children>
