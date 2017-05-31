@@ -9,10 +9,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.Vector;
 
 import javax.swing.JButton;
@@ -41,6 +43,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Cell;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -70,6 +73,7 @@ public class Main extends Application{
 	
 	private static final String FXML_MAIN_SCREEN_PATH = "screens/view/Screen2.fxml";
 	private static final ExtensionFilter FILTER_XLSX = new FileChooser.ExtensionFilter("Excel spreadsheet", "*.xlsx");
+	private static final ExtensionFilter FILTER_SQL = new FileChooser.ExtensionFilter("SQL File", "*.sql");
 	private static final String FXML_WELCOME_SCREEN_PATH = "screens/view/Screen1.fxml";
 	private static final String DEFAULT_CDM_CSV_PATH = "src/org/ohdsi/rabbitInAHat/dataModel/CDMV5.0.1.backup.csv";
 	private Button newProjectBtn;
@@ -80,8 +84,9 @@ public class Main extends Application{
 	private Button nextButton;
 	private Button manualEnterButton;
 	private Button ignoreButton;
+	private Button saveSQL;
 	
-	private MenuButton typeButton;
+	private ComboBox typeButton;
 
 	private Stage primaryStage;
 	private Stage newWindow;
@@ -303,6 +308,7 @@ public class Main extends Application{
 							
 							
 							Map<Field, Field> myMap = extractAllFIeldsRequiringConceptID();
+							ObjectExchange.conceptIDFieldMap = myMap;
 							System.out.println("size: " + myMap.size());
 							for (Map.Entry<Field, Field> entry : myMap.entrySet())
 							{
@@ -322,7 +328,10 @@ public class Main extends Application{
 							
 							leftColumn = (TableColumn<myConceptTable, String>) conceptTable.getColumns().get(1);
 							leftColumn.setCellValueFactory(new PropertyValueFactory<myConceptTable, String>("mapName"));
-							System.out.println(data.size());
+//							System.out.println(data.size());
+							if (data.size() == 0) {
+								data.add(new myConceptTable(" ", " "));
+							}
 							
 							
 							conceptTable.setItems(data);
@@ -350,20 +359,30 @@ public class Main extends Application{
 								
 								
 								try {
-									Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen4_try.fxml")));
+									Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen4_try_2.fxml")));
 									passwordField = (TextField) newScene.lookup("#password_field");
 									userNameField = (TextField) newScene.lookup("#username_field");
 									dbNameField = (TextField) newScene.lookup("#dbname_field");
 									ipField = (TextField) newScene.lookup("#ip_field");
 									inputButton = (Button) newScene.lookup("#ok_button");
-									typeButton = (MenuButton) newScene.lookup("#type_button");
-									menuItem1 = new MenuItem("MYSQL");
-									menuItem2 = new MenuItem("MSSQL");
-									menuItem3 = new MenuItem("ORACLE");
-									menuItem4 = new MenuItem("POSTGRESQL");
-									menuItem5 = new MenuItem("MSACCESS");
-									menuItem6 = new MenuItem("REDSHIFT");
-									typeButton.getItems().setAll(menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6);
+									typeButton = (ComboBox) newScene.lookup("#combo_type");
+									typeButton.setValue("MYSQL");
+									ObservableList<String> typeList = FXCollections.observableArrayList();
+									typeList.add("MSSQL");
+									typeList.add("ORACLE");
+									typeList.add("POSTGRESQL");
+									typeList.add("MSACCESS");
+									typeList.add("REDSHIFT");
+									typeButton.setItems(typeList);
+									
+//									typeButton = (MenuButton) newScene.lookup("#type_button");
+//									menuItem1 = new MenuItem("MYSQL");
+//									menuItem2 = new MenuItem("MSSQL");
+//									menuItem3 = new MenuItem("ORACLE");
+//									menuItem4 = new MenuItem("POSTGRESQL");
+//									menuItem5 = new MenuItem("MSACCESS");
+//									menuItem6 = new MenuItem("REDSHIFT");
+//									typeButton.getItems().setAll(menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6);
 									
 									
 									newWindow.setScene(newScene);
@@ -372,36 +391,36 @@ public class Main extends Application{
 									e.printStackTrace();
 								}
 								
-								menuItem1.setOnAction(new EventHandler<ActionEvent>() {
-									public void handle (ActionEvent e) {
-										type = "MYSQL";
-									}
-								});
-								menuItem2.setOnAction(new EventHandler<ActionEvent>() {
-									public void handle (ActionEvent e) {
-										type = "MSSQL";
-									}
-								});
-								menuItem3.setOnAction(new EventHandler<ActionEvent>() {
-									public void handle (ActionEvent e) {
-										type = "ORACLE";
-									}
-								});
-								menuItem4.setOnAction(new EventHandler<ActionEvent>() {
-									public void handle (ActionEvent e) {
-										type = "POSTGRESQL";
-									}
-								});
-								menuItem5.setOnAction(new EventHandler<ActionEvent>() {
-									public void handle (ActionEvent e) {
-										type = "MSACCESS";
-									}
-								});
-								menuItem6.setOnAction(new EventHandler<ActionEvent>() {
-									public void handle (ActionEvent e) {
-										type = "REDSHIFT";
-									}
-								});
+//								menuItem1.setOnAction(new EventHandler<ActionEvent>() {
+//									public void handle (ActionEvent e) {
+//										type = "MYSQL";
+//									}
+//								});
+//								menuItem2.setOnAction(new EventHandler<ActionEvent>() {
+//									public void handle (ActionEvent e) {
+//										type = "MSSQL";
+//									}
+//								});
+//								menuItem3.setOnAction(new EventHandler<ActionEvent>() {
+//									public void handle (ActionEvent e) {
+//										type = "ORACLE";
+//									}
+//								});
+//								menuItem4.setOnAction(new EventHandler<ActionEvent>() {
+//									public void handle (ActionEvent e) {
+//										type = "POSTGRESQL";
+//									}
+//								});
+//								menuItem5.setOnAction(new EventHandler<ActionEvent>() {
+//									public void handle (ActionEvent e) {
+//										type = "MSACCESS";
+//									}
+//								});
+//								menuItem6.setOnAction(new EventHandler<ActionEvent>() {
+//									public void handle (ActionEvent e) {
+//										type = "REDSHIFT";
+//									}
+//								});
 								inputButton.setOnAction(new EventHandler<ActionEvent>() {
 									public void handle (ActionEvent e) {
 										if (passwordField.getText() != null) {
@@ -416,10 +435,11 @@ public class Main extends Application{
 										if (ipField.getText() != null) {
 											ipName = ipField.getText();
 										}
+										type = (String) typeButton.getValue();
 										System.out.println("here is the answer: " +  password +  "  "+ username +  "  "+ dbName+ "   "+ ipName);
 									
 										try {
-											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try.fxml")));
+											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try_2.fxml")));
 											nextButton = (Button) newScene.lookup("#next_button");
 											showType = (Text) newScene.lookup("#showType");
 											showIP = (Text) newScene.lookup("#showIP");
@@ -428,9 +448,18 @@ public class Main extends Application{
 											showType.setText(type);
 											
 											newWindow.setScene(newScene);
+											DbType myDBType = new DbType(type);
+											int percent = 100;
+											for (Map.Entry<Field, Field> item : ObjectExchange.conceptIDFieldMap.entrySet()) {
+												List<Pair<String, String>> list = doScanTable(myDBType, ipName, username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
+											}
+											
+											
 										
 										
 										} catch (IOException e1) {
+											e1.printStackTrace();
+										} catch (SQLException e1) {
 											// TODO Auto-generated catch block
 											e1.printStackTrace();
 										}
@@ -439,11 +468,11 @@ public class Main extends Application{
 											public void handle (ActionEvent e) {
 												try {
 													Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
+													//TODO: add in table
 													manualEnterButton = (Button) newScene.lookup("#manually_enter");
 													ignoreButton = (Button) newScene.lookup("#ignore_button");
 													newWindow.setScene(newScene);
 												} catch (IOException e1) {
-													// TODO Auto-generated catch block
 													e1.printStackTrace();
 												}
 												
@@ -462,11 +491,25 @@ public class Main extends Application{
 														newWindow.close();
 														try {
 															Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen7_try.fxml")));
+															saveSQL = (Button) newScene.lookup("#save_as_sql");
+															
 															primaryStage.setScene(newScene);
 														} catch (IOException e) {
-															// TODO Auto-generated catch block
 															e.printStackTrace();
 														}
+														
+														saveSQL.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+															public void handle(MouseEvent arg0) {
+																try {
+																	doSaveSQL(chooseFile(true, FILTER_SQL), ObjectExchange.conceptIDString);
+																} catch (FileNotFoundException e) {
+																	//TODO Handle File Not Found
+																}
+																
+															}
+															
+														});
 														
 													}
 													

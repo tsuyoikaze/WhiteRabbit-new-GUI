@@ -16,7 +16,7 @@
              <Line endX="100.0" layoutX="145.0" layoutY="67.0" startX="-120.0" stroke="#aaaaaa" translateX="-10.0" />
              <VBox alignment="CENTER_LEFT" layoutX="87.0" layoutY="27.0" maxHeight="139.0" maxWidth="200.0" prefHeight="119.0" prefWidth="189.0" translateX="-55.0" translateY="40.0">
                 <children>
-                   <Button id="new_project_btn" mnemonicParsing="false" style="-fx-background-color: #DDDDDD;" text="Save As SQL" textFill="#222222">
+                   <Button id="save_as_sql" mnemonicParsing="false" style="-fx-background-color: #DDDDDD;" text="Save As SQL" textFill="#222222">
                       <font>
                          <Font name="Arial Bold" size="10.0" />
                       </font></Button>

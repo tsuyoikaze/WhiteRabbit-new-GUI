@@ -17,9 +17,12 @@
  ******************************************************************************/
 package org.ohdsi.whiteRabbit;
 
+import java.util.Map;
+
 import javax.swing.JFrame;
 
 import org.ohdsi.rabbitInAHat.dataModel.ETL;
+import org.ohdsi.rabbitInAHat.dataModel.Field;
 
 /**
  * This class is used to hold global variables
@@ -28,4 +31,6 @@ public class ObjectExchange {
 	public static JFrame	frame;
 	public static Console	console;
 	public static ETL		etl;
+	public static String	conceptIDString = "";
+	public static Map<Field, Field> conceptIDFieldMap;
 }

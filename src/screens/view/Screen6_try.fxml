@@ -21,8 +21,8 @@
       </Text>
       <TableView id="conceptTable" fx:id="conceptTable" layoutX="55.0" layoutY="112.0" prefHeight="156.0" prefWidth="403.0" style="-fx-background-color: whitesmoke;">
         <columns>
-          <TableColumn id="leftColumn" prefWidth="202.0" style="-fx-background-color: whitesmoke;" text="C1" />
-          <TableColumn id="rightColumn" prefWidth="200.0" style="-fx-background-color: whitesmoke;" text="C2" />
+          <TableColumn id="leftColumn" prefWidth="402.0" style="-fx-background-color: whitesmoke;" text="C1" />
+          <TableColumn id="rightColumn" minWidth="0.0" prefWidth="0.0" style="-fx-background-color: whitesmoke;" text="C2" />
         </columns>
       </TableView>
       <Button id="manually_enter" layoutX="96.0" layoutY="291.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="136.0" style="-fx-background-color: white;" text="Manually Enter">
