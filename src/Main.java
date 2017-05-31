@@ -30,6 +30,7 @@ import org.ohdsi.rabbitInAHat.dataModel.Field;
 import org.ohdsi.rabbitInAHat.dataModel.MappableItem;
 import org.ohdsi.rabbitInAHat.dataModel.Mapping;
 import org.ohdsi.rabbitInAHat.dataModel.Table;
+import org.ohdsi.utilities.ConceptIDFetcher;
 import org.ohdsi.utilities.exception.DuplicateTargetException;
 import org.ohdsi.utilities.exception.TypeMismatchException;
 import org.ohdsi.whiteRabbit.ObjectExchange;
@@ -451,17 +452,28 @@ public class Main extends Application{
 											DbType myDBType = new DbType(type);
 											int percent = 100;
 											for (Map.Entry<Field, Field> item : ObjectExchange.conceptIDFieldMap.entrySet()) {
-												List<Pair<String, String>> list = doScanTable(myDBType, ipName, "", username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
+												List<org.ohdsi.utilities.collections.Pair<String, String>> list = doScanTable(myDBType, ipName, "", username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
+												LinkedList<String> l = new LinkedList<>();
+												for (org.ohdsi.utilities.collections.Pair<String, String> item2 : list) {
+													if (!l.contains(item2.getItem2())) {
+														l.add(item2.getItem2());
+													}
+												}
+												Map<String, Integer> conceptIDMap = ConceptIDFetcher.fetchConceptIDs(l, "src/org/ohdsi/rabbitInAHat/dataModel/CONCEPT_TRUNCATED.csv.gz");
+												ObjectExchange.conceptIDString += ETLSQLGenerator.getConceptIDMap(item.getValue(), conceptIDMap, list);
+												
 											}
+											
+											System.out.println("done");
 											
 											
 										
 										
 										}catch (SQLException e1) {
-											// TODO Auto-generated catch block
 											e1.printStackTrace();
 										} catch (IOException e1) {
-											// TODO Auto-generated catch block
+											e1.printStackTrace();
+										} catch (InterruptedException e1) {
 											e1.printStackTrace();
 										}
 										
@@ -692,12 +704,14 @@ public class Main extends Application{
 		return result;
 	}
 	
-	private List<Pair<String, String>> doScanTable (DbType type, String address, String domain, String username, String password, String database, Table table, Field field, Table targetTable) throws SQLException {
-		LinkedList<Pair<String, String>> result = new LinkedList<>();
-		Connection con = DBConnector.connect(address, domain, username, password, type);
-		ResultSet set = con.prepareStatement("SELECT" + ETLSQLGenerator.getUniqueSourceField(table, targetTable).getName() + "," + field.getName() + " FROM " + table.getName() + ";").executeQuery();
+	private List<org.ohdsi.utilities.collections.Pair<String, String>> doScanTable (DbType type, String address, String domain, String username, String password, String database, Table table, Field field, Table targetTable) throws SQLException {
+		LinkedList<org.ohdsi.utilities.collections.Pair<String, String>> result = new LinkedList<>();
+		Connection con = DBConnector.connect(address, domain, username, password, type, database);
+		System.out.println("source table: " + field.getTable() + "\tsource field: " + field + "\ttarget table: " + targetTable + "\tcon: " + con);
+		System.out.println(ETLSQLGenerator.getUniqueSourceField(table, targetTable));
+		ResultSet set = con.createStatement().executeQuery("SELECT " + ETLSQLGenerator.getUniqueSourceField(table, targetTable).getName() + "," + field.getName() + " FROM " + table.getName() + ";");
 		while (set.next()) {
-			result.add(new Pair<>(set.getString(1), set.getString(2)));
+			result.add(new org.ohdsi.utilities.collections.Pair<>(set.getString(1), set.getString(2)));
 		}
 		return result;
 	}

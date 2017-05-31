@@ -201,6 +201,7 @@ public class ETLSQLGenerator {
 				uniqueField = (Field)field;
 			}
 		}
+		System.out.println("unique target field: " + uniqueField);
 		if (uniqueField == null) {
 			return null;
 		}
@@ -211,6 +212,7 @@ public class ETLSQLGenerator {
 			sourceFields.addAll(map_.getSourceItemsFromTarget(uniqueField));
 		}
 		if (sourceFields.isEmpty()) {
+			System.out.println("Source field empty");
 			return null;
 		}
 		else {
@@ -293,6 +295,9 @@ public class ETLSQLGenerator {
 		else if (source == target) {
 			return toBeCasted;
 		}
+		else if ((source == DataType.TEXT || source == DataType.VARCHAR) && (target == DataType.TEXT || target == DataType.VARCHAR)) {
+			return toBeCasted;
+		}
 		else if (source == DataType.TIMESTAMP && (target == DataType.DATE || target == DataType.TIME || target == DataType.YEAR)) {
 			return convertType(convertType(toBeCasted, DataType.TIMESTAMP, DataType.DATETIME), DataType.DATETIME, target);
 		}
@@ -313,6 +318,7 @@ public class ETLSQLGenerator {
 		else if ((source == DataType.TEXT || source == DataType.VARCHAR) && target == DataType.INTEGER) {
 			return "CAST(" + toBeCasted + ") AS UNSIGNED";
 		}
+		System.out.println("Source: " + source + "\tTarget: " + target);
 		throw new UnsupportedDataTypeException();
 	}
 }
