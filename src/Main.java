@@ -451,15 +451,16 @@ public class Main extends Application{
 											DbType myDBType = new DbType(type);
 											int percent = 100;
 											for (Map.Entry<Field, Field> item : ObjectExchange.conceptIDFieldMap.entrySet()) {
-												List<Pair<String, String>> list = doScanTable(myDBType, ipName, username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
+												List<Pair<String, String>> list = doScanTable(myDBType, ipName, "", username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
 											}
 											
 											
 										
 										
-										} catch (IOException e1) {
+										}catch (SQLException e1) {
+											// TODO Auto-generated catch block
 											e1.printStackTrace();
-										} catch (SQLException e1) {
+										} catch (IOException e1) {
 											// TODO Auto-generated catch block
 											e1.printStackTrace();
 										}
@@ -691,9 +692,9 @@ public class Main extends Application{
 		return result;
 	}
 	
-	private List<Pair<String, String>> doScanTable (DbType type, String address, String username, String password, String database, Table table, Field field, Table targetTable) throws SQLException {
+	private List<Pair<String, String>> doScanTable (DbType type, String address, String domain, String username, String password, String database, Table table, Field field, Table targetTable) throws SQLException {
 		LinkedList<Pair<String, String>> result = new LinkedList<>();
-		Connection con = DBConnector.connect(address, address, username, password, type);
+		Connection con = DBConnector.connect(address, domain, username, password, type);
 		ResultSet set = con.prepareStatement("SELECT" + ETLSQLGenerator.getUniqueSourceField(table, targetTable).getName() + "," + field.getName() + " FROM " + table.getName() + ";").executeQuery();
 		while (set.next()) {
 			result.add(new Pair<>(set.getString(1), set.getString(2)));
