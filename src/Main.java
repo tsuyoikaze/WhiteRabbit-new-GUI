@@ -121,6 +121,8 @@ public class Main extends Application{
 	private String typeName;
 	private String type;
 	
+	
+	
 	 
 	
 	

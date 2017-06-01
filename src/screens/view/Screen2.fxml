@@ -14,10 +14,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="600.0">
+      <MenuBar id="menu" prefHeight="25.0" prefWidth="600.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu id="file_menu" mnemonicParsing="false" text="File">
             <items>
+                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
