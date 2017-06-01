@@ -18,7 +18,6 @@
         <menus>
           <Menu id="file_menu" mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>

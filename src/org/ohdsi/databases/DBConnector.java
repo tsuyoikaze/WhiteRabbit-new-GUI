@@ -87,6 +87,23 @@ public class DBConnector {
 		else
 			return null;
 	}
+	
+	public static Connection connect(String server, String domain, String user, String password, DbType dbType, String dbName) {
+		if (dbType.equals(DbType.MYSQL))
+			return DBConnector.connectToMySQL(server, user, password, dbName);
+		else if (dbType.equals(DbType.MSSQL))
+			return DBConnector.connectToMSSQL(server, domain, user, password);
+		else if (dbType.equals(DbType.ORACLE))
+			return DBConnector.connectToOracle(server, domain, user, password);
+		else if (dbType.equals(DbType.POSTGRESQL))
+			return DBConnector.connectToPostgreSQL(server, user, password);
+		else if (dbType.equals(DbType.MSACCESS))
+			return DBConnector.connectToMsAccess(server, user, password);
+		else if (dbType.equals(DbType.REDSHIFT))
+			return DBConnector.connectToRedshift(server, user, password);
+		else
+			return null;
+	}
 
 	public static Connection connectToRedshift(String server, String user, String password) {
 		if (!server.contains("/"))
@@ -144,6 +161,22 @@ public class DBConnector {
 		}
 
 		String url = "jdbc:mysql://" + server + ":3306/?useCursorFetch=true&zeroDateTimeBehavior=convertToNull";
+
+		try {
+			return DriverManager.getConnection(url, user, password);
+		} catch (SQLException e1) {
+			throw new RuntimeException("Cannot connect to DB server: " + e1.getMessage());
+		}
+	}
+	
+	public static Connection connectToMySQL(String server, String user, String password, String dbName) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			throw new RuntimeException("Cannot find JDBC driver. Make sure the file mysql-connector-java-x.x.xx-bin.jar is in the path");
+		}
+
+		String url = "jdbc:mysql://" + server + ":3306/" + dbName + "?useCursorFetch=true&zeroDateTimeBehavior=convertToNull";
 
 		try {
 			return DriverManager.getConnection(url, user, password);
