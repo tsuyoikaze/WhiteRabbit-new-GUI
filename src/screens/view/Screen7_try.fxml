@@ -18,24 +18,24 @@
                 <children>
                    <Button id="save_as_sql" mnemonicParsing="false" style="-fx-background-color: #DDDDDD;" text="Save As SQL" textFill="#222222">
                       <font>
-                         <Font name="Arial Bold" size="10.0" />
+                         <Font name="Arial Bold" size="12.0" />
                       </font></Button>
                    <Button id="open_excel_btn" mnemonicParsing="false" style="-fx-background-color: #dddddd;" text="Save Backup File" textFill="#222222">
                       <font>
-                         <Font name="Arial Bold" size="10.0" />
+                         <Font name="Arial Bold" size="12.0" />
                       </font></Button>
                    <Button id="open_project_btn" mnemonicParsing="false" style="-fx-background-color: #dddddd;" text="Inject SQL to Database" textFill="#222222">
                       <font>
-                         <Font name="Arial Bold" size="10.0" />
+                         <Font name="Arial Bold" size="12.0" />
                       </font></Button>
                 </children>
                 <padding>
                    <Insets left="20.0" right="20.0" />
                 </padding>
              </VBox>
-            <Text layoutX="97.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DONE!">
+            <Text layoutX="87.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DONE!">
                <font>
-                  <Font size="18.0" />
+                  <Font size="24.0" />
                </font>
             </Text>
           </children>

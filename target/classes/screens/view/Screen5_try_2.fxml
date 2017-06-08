@@ -29,7 +29,10 @@
          </font>
       </Text>
       <ProgressBar layoutX="50.0" layoutY="223.0" prefHeight="20.0" prefWidth="439.0" progress="0.0" />
-      <Button id="next_button" layoutX="220.0" layoutY="278.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: white;" text="NEXT" />
+      <Button id="next_button" layoutX="220.0" layoutY="278.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: white;" text="NEXT">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
       <Text id="showType" layoutX="107.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.21875">
          <font>
             <Font size="18.0" />
