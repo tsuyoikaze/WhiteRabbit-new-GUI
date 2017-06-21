@@ -131,6 +131,7 @@ public class Main extends Application{
 	private MenuBar myMenuBar;
 	private Menu fileMenu;
 	private MenuItem saveFile;
+	private MenuItem nextStep;
 	
 	private TreeView srcTreeView;
 	private TreeView targetTreeView;
@@ -192,7 +193,13 @@ public class Main extends Application{
 				myMenuBar = (MenuBar) newScene.lookup("#menu");
 				fileMenu = myMenuBar.getMenus().get(0);
 				saveFile = new MenuItem("Save");
-				fileMenu.getItems().add(saveFile);
+				nextStep = new MenuItem("Next");
+				fileMenu.getItems().add(0, saveFile);
+				fileMenu.getItems().add(1, nextStep);
+				
+				
+				
+				
 				
 				//TODO: newly addin
 				srcTreeView = (TreeView) newScene.lookup("#treeView_1");
@@ -402,11 +409,13 @@ public class Main extends Application{
 				});
 				
 				
-
-				confirmation.setOnMouseClicked(new EventHandler<MouseEvent>() {
-					
+				
+				//confirmation.setOnMouseClicked(new EventHandler<MouseEvent>() {
+				  nextStep.setOnAction(new EventHandler<ActionEvent>() {
+					  
 					@Override
-					public void handle(MouseEvent event) {
+					//public void handle(MouseEvent event) {
+					  public void handle(ActionEvent event) {	
 						try {
 							newWindow = new Stage();
 							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3.fxml")));
