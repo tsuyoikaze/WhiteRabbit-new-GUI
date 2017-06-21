@@ -178,7 +178,7 @@ public class ETLSQLGenerator {
 			if (map.containsKey(item.getItem2())) {
 				result += "UPDATE " + targetField.getTable().getName() + "\n";
 				result += "\tSET " + targetField.getName() + " = " + map.get(item.getItem2()) + "\n";
-				result += "WHERE " + getUniqueTargetField(targetField.getTable()).getName() + " = '" + item.getItem1() + "'\n\n";
+				result += "WHERE " + getUniqueTargetField(targetField.getTable()).getName() + " = '" + item.getItem1() + "';\n\n";
 			}
 		}
 		return result;
@@ -316,7 +316,7 @@ public class ETLSQLGenerator {
 			}
 		}
 		else if ((source == DataType.TEXT || source == DataType.VARCHAR) && target == DataType.INTEGER) {
-			return "CAST(" + toBeCasted + ") AS UNSIGNED";
+			return "CAST(" + toBeCasted + " AS UNSIGNED)";
 		}
 		System.out.println("Source: " + source + "\tTarget: " + target);
 		throw new UnsupportedDataTypeException();
