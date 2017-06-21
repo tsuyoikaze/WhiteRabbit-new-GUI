@@ -54,6 +54,9 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeCell;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -67,6 +70,7 @@ import javafx.util.Callback;
 import javafx.util.Pair;
 import javafx.application.*;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -128,6 +132,11 @@ public class Main extends Application{
 	private Menu fileMenu;
 	private MenuItem saveFile;
 	
+	private TreeView srcTreeView;
+	private TreeView targetTreeView;
+	
+	private TreeItem<String> root;
+	private TreeItem<String> root_2;
 	
 	
 	 
@@ -177,17 +186,21 @@ public class Main extends Application{
 			 try {
 				Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen2.fxml")));
 				//todo
-				listviewSource = (ListView<String>) newScene.lookup("#listView_src");
-				listviewTarget = (ListView<String>) newScene.lookup("#listView_target");
+//				listviewSource = (ListView<String>) newScene.lookup("#listView_src");
+//				listviewTarget = (ListView<String>) newScene.lookup("#listView_target");
 				confirmation = (Text) newScene.lookup("#confirm");
 				myMenuBar = (MenuBar) newScene.lookup("#menu");
 				fileMenu = myMenuBar.getMenus().get(0);
 				saveFile = new MenuItem("Save");
 				fileMenu.getItems().add(saveFile);
 				
-				System.out.println("1");
-				loadListViewSecondScreen();
-				System.out.println("2");
+				//TODO: newly addin
+				srcTreeView = (TreeView) newScene.lookup("#treeView_1");
+				targetTreeView = (TreeView) newScene.lookup("#treeView_2");
+				
+//				System.out.println("1");
+//				loadListViewSecondScreen();
+//				System.out.println("2");
 				
 				
 				
@@ -255,58 +268,141 @@ public class Main extends Application{
 			
 			public void handle(MouseEvent arg0) {
 				doOpenScanReport(chooseFile(false, FILTER_XLSX));
-				listviewSource.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//				listviewSource.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//
+//			        @Override
+//			        public void handle(MouseEvent event) {
+//			        	
+//			        	if (listviewSource.getSelectionModel().getSelectedItem().startsWith("	")) {
+//			        		List<Field> fields = currentSourceTable.getFields();
+//			        		for (Field field : fields) {
+//			        			if (("	" + field.getName()).equals(listviewSource.getSelectionModel().getSelectedItem())) {
+//			        				currentSourceField = field;
+//			        			}
+//			        		}
+//			        		return;
+//			        	}
+//			        	
+//			            loadListViewWithDetail(listviewSource.getSelectionModel().getSelectedItem(), "source");
+//			            
+//			        }
+//			        
+//			    });
+//				listviewTarget.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//
+//			        @Override
+//			        public void handle(MouseEvent event) {
+//			        	
+//			        	if (listviewTarget.getSelectionModel().getSelectedItem().startsWith("	")) {
+//			        		List<Field> fields = currentTargetTable.getFields();
+//			        		for (Field field : fields) {
+//			        			if (("	" + field.getName()).equals(listviewTarget.getSelectionModel().getSelectedItem())) {
+//			        				currentTargetField = field;
+//			        				if (currentSourceField != null) {
+//			        					if (ObjectExchange.etl.getTableToTableMapping().getSourceToTargetMap(currentSourceTable, currentTargetTable) == null) {
+//			        						ObjectExchange.etl.getTableToTableMapping().addSourceToTargetMap(currentSourceTable, currentTargetTable);
+//			        					}
+//			        					ObjectExchange.etl.getFieldToFieldMapping(currentSourceTable, currentTargetTable).addSourceToTargetMap(currentSourceField, currentTargetField);
+//			        					System.out.println("Clicked");
+//			        					currentTargetField.setDisplayName(currentTargetField.getName() + " <" + currentSourceTable.getName() + "." + currentSourceField.getName() + ">");
+//			        					currentSourceField = null;
+//			        					loadListViewWithDetail(currentTargetTable.getName(), "target");
+//			        				}
+//			        				break;
+//			        			}
+//			        		}
+//			        		return;
+//			        	}
+//			        	
+//			            System.out.println("clicked on " + listviewTarget.getSelectionModel().getSelectedItem());
+//			            loadListViewWithDetail(listviewTarget.getSelectionModel().getSelectedItem(), "target");
+//			            listviewSource.getSelectionModel();
+//			        }
+//			        
+//			    });
+				
+				
+				// srcTreeView part (if put into onMouseClick, then only expand when click)
+				loadTreeView();
+				targetTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+					@Override
+					public void handle(MouseEvent event) {
+						Node node = event.getPickResult().getIntersectedNode();
+						String name = "";
+					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
+					    if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
+					        name = (String) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue();
+					        if (((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getParent() != root) {
+					        	System.out.println("Node click: " + name);
+					        	
+					        	//find the currentSourceTable
+					        	int flag = 0;
+					        	List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
+					        	for (Table t : targetTable) {
+					        		if (flag == 1) {
+					        			break;
+					        		}
+					        		for (int i = 0; i < t.getFields().size(); i++) {
+					        			if (name.equals(t.getFields().get(i).getDisplayName())) {
+					        				currentTargetTable = t;
+					        				currentTargetField = t.getFields().get(i);
+					        				if (currentSourceField != null) {
+					        					if (ObjectExchange.etl.getTableToTableMapping().getSourceToTargetMap(currentSourceTable, currentTargetTable) == null) {
+					        						ObjectExchange.etl.getTableToTableMapping().addSourceToTargetMap(currentSourceTable, currentTargetTable);
+					        					}
+					        					ObjectExchange.etl.getFieldToFieldMapping(currentSourceTable, currentTargetTable).addSourceToTargetMap(currentSourceField, currentTargetField);
+					        					System.out.println("Clicked");
+					        					currentTargetField.setDisplayName(currentTargetField.getName() + " <" + currentSourceTable.getName() + "." + currentSourceField.getName() + ">");
+					        					currentSourceField = null;
+					        					reLoadTreeView(currentTargetField);
+					        					//loadListViewWithDetail(currentTargetTable.getName(), "target");
+					        				}
+					        				flag = 1;
+					        				break;
+					        			}
+					        		}
+					        	}
+					        }
+					    }
+					}
+				});
+				
+				srcTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+					@Override
+					public void handle(MouseEvent event) {
+						Node node = event.getPickResult().getIntersectedNode();
+						String name = "";
+					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
+					    if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
+					        name = (String) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue();
+					        if (((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getParent() != root) {
+					        	System.out.println("Node click: " + name);
+					        	
+					        	//find the currentSourceTable
+					        	int flag = 0;
+					        	List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
+					        	for (Table t : sourceTable) {
+					        		if (flag == 1) {
+					        			break;
+					        		}
+					        		for (int i = 0; i < t.getFields().size(); i++) {
+					        			if (name.equals(t.getFields().get(i).getDisplayName())) {
+					        				currentSourceTable = t;
+					        				currentSourceField = t.getFields().get(i);
+					        				flag = 1;
+					        				break;
+					        			}
+					        		}
+					        	}
+					        }
+					    }
+					    
+					    
+					}
+				});
+				
+				
 
-			        @Override
-			        public void handle(MouseEvent event) {
-			        	
-			        	if (listviewSource.getSelectionModel().getSelectedItem().startsWith("	")) {
-			        		List<Field> fields = currentSourceTable.getFields();
-			        		for (Field field : fields) {
-			        			if (("	" + field.getName()).equals(listviewSource.getSelectionModel().getSelectedItem())) {
-			        				currentSourceField = field;
-			        			}
-			        		}
-			        		return;
-			        	}
-			        	
-			            loadListViewWithDetail(listviewSource.getSelectionModel().getSelectedItem(), "source");
-			            
-			        }
-			        
-			    });
-				listviewTarget.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-			        @Override
-			        public void handle(MouseEvent event) {
-			        	
-			        	if (listviewTarget.getSelectionModel().getSelectedItem().startsWith("	")) {
-			        		List<Field> fields = currentTargetTable.getFields();
-			        		for (Field field : fields) {
-			        			if (("	" + field.getName()).equals(listviewTarget.getSelectionModel().getSelectedItem())) {
-			        				currentTargetField = field;
-			        				if (currentSourceField != null) {
-			        					if (ObjectExchange.etl.getTableToTableMapping().getSourceToTargetMap(currentSourceTable, currentTargetTable) == null) {
-			        						ObjectExchange.etl.getTableToTableMapping().addSourceToTargetMap(currentSourceTable, currentTargetTable);
-			        					}
-			        					ObjectExchange.etl.getFieldToFieldMapping(currentSourceTable, currentTargetTable).addSourceToTargetMap(currentSourceField, currentTargetField);
-			        					System.out.println("Clicked");
-			        					currentTargetField.setDisplayName(currentTargetField.getName() + " <" + currentSourceTable.getName() + "." + currentSourceField.getName() + ">");
-			        					currentSourceField = null;
-			        					loadListViewWithDetail(currentTargetTable.getName(), "target");
-			        				}
-			        				break;
-			        			}
-			        		}
-			        		return;
-			        	}
-			        	
-			            System.out.println("clicked on " + listviewTarget.getSelectionModel().getSelectedItem());
-			            loadListViewWithDetail(listviewTarget.getSelectionModel().getSelectedItem(), "target");
-			            listviewSource.getSelectionModel();
-			        }
-			        
-			    });
 				confirmation.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					
 					@Override
@@ -388,14 +484,6 @@ public class Main extends Application{
 									typeList.add("REDSHIFT");
 									typeButton.setItems(typeList);
 									
-//									typeButton = (MenuButton) newScene.lookup("#type_button");
-//									menuItem1 = new MenuItem("MYSQL");
-//									menuItem2 = new MenuItem("MSSQL");
-//									menuItem3 = new MenuItem("ORACLE");
-//									menuItem4 = new MenuItem("POSTGRESQL");
-//									menuItem5 = new MenuItem("MSACCESS");
-//									menuItem6 = new MenuItem("REDSHIFT");
-//									typeButton.getItems().setAll(menuItem1, menuItem2, menuItem3, menuItem4, menuItem5, menuItem6);
 									
 									
 									newWindow.setScene(newScene);
@@ -404,36 +492,6 @@ public class Main extends Application{
 									e.printStackTrace();
 								}
 								
-//								menuItem1.setOnAction(new EventHandler<ActionEvent>() {
-//									public void handle (ActionEvent e) {
-//										type = "MYSQL";
-//									}
-//								});
-//								menuItem2.setOnAction(new EventHandler<ActionEvent>() {
-//									public void handle (ActionEvent e) {
-//										type = "MSSQL";
-//									}
-//								});
-//								menuItem3.setOnAction(new EventHandler<ActionEvent>() {
-//									public void handle (ActionEvent e) {
-//										type = "ORACLE";
-//									}
-//								});
-//								menuItem4.setOnAction(new EventHandler<ActionEvent>() {
-//									public void handle (ActionEvent e) {
-//										type = "POSTGRESQL";
-//									}
-//								});
-//								menuItem5.setOnAction(new EventHandler<ActionEvent>() {
-//									public void handle (ActionEvent e) {
-//										type = "MSACCESS";
-//									}
-//								});
-//								menuItem6.setOnAction(new EventHandler<ActionEvent>() {
-//									public void handle (ActionEvent e) {
-//										type = "REDSHIFT";
-//									}
-//								});
 								inputButton.setOnAction(new EventHandler<ActionEvent>() {
 									public void handle (ActionEvent e) {
 										if (passwordField.getText() != null) {
@@ -597,6 +655,66 @@ public class Main extends Application{
 	
 
 	
+
+	private void reLoadTreeView(Field currentSourceField) {
+		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
+		root_2 = new TreeItem<>("Target");
+		root_2.setExpanded(true);
+		int flag = 0;
+		for (Table t : targetTable) {
+			TreeItem<String> item = new TreeItem<>(t.getName());
+			root_2.getChildren().add(item);
+			for (int i = 0; i < t.getFields().size(); i++) {
+				if (flag == 0) {
+					if (t.getFields().get(i).equals(currentSourceField)) {
+						item.setExpanded(true);
+						flag = 1;
+					}
+					else {
+						item.setExpanded(false);
+					}
+				}
+				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+				item.getChildren().add(sub);
+			}
+			
+		}
+		targetTreeView.setRoot(root_2);
+	}
+	
+	private void loadTreeView() {
+		//source
+		List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
+		root = new TreeItem<>("Source");
+		root.setExpanded(true);
+		for (Table t : sourceTable) {
+			TreeItem<String> item = new TreeItem<>(t.getName());
+			root.getChildren().add(item);
+			item.setExpanded(false);
+			for (int i = 0; i < t.getFields().size(); i++) {
+				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+				item.getChildren().add(sub);
+			}
+			
+		}
+		srcTreeView.setRoot(root);
+		
+		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
+		root_2 = new TreeItem<>("Target");
+		root_2.setExpanded(true);
+		for (Table t : targetTable) {
+			TreeItem<String> item = new TreeItem<>(t.getName());
+			root_2.getChildren().add(item);
+			item.setExpanded(false);
+			for (int i = 0; i < t.getFields().size(); i++) {
+				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+				item.getChildren().add(sub);
+			}
+			
+		}
+		targetTreeView.setRoot(root_2);
+		
+	}
 	
 	public static class myConceptTable {
 		
@@ -623,68 +741,68 @@ public class Main extends Application{
 	    }
 	}
 	
-	private void loadListViewSecondScreen() {
-		//listview.setEditable(true);
-		ObservableList<String> observableListSource = FXCollections.observableArrayList();
-		ObservableList<String> observableListTarget = FXCollections.observableArrayList();
-		
-		List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
-		for (Table t : sourceTable) {
-			observableListSource.add(t.getName());
-		}
-		
-		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
-		for (Table t : targetTable) {
-			observableListTarget.add(t.getName());
-		}
-		listviewSource.setItems(observableListSource);
-		listviewTarget.setItems(observableListTarget);
-	}
-	
-	private void loadListViewWithDetail(String click, String version) {
-		if (version == "source") {
-			
-			currentSourceTable = ObjectExchange.etl.getSourceDatabase().getTableByName(click);
-			
-			ObservableList<String> observableListSource = FXCollections.observableArrayList();
-		
-			List<Table> sourceTableDetail = ObjectExchange.etl.getSourceDatabase().getTables();
-			for (Table t: sourceTableDetail) {
-				observableListSource.add(t.getName());
-				if (t.getName().equals(click)) {
-					int i = 0;
-					for (i = 0; i < t.getFields().size(); i++) {
-						observableListSource.add("	" + t.getFields().get(i).getDisplayName());
-					}
-			
-				}
-			
-			}
-			listviewSource.setItems(observableListSource);
-		}
-		else {
-			ObservableList<String> observableListTarget = FXCollections.observableArrayList();
-			
-			currentTargetTable = ObjectExchange.etl.getTargetDatabase().getTableByName(click);
-		
-			List<Table> targetTableDetail = ObjectExchange.etl.getTargetDatabase().getTables();
-			for (Table t: targetTableDetail) {
-				observableListTarget.add(t.getName());
-				if (t.getName().equals(click)) {
-					System.out.println("Here");
-					int i = 0;
-					for (i = 0; i < t.getFields().size(); i++) {
-						observableListTarget.add("	" + t.getFields().get(i).getDisplayName());
-						
-					}
-			
-				}
-				
-			
-			}
-			listviewTarget.setItems(observableListTarget);
-		}
-	}
+//	private void loadListViewSecondScreen() {
+//		//listview.setEditable(true);
+//		ObservableList<String> observableListSource = FXCollections.observableArrayList();
+//		ObservableList<String> observableListTarget = FXCollections.observableArrayList();
+//		
+//		List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
+//		for (Table t : sourceTable) {
+//			observableListSource.add(t.getName());
+//		}
+//		
+//		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
+//		for (Table t : targetTable) {
+//			observableListTarget.add(t.getName());
+//		}
+//		listviewSource.setItems(observableListSource);
+//		listviewTarget.setItems(observableListTarget);
+//	}
+//	
+//	private void loadListViewWithDetail(String click, String version) {
+//		if (version == "source") {
+//			
+//			currentSourceTable = ObjectExchange.etl.getSourceDatabase().getTableByName(click);
+//			
+//			ObservableList<String> observableListSource = FXCollections.observableArrayList();
+//		
+//			List<Table> sourceTableDetail = ObjectExchange.etl.getSourceDatabase().getTables();
+//			for (Table t: sourceTableDetail) {
+//				observableListSource.add(t.getName());
+//				if (t.getName().equals(click)) {
+//					int i = 0;
+//					for (i = 0; i < t.getFields().size(); i++) {
+//						observableListSource.add("	" + t.getFields().get(i).getDisplayName());
+//					}
+//			
+//				}
+//			
+//			}
+//			listviewSource.setItems(observableListSource);
+//		}
+//		else {
+//			ObservableList<String> observableListTarget = FXCollections.observableArrayList();
+//			
+//			currentTargetTable = ObjectExchange.etl.getTargetDatabase().getTableByName(click);
+//		
+//			List<Table> targetTableDetail = ObjectExchange.etl.getTargetDatabase().getTables();
+//			for (Table t: targetTableDetail) {
+//				observableListTarget.add(t.getName());
+//				if (t.getName().equals(click)) {
+//					System.out.println("Here");
+//					int i = 0;
+//					for (i = 0; i < t.getFields().size(); i++) {
+//						observableListTarget.add("	" + t.getFields().get(i).getDisplayName());
+//						
+//					}
+//			
+//				}
+//				
+//			
+//			}
+//			listviewTarget.setItems(observableListTarget);
+//		}
+//	}
 	
 	
 	

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -68,8 +68,8 @@
       <ScrollBar disable="true" layoutX="586.0" layoutY="65.0" orientation="VERTICAL" prefHeight="335.0" prefWidth="14.0" />
       <Pane layoutY="65.0" prefHeight="335.0" prefWidth="586.0" style="-fx-background-color: white;">
          <children>
-            <ListView id="listView_src" layoutX="14.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
-            <ListView id="listView_target" layoutX="372.0" layoutY="14.0" prefHeight="310.0" prefWidth="200.0" style="-fx-border-color: white;" />
+            <TreeView id="treeView_1" layoutX="21.0" layoutY="14.0" prefHeight="298.0" prefWidth="221.0" />
+            <TreeView id="treeView_2" layoutX="351.0" layoutY="14.0" prefHeight="298.0" prefWidth="221.0" />
          </children>
       </Pane>
    </children>
