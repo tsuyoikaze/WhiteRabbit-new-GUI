@@ -110,7 +110,7 @@ public class Main extends Application{
 
 	private Stage primaryStage;
 	private Stage newWindow;
-	private BorderPane mainLayout;
+	private Pane mainLayout;
 	
 	FileChooser chooser;
 	
@@ -436,9 +436,10 @@ public class Main extends Application{
 					    	if (targetTreeView.getSelectionModel() == null) System.out.print("It is really nul");
 					    	else System.out.println("This is NOTT null");
 					    	
-					    	
-					    	if (((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()) == null) System.out.println("THis is null"); else
-					        name = ((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+
+					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedItem());
+					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedIndex());
+					    	name = ((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
 					        //newly added for arrows
 					       
 					        

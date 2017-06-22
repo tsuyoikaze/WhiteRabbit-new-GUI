@@ -2,37 +2,57 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #999999;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
-    <center>
-       <Pane maxHeight="200.0" maxWidth="250.0" prefHeight="119.0" prefWidth="250.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
-          <children>
-             <Line endX="100.0" layoutX="145.0" layoutY="67.0" startX="-120.0" stroke="#aaaaaa" translateX="-10.0" />
-             <VBox alignment="CENTER_LEFT" layoutX="70.0" layoutY="27.0" maxHeight="139.0" maxWidth="217.0" prefHeight="119.0" prefWidth="217.0" translateX="-55.0" translateY="40.0">
-                <children>
-                   <Button id="new_project_btn" mnemonicParsing="false" style="-fx-background-color: #DDDDDD;" text="New From Database" textFill="#222222">
-                      <font>
-                         <Font name="Arial Bold" size="12.0" />
-                      </font></Button>
-                   <Button id="open_excel_btn" mnemonicParsing="false" style="-fx-background-color: #dddddd;" text="New From Scanned Excel" textFill="#222222">
-                      <font>
-                         <Font name="Arial Bold" size="12.0" />
-                      </font></Button>
-                   <Button id="open_project_btn" mnemonicParsing="false" style="-fx-background-color: #dddddd;" text="Opening Existing ETL" textFill="#222222">
-                      <font>
-                         <Font name="Arial Bold" size="12.0" />
-                      </font></Button>
-                </children>
-                <padding>
-                   <Insets left="20.0" right="20.0" />
-                </padding>
-             </VBox>
-          </children>
-       </Pane>
-    </center>
- </BorderPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView accessibleText="LOGO" fitHeight="80.0" fitWidth="180.0" layoutX="37.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="100.0" maxHeight="139.0" maxWidth="217.0" prefHeight="80.0" prefWidth="220.0">
+         <children>
+            <Button id="new_project_btn" mnemonicParsing="false" style="-fx-background-color: #EEEEEE;" text="New From Database" textFill="#222222">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="16.0">
+                     <image>
+                        <Image url="@../glyphicons_free/glyphicons/png/glyphicons-458-transfer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="open_excel_btn" mnemonicParsing="false" style="-fx-background-color: #EEEEEE;" text="New From Scanned Excel" textFill="#222222">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="16.0">
+                     <image>
+                        <Image url="@../glyphicons_free/glyphicons/png/glyphicons-145-folder-open.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="open_project_btn" mnemonicParsing="false" style="-fx-background-color: #EEEEEE;" text="Opening Existing ETL" textFill="#222222">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="16.0">
+                     <image>
+                        <Image url="@../glyphicons_free/glyphicons/png/glyphicons-448-floppy-open.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>
