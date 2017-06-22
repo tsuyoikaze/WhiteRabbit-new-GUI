@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -35,7 +36,9 @@ import org.ohdsi.utilities.exception.DuplicateTargetException;
 import org.ohdsi.utilities.exception.TypeMismatchException;
 import org.ohdsi.whiteRabbit.ObjectExchange;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Point2D;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -45,12 +48,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Cell;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -59,9 +64,17 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DataFormat;
+import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -136,8 +149,19 @@ public class Main extends Application{
 	private TreeView srcTreeView;
 	private TreeView targetTreeView;
 	
-	private TreeItem<String> root;
-	private TreeItem<String> root_2;
+	private List<Node> srcCells;
+	private List<Node> targetCells;
+	
+	private TreeItem<Text> root;
+	private TreeItem<Text> root_2;
+	
+	private double srcX;
+	private double srcY;
+	private double targetX;
+	private double targetY;
+	
+	private Pane myPane;
+	
 	
 	
 	 
@@ -196,6 +220,7 @@ public class Main extends Application{
 				nextStep = new MenuItem("Next");
 				fileMenu.getItems().add(0, saveFile);
 				fileMenu.getItems().add(1, nextStep);
+				myPane = (Pane) newScene.lookup("#myPane");
 				
 				
 				
@@ -221,6 +246,7 @@ public class Main extends Application{
 	
 	
 	public void start(final Stage primaryStage) throws IOException {
+		
 		this.primaryStage = primaryStage;
 		//this.primaryStage.setTitle("Rabbit Catcher");
 		FXMLLoader loader = new FXMLLoader();
@@ -338,9 +364,11 @@ public class Main extends Application{
 						String name = "";
 					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
 					    if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
-					        name = (String) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue();
+//					        name = (String) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue();
+					        name = ((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
 					        if (((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getParent() != root) {
 					        	System.out.println("Node click: " + name);
+					        	
 					        	
 					        	//find the currentSourceTable
 					        	int flag = 0;
@@ -369,6 +397,28 @@ public class Main extends Application{
 					        			}
 					        		}
 					        	}
+					        	
+					        	
+					        	//Testing
+		        				ObservableList<TreeItem> firstLevel= targetTreeView.getRoot().getChildren();
+		        				for (TreeItem treeItem : firstLevel) {
+		        					Text myText = (Text) treeItem.getValue();
+		        					if (currentTargetTable.getName().equals(myText.getText())) {
+		        						ObservableList<TreeItem> secondLevel= treeItem.getChildren();
+		        						for (TreeItem subTreeItem : secondLevel) {
+		        							Text subText = (Text) subTreeItem.getValue();
+		        							if (currentTargetField.getName().equals(subText)) {
+		        								targetX = subText.getLayoutX();
+		        								targetY = subText.getLayoutY();
+		        								break;
+		        							}
+		        						}
+		        					}
+		        				}
+		        				
+		        				//Testing ends
+					        	
+					        	
 					        }
 					    }
 					}
@@ -378,13 +428,23 @@ public class Main extends Application{
 					@Override
 					public void handle(MouseEvent event) {
 						Node node = event.getPickResult().getIntersectedNode();
+						
 						String name = "";
 					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
 					    if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
-					        name = (String) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue();
+//					        name = (String) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue();
+					    	if (targetTreeView.getSelectionModel() == null) System.out.print("It is really nul");
+					    	else System.out.println("This is NOTT null");
+					    	
+					    	
+					    	if (((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()) == null) System.out.println("THis is null"); else
+					        name = ((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+					        //newly added for arrows
+					       
+					        
 					        if (((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getParent() != root) {
 					        	System.out.println("Node click: " + name);
-					        	
+					        	 
 					        	//find the currentSourceTable
 					        	int flag = 0;
 					        	List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
@@ -394,6 +454,8 @@ public class Main extends Application{
 					        		}
 					        		for (int i = 0; i < t.getFields().size(); i++) {
 					        			if (name.equals(t.getFields().get(i).getDisplayName())) {
+					        				
+					        				
 					        				currentSourceTable = t;
 					        				currentSourceField = t.getFields().get(i);
 					        				flag = 1;
@@ -401,6 +463,26 @@ public class Main extends Application{
 					        			}
 					        		}
 					        	}
+					        	
+
+		        				//Testing
+		        				ObservableList<TreeItem> firstLevel= srcTreeView.getRoot().getChildren();
+		        				for (TreeItem treeItem : firstLevel) {
+		        					Text myText = (Text) treeItem.getValue();
+		        					if (currentSourceTable.getName().equals(myText.getText())) {
+		        						ObservableList<TreeItem> secondLevel= treeItem.getChildren();
+		        						for (TreeItem subTreeItem : secondLevel) {
+		        							Text subText = (Text) subTreeItem.getValue();
+		        							if (currentSourceField.getName().equals(subText)) {
+		        								srcX = subText.getLayoutX();
+		        								srcY = subText.getLayoutY();
+		        								break;
+		        							}
+		        						}
+		        					}
+		        				}
+		        				
+		        				//Testing ends
 					        }
 					    }
 					    
@@ -667,11 +749,18 @@ public class Main extends Application{
 
 	private void reLoadTreeView(Field currentSourceField) {
 		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
-		root_2 = new TreeItem<>("Target");
+		Text target = new Text("Target");
+		root_2 = new TreeItem<>(target);
 		root_2.setExpanded(true);
 		int flag = 0;
 		for (Table t : targetTable) {
-			TreeItem<String> item = new TreeItem<>(t.getName());
+			//newly added
+			Text parent = new Text(t.getName());
+			TreeItem<Text> item = new TreeItem<>(parent);
+			//newly added end
+			
+			
+//			TreeItem<String> item = new TreeItem<>(t.getName());
 			root_2.getChildren().add(item);
 			for (int i = 0; i < t.getFields().size(); i++) {
 				if (flag == 0) {
@@ -683,45 +772,98 @@ public class Main extends Application{
 						item.setExpanded(false);
 					}
 				}
-				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+				//newly added
+				Text myText = new Text(t.getFields().get(i).getDisplayName());
+				TreeItem<Text> sub = new TreeItem<>(myText);
+				item.getChildren().add(sub);
+				//newly added end
+//				
+//				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
 				item.getChildren().add(sub);
 			}
 			
 		}
 		targetTreeView.setRoot(root_2);
+		
+		//adding line demo
+		Line line = new Line();
+		line.setStartX(srcX);
+		line.setStartY(srcY);
+		line.setEndX(targetX);
+		line.setEndY(targetY);
+		if (myPane != null) myPane.getChildren().add(line);
+		else System.out.println("This is null");
 	}
 	
 	private void loadTreeView() {
 		//source
+		
 		List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
-		root = new TreeItem<>("Source");
+		Text source = new Text("Source");
+		root = new TreeItem<>(source);
 		root.setExpanded(true);
 		for (Table t : sourceTable) {
-			TreeItem<String> item = new TreeItem<>(t.getName());
+			//newly added
+			Text parent = new Text(t.getName());
+			TreeItem<Text> item = new TreeItem<>(parent);
+			//newly added end
+			
+//			TreeItem<String> item = new TreeItem<>(t.getName());
 			root.getChildren().add(item);
 			item.setExpanded(false);
 			for (int i = 0; i < t.getFields().size(); i++) {
-				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+				//newly added
+				Text myText = new Text(t.getFields().get(i).getDisplayName());
+				TreeItem<Text> sub = new TreeItem<>(myText);
 				item.getChildren().add(sub);
+				//newly added end
+				
+//				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+//				item.getChildren().add(sub);
+				
 			}
 			
 		}
 		srcTreeView.setRoot(root);
 		
 		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
-		root_2 = new TreeItem<>("Target");
+		Text target = new Text("Target");
+		root_2 = new TreeItem<>(target);
 		root_2.setExpanded(true);
 		for (Table t : targetTable) {
-			TreeItem<String> item = new TreeItem<>(t.getName());
+			//newly added
+			Text parent = new Text(t.getName());
+			TreeItem<Text> item = new TreeItem<>(parent);
+			//newly added end
+			
+//			TreeItem<String> item = new TreeItem<>(t.getName());
 			root_2.getChildren().add(item);
 			item.setExpanded(false);
 			for (int i = 0; i < t.getFields().size(); i++) {
-				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+				//newly added
+				Text myText = new Text(t.getFields().get(i).getDisplayName());
+				TreeItem<Text> sub = new TreeItem<>(myText);
 				item.getChildren().add(sub);
+				//newly added end
+				
+				
+//				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+//				item.getChildren().add(sub);
 			}
 			
 		}
 		targetTreeView.setRoot(root_2);
+		
+		//adding line demo
+//		Line line = new Line();
+//		line.setStartX(0);
+//		line.setStartY(0);
+//		line.setEndX(100);
+//		line.setEndY(100);
+//		if (myPane != null) myPane.getChildren().add(line);
+//		else System.out.println("This is null");
+		
+
 		
 	}
 	
@@ -911,5 +1053,6 @@ public class Main extends Application{
 			writer.close();
 		}
 	}
+	
 
 }
