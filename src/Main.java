@@ -216,10 +216,13 @@ public class Main extends Application{
 				confirmation = (Text) newScene.lookup("#confirm");
 				myMenuBar = (MenuBar) newScene.lookup("#menu");
 				fileMenu = myMenuBar.getMenus().get(0);
-				saveFile = new MenuItem("Save");
-				nextStep = new MenuItem("Next");
-				fileMenu.getItems().add(0, saveFile);
-				fileMenu.getItems().add(1, nextStep);
+				saveFile = fileMenu.getItems().get(0);
+				nextStep = fileMenu.getItems().get(1);
+//				
+//				saveFile = new MenuItem("Save");
+//				nextStep = new MenuItem("Next");
+//				fileMenu.getItems().add(0, saveFile);
+//				fileMenu.getItems().add(1, nextStep);
 				myPane = (Pane) newScene.lookup("#myPane");
 				
 				
@@ -389,6 +392,46 @@ public class Main extends Application{
 					        					System.out.println("Clicked");
 					        					currentTargetField.setDisplayName(currentTargetField.getName() + " <" + currentSourceTable.getName() + "." + currentSourceField.getName() + ">");
 					        					currentSourceField = null;
+					        					
+					        					//Testing
+									        	System.out.println("currentTargetTable name is " + currentTargetTable.getName());
+						        				
+									        	ObservableList<TreeItem> firstLevel= targetTreeView.getRoot().getChildren();
+						        				for (TreeItem treeItem : firstLevel) {
+						        					Text myText = (Text) treeItem.getValue();
+						        					System.out.println("myText is " + myText.getText());
+						        					if (currentTargetTable.getName().equals(myText.getText())) {
+						        						ObservableList<TreeItem> secondLevel= treeItem.getChildren();
+						        						for (TreeItem subTreeItem : secondLevel) {
+						        							Text subText = (Text) subTreeItem.getValue();
+						        							System.out.println("subTreeItem is " + subText.getText());
+						        							System.out.println("currentTargetField is " + currentTargetField.getName());
+						        							String theText = currentTargetField.getName();
+						        							int idx = theText.indexOf("<");
+						        							if (idx != -1) {
+						        								theText = theText.substring(0, idx-1);
+						        							}
+						        							
+						        							String theText2 = subText.getText();
+						        							int idx2 = theText2.indexOf("<");
+						        							if (idx2 != -1) {
+						        								theText2 = theText2.substring(0, idx2-1);
+						        							}
+						        							System.out.println("theText is " + theText + "with length " + theText.length());
+						        							System.out.println("theText2 is " + theText2 + "with length " + theText2.length());
+						        							if (theText.equals(theText2)) {
+						        								targetX = subText.localToScene(0,0).getX();
+						        								targetY = subText.localToScene(0, 0).getY();
+						        								System.out.print("Reach this line");
+						        								break;
+						        							}
+						        						}
+						        					}
+						        				}
+						        				
+						        				//Testing ends
+					        					
+					        					
 					        					reLoadTreeView(currentTargetField);
 					        					//loadListViewWithDetail(currentTargetTable.getName(), "target");
 					        				}
@@ -399,30 +442,14 @@ public class Main extends Application{
 					        	}
 					        	
 					        	
-					        	//Testing
-		        				ObservableList<TreeItem> firstLevel= targetTreeView.getRoot().getChildren();
-		        				for (TreeItem treeItem : firstLevel) {
-		        					Text myText = (Text) treeItem.getValue();
-		        					if (currentTargetTable.getName().equals(myText.getText())) {
-		        						ObservableList<TreeItem> secondLevel= treeItem.getChildren();
-		        						for (TreeItem subTreeItem : secondLevel) {
-		        							Text subText = (Text) subTreeItem.getValue();
-		        							if (currentTargetField.getName().equals(subText)) {
-		        								targetX = subText.getLayoutX();
-		        								targetY = subText.getLayoutY();
-		        								break;
-		        							}
-		        						}
-		        					}
-		        				}
-		        				
-		        				//Testing ends
+					        	
 					        	
 					        	
 					        }
 					    }
 					}
 				});
+				
 				
 				srcTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
@@ -436,10 +463,11 @@ public class Main extends Application{
 					    	if (targetTreeView.getSelectionModel() == null) System.out.print("It is really nul");
 					    	else System.out.println("This is NOTT null");
 					    	
-
-					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedItem());
-					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedIndex());
-					    	name = ((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+//
+//					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedItem());
+//					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedIndex());
+					    	name = ((Text) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+					    	System.out.println("name of the field is " + name);
 					        //newly added for arrows
 					       
 					        
@@ -465,18 +493,33 @@ public class Main extends Application{
 					        		}
 					        	}
 					        	
-
+					        	
 		        				//Testing
 		        				ObservableList<TreeItem> firstLevel= srcTreeView.getRoot().getChildren();
 		        				for (TreeItem treeItem : firstLevel) {
 		        					Text myText = (Text) treeItem.getValue();
+		        					System.out.println("my src test is " + myText.getText());
+		        					System.out.println("current source table is " + currentSourceTable);
 		        					if (currentSourceTable.getName().equals(myText.getText())) {
 		        						ObservableList<TreeItem> secondLevel= treeItem.getChildren();
 		        						for (TreeItem subTreeItem : secondLevel) {
 		        							Text subText = (Text) subTreeItem.getValue();
-		        							if (currentSourceField.getName().equals(subText)) {
-		        								srcX = subText.getLayoutX();
-		        								srcY = subText.getLayoutY();
+		        							System.out.println("my src subtest is " + subText.getText() + "with length " + subText.getText().length());
+		        							System.out.println("current source field is " + currentSourceField);
+		        							
+		        							String theText = currentSourceField.getName();
+		        							int idx = theText.indexOf(".");
+		        							if (idx != -1) {
+		        								theText = theText.substring(idx, theText.length()-1);
+		        							}
+		        							System.out.println("theText is " + theText + "with length " + theText.length());
+		        						
+		        							
+		        							
+		        							if (theText.equals(subText.getText())) {
+		        								srcX = subText.localToScene(100, 100).getX();
+		        								srcY = subText.localToScene(100, 100).getY();
+		        								System.out.println("Reach the src line and srcX and srcY are " + srcX + srcY);
 		        								break;
 		        							}
 		        						}
@@ -780,20 +823,21 @@ public class Main extends Application{
 				//newly added end
 //				
 //				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
-				item.getChildren().add(sub);
+//				item.getChildren().add(sub);
 			}
 			
 		}
 		targetTreeView.setRoot(root_2);
 		
-		//adding line demo
-		Line line = new Line();
-		line.setStartX(srcX);
-		line.setStartY(srcY);
-		line.setEndX(targetX);
-		line.setEndY(targetY);
-		if (myPane != null) myPane.getChildren().add(line);
-		else System.out.println("This is null");
+//		System.out.println("srcX is " + srcX + "  srcY is " + srcY + " targetX is " + targetX + "  targetY is " + targetY);
+//		//adding line demo
+//		Line line = new Line();
+//		line.setStartX(srcX);
+//		line.setStartY(srcY);
+//		line.setEndX(targetX);
+//		line.setEndY(targetY);
+//		if (myPane != null) myPane.getChildren().add(line);
+//		else System.out.println("This is null");
 	}
 	
 	private void loadTreeView() {
@@ -817,6 +861,7 @@ public class Main extends Application{
 				Text myText = new Text(t.getFields().get(i).getDisplayName());
 				TreeItem<Text> sub = new TreeItem<>(myText);
 				item.getChildren().add(sub);
+				
 				//newly added end
 				
 //				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());

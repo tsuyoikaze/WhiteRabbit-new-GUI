@@ -18,6 +18,8 @@
         <menus>
           <Menu id="file_menu" mnemonicParsing="false" text="File">
             <items>
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Next" />
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
