@@ -54,6 +54,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
@@ -161,6 +162,7 @@ public class Main extends Application{
 	private double targetY;
 	
 	private Pane myPane;
+	private ScrollPane myScrollPane;
 	
 	
 	
@@ -224,14 +226,19 @@ public class Main extends Application{
 //				fileMenu.getItems().add(0, saveFile);
 //				fileMenu.getItems().add(1, nextStep);
 				myPane = (Pane) newScene.lookup("#myPane");
+				myScrollPane = (ScrollPane) newScene.lookup("#myScrollPane");
+				
+				myPane = (Pane) myScrollPane.getContent();
+				srcTreeView = (TreeView) myPane.getChildren().get(0);
+				targetTreeView = (TreeView) myPane.getChildren().get(1);
 				
 				
 				
 				
 				
 				//TODO: newly addin
-				srcTreeView = (TreeView) newScene.lookup("#treeView_1");
-				targetTreeView = (TreeView) newScene.lookup("#treeView_2");
+				//srcTreeView = (TreeView) newScene.lookup("#treeView_1");
+				//targetTreeView = (TreeView) newScene.lookup("#treeView_2");
 				
 //				System.out.println("1");
 //				loadListViewSecondScreen();

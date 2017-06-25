@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -18,7 +19,7 @@
         <menus>
           <Menu id="file_menu" mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem id="saveFile" mnemonicParsing="false" text="Save" />
                   <MenuItem mnemonicParsing="false" text="Next" />
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
@@ -68,11 +69,15 @@
          </children>
       </HBox>
       <ScrollBar disable="true" layoutX="586.0" layoutY="65.0" orientation="VERTICAL" prefHeight="335.0" prefWidth="14.0" />
-      <Pane id="myPane" layoutY="65.0" prefHeight="335.0" prefWidth="586.0" style="-fx-background-color: white;">
-         <children>
-            <TreeView id="treeView_2" layoutX="351.0" layoutY="14.0" prefHeight="298.0" prefWidth="221.0" />
-            <TreeView id="treeView_1" layoutX="21.0" layoutY="14.0" prefHeight="298.0" prefWidth="221.0" />
-         </children>
-      </Pane>
+      <ScrollPane id="myScrollPane" layoutY="65.0" prefHeight="335.0" prefWidth="588.0">
+         <content>
+            <Pane id="myPane" prefHeight="336.0" prefWidth="587.0">
+               <children>
+                  <TreeView id="treeView_1" layoutX="27.0" layoutY="14.0" prefHeight="293.0" prefWidth="215.0" />
+                  <TreeView id="treeView_2" layoutX="342.0" layoutY="14.0" prefHeight="292.0" prefWidth="200.0" />
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
    </children>
 </Pane>
