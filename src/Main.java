@@ -162,7 +162,10 @@ public class Main extends Application{
 	private double targetY;
 	
 	private Pane myPane;
+	private Pane thePane;
 	private ScrollPane myScrollPane;
+	
+	private double height;
 	
 	
 	
@@ -225,6 +228,7 @@ public class Main extends Application{
 //				nextStep = new MenuItem("Next");
 //				fileMenu.getItems().add(0, saveFile);
 //				fileMenu.getItems().add(1, nextStep);
+				thePane = (Pane) newScene.lookup("#thePane");
 				myPane = (Pane) newScene.lookup("#myPane");
 				myScrollPane = (ScrollPane) newScene.lookup("#myScrollPane");
 				
@@ -232,9 +236,15 @@ public class Main extends Application{
 				srcTreeView = (TreeView) myPane.getChildren().get(0);
 				targetTreeView = (TreeView) myPane.getChildren().get(1);
 				
+				//get the height of the targetTreeView
 				
 				
 				
+				
+				
+//				double height_of_scrollPane = myScrollPane.getHeight();
+//				myPane.setPrefHeight(height_of_scrollPane);
+			
 				
 				//TODO: newly addin
 				//srcTreeView = (TreeView) newScene.lookup("#treeView_1");
@@ -367,6 +377,7 @@ public class Main extends Application{
 				
 				// srcTreeView part (if put into onMouseClick, then only expand when click)
 				loadTreeView();
+				myPane.setPrefHeight(height);
 				targetTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
@@ -850,6 +861,48 @@ public class Main extends Application{
 	private void loadTreeView() {
 		//source
 		
+		int count_parent = 0;
+		int count_child = 0;
+		int toUse = 0;
+		
+		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
+		Text target = new Text("Target");
+		root_2 = new TreeItem<>(target);
+		root_2.setExpanded(true);
+		for (Table t : targetTable) {
+			//newly added
+			Text parent = new Text(t.getName());
+			TreeItem<Text> item = new TreeItem<>(parent);
+			count_parent++;
+			//newly added end
+			
+//			TreeItem<String> item = new TreeItem<>(t.getName());
+			root_2.getChildren().add(item);
+			item.setExpanded(false);
+			for (int i = 0; i < t.getFields().size(); i++) {
+				//newly added
+				toUse++;
+				Text myText = new Text(t.getFields().get(i).getDisplayName());
+				TreeItem<Text> sub = new TreeItem<>(myText);
+				item.getChildren().add(sub);
+				//newly added end
+				
+				
+//				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
+//				item.getChildren().add(sub);
+			}
+			if (toUse > count_child) count_child = toUse;
+			
+		}
+		height = count_parent + count_child;
+		height = height * 5;
+		System.out.println("height is " + height);
+		
+		System.out.println("count_parent and count_child are " + count_parent + " " + count_child);
+		targetTreeView.setPrefHeight(height);
+		
+		targetTreeView.setRoot(root_2);
+		
 		List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
 		Text source = new Text("Source");
 		root = new TreeItem<>(source);
@@ -877,35 +930,12 @@ public class Main extends Application{
 			}
 			
 		}
+		
+		srcTreeView.setPrefHeight(height);
+		
 		srcTreeView.setRoot(root);
 		
-		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
-		Text target = new Text("Target");
-		root_2 = new TreeItem<>(target);
-		root_2.setExpanded(true);
-		for (Table t : targetTable) {
-			//newly added
-			Text parent = new Text(t.getName());
-			TreeItem<Text> item = new TreeItem<>(parent);
-			//newly added end
-			
-//			TreeItem<String> item = new TreeItem<>(t.getName());
-			root_2.getChildren().add(item);
-			item.setExpanded(false);
-			for (int i = 0; i < t.getFields().size(); i++) {
-				//newly added
-				Text myText = new Text(t.getFields().get(i).getDisplayName());
-				TreeItem<Text> sub = new TreeItem<>(myText);
-				item.getChildren().add(sub);
-				//newly added end
-				
-				
-//				TreeItem<String> sub = new TreeItem<>(t.getFields().get(i).getDisplayName());
-//				item.getChildren().add(sub);
-			}
-			
-		}
-		targetTreeView.setRoot(root_2);
+		
 		
 		//adding line demo
 //		Line line = new Line();
