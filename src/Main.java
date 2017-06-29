@@ -392,6 +392,7 @@ public class Main extends Application{
 					    if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
 //					        name = (String) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue();
 					        name = ((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+					        TreeItem parent = ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getParent();
 					        if (((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getParent() != root) {
 					        	System.out.println("Node click: " + name);
 					        	
@@ -404,7 +405,7 @@ public class Main extends Application{
 					        			break;
 					        		}
 					        		for (int i = 0; i < t.getFields().size(); i++) {
-					        			if (name.equals(t.getFields().get(i).getDisplayName())) {
+					        			if (name.equals(t.getFields().get(i).getDisplayName()) && ((Text)parent.getValue()).getText().equals(t.getName())) {
 					        				
 					        				currentTargetTable = t;
 					        				currentTargetField = t.getFields().get(i);
@@ -509,7 +510,9 @@ public class Main extends Application{
 //					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedItem());
 //					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedIndex());
 					    	name = ((Text) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+					    	TreeItem parent = ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getParent();
 					    	System.out.println("name of the field is " + name);
+					    	
 					        //newly added for arrows
 					       
 					        
@@ -520,11 +523,12 @@ public class Main extends Application{
 					        	int flag = 0;
 					        	List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
 					        	for (Table t : sourceTable) {
+					        		System.out.println("parent is " + ((Text)parent.getValue()).getText());
 					        		if (flag == 1) {
 					        			break;
 					        		}
 					        		for (int i = 0; i < t.getFields().size(); i++) {
-					        			if (name.equals(t.getFields().get(i).getDisplayName())) {
+					        			if (name.equals(t.getFields().get(i).getDisplayName()) && ((Text)parent.getValue()).getText().equals(t.getName())) {
 					        				
 					        				
 					        				currentSourceTable = t;
@@ -871,8 +875,8 @@ public class Main extends Application{
 		}
 		targetTreeView.setRoot(root_2);
 		
-//		srcY -= 170;
-//		targetY -= 70;
+		srcY -= 170;
+		targetY -= 70;
 		System.out.println("srcX is " + srcX + "  srcY is " + srcY + " targetX is " + targetX + "  targetY is " + targetY);
 		System.out.println("trackCurrentTargetField is " + trackCurrentTargetField + " currentTargetTable is " + currentTargetTable);
 		
