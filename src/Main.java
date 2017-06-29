@@ -126,6 +126,8 @@ public class Main extends Application{
 	
 	private Table currentSourceTable, currentTargetTable;
 	private Field currentSourceField, currentTargetField;
+	private Table trackCurrentTargetField;
+	private int trackCurrent = 0;
 	
 	private TextField passwordField;
 	private TextField userNameField;
@@ -167,6 +169,7 @@ public class Main extends Application{
 	
 	private double height;
 	
+	private LinkedList<Line> line_array;
 	
 	
 	 
@@ -235,6 +238,8 @@ public class Main extends Application{
 				myPane = (Pane) myScrollPane.getContent();
 				srcTreeView = (TreeView) myPane.getChildren().get(0);
 				targetTreeView = (TreeView) myPane.getChildren().get(1);
+				
+				line_array = new LinkedList<Line>();
 				
 				//get the height of the targetTreeView
 				
@@ -400,8 +405,13 @@ public class Main extends Application{
 					        		}
 					        		for (int i = 0; i < t.getFields().size(); i++) {
 					        			if (name.equals(t.getFields().get(i).getDisplayName())) {
+					        				
 					        				currentTargetTable = t;
 					        				currentTargetField = t.getFields().get(i);
+					        				if (trackCurrent == 0) {
+					        					trackCurrentTargetField = currentTargetTable;
+					        					trackCurrent = 1;
+					        				}
 					        				if (currentSourceField != null) {
 					        					if (ObjectExchange.etl.getTableToTableMapping().getSourceToTargetMap(currentSourceTable, currentTargetTable) == null) {
 					        						ObjectExchange.etl.getTableToTableMapping().addSourceToTargetMap(currentSourceTable, currentTargetTable);
@@ -451,6 +461,18 @@ public class Main extends Application{
 					        					
 					        					
 					        					reLoadTreeView(currentTargetField);
+					        					if (trackCurrent == 2) {
+					        						targetY -= trackCurrentTargetField.getFields().size() * 25;
+					        						System.out.println("I want to see " + trackCurrentTargetField.getFields().size());
+					        						trackCurrentTargetField = currentTargetTable;
+					        						Line line = new Line();
+					        						line.setStartX(srcX);
+					        						line.setStartY(srcY);
+					        						line.setEndX(targetX);
+					        						line.setEndY(targetY);
+					        						line_array.add(line);
+					        						myPane.getChildren().add(line);
+					        					}
 					        					//loadListViewWithDetail(currentTargetTable.getName(), "target");
 					        				}
 					        				flag = 1;
@@ -466,6 +488,8 @@ public class Main extends Application{
 					        }
 					    }
 					}
+
+					
 				});
 				
 				
@@ -847,13 +871,34 @@ public class Main extends Application{
 		}
 		targetTreeView.setRoot(root_2);
 		
-//		System.out.println("srcX is " + srcX + "  srcY is " + srcY + " targetX is " + targetX + "  targetY is " + targetY);
-//		//adding line demo
-//		Line line = new Line();
-//		line.setStartX(srcX);
-//		line.setStartY(srcY);
-//		line.setEndX(targetX);
-//		line.setEndY(targetY);
+//		srcY -= 170;
+//		targetY -= 70;
+		System.out.println("srcX is " + srcX + "  srcY is " + srcY + " targetX is " + targetX + "  targetY is " + targetY);
+		System.out.println("trackCurrentTargetField is " + trackCurrentTargetField + " currentTargetTable is " + currentTargetTable);
+		
+		if (trackCurrentTargetField == currentTargetTable) {
+			trackCurrent = 1;
+			//adding line demo
+			Line line = new Line();
+			line.setStartX(srcX);
+			line.setStartY(srcY);
+			line.setEndX(targetX);
+			line.setEndY(targetY);
+			line_array.add(line);
+			myPane.getChildren().add(line);
+		}
+		else {
+			
+			trackCurrent = 2;
+			int length = line_array.size();
+			for (int i = 0; i < length; i++) {
+				Line theLine = line_array.removeFirst();
+				myPane.getChildren().remove(theLine);
+			}
+			
+		}
+		
+		
 //		if (myPane != null) myPane.getChildren().add(line);
 //		else System.out.println("This is null");
 	}
