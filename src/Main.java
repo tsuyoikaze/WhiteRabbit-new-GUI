@@ -494,6 +494,7 @@ public class Main extends Application{
 				});
 				
 				
+				
 				srcTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
@@ -511,6 +512,8 @@ public class Main extends Application{
 //					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedIndex());
 					    	name = ((Text) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
 					    	TreeItem parent = ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getParent();
+					    	
+					    	
 					    	System.out.println("name of the field is " + name);
 					    	
 					        //newly added for arrows
