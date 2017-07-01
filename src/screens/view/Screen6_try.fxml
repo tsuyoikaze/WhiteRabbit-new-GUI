@@ -18,7 +18,8 @@
       </Text>
       <TableView id="conceptTable" fx:id="conceptTable" layoutX="55.0" layoutY="94.0" prefHeight="156.0" prefWidth="403.0" style="-fx-background-color: whitesmoke;">
         <columns>
-          <TableColumn id="leftColumn" prefWidth="402.0" style="-fx-background-color: #d7ecff;" text="C1" />
+          <TableColumn id="leftColumn" prefWidth="201.0" style="-fx-background-color: #d7ecff;" text="Entry Names" />
+            <TableColumn id="leftColumn" prefWidth="202.0" style="-fx-background-color: #ffead7;" text="Corresponding Concept ID" />
         </columns>
       </TableView>
       <Button id="manually_enter" layoutX="110.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #a4d4ff;" text="Manually Enter">

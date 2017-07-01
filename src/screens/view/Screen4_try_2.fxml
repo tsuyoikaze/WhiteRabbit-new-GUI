@@ -16,12 +16,12 @@
       </Text>
       <Text layoutX="15.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database Type" />
       <ComboBox id="combo_type" layoutX="120.0" layoutY="67.0" prefHeight="15.0" prefWidth="365.0" style="-fx-background-color: #a4d4ff;" />
-      <Text layoutX="15.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-      <TextField id="password_field" layoutX="120.0" layoutY="170.0" prefHeight="29.0" prefWidth="365.0" />
       <Text layoutX="15.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database Name" wrappingWidth="87.11718767881393" />
       <TextField id="dbname_field" layoutX="120.0" layoutY="101.0" prefHeight="27.0" prefWidth="365.0" />
       <Text layoutX="15.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
       <TextField id="username_field" layoutX="120.0" layoutY="136.0" prefHeight="27.0" prefWidth="365.0" />
+      <Text layoutX="15.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <TextField id="password_field" layoutX="120.0" layoutY="170.0" prefHeight="29.0" prefWidth="365.0" />
       <Text layoutX="15.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <TextField id="ip_field" layoutX="120.0" layoutY="206.0" prefHeight="27.0" prefWidth="365.0" />
       <Button id="ok_button" layoutX="220.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #a4d4ff;" text="Next">

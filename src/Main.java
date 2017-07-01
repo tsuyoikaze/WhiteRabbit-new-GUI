@@ -1,3 +1,4 @@
+import java.awt.Event;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -96,6 +97,8 @@ public class Main extends Application{
 	private static final String FXML_MAIN_SCREEN_PATH = "screens/view/Screen2.fxml";
 	private static final ExtensionFilter FILTER_XLSX = new FileChooser.ExtensionFilter("Excel spreadsheet", "*.xlsx");
 	private static final ExtensionFilter FILTER_SQL = new FileChooser.ExtensionFilter("SQL File", "*.sql");
+	private static final ExtensionFilter FILTER_JSON = new FileChooser.ExtensionFilter("JavaScript Object Notation", "*.json");
+	private static final ExtensionFilter FILTER_GZ = new FileChooser.ExtensionFilter("GZip Compressed file", "*.tar.gz");
 	private static final String FXML_WELCOME_SCREEN_PATH = "screens/view/Screen1.fxml";
 	private static final String DEFAULT_CDM_CSV_PATH = "src/org/ohdsi/rabbitInAHat/dataModel/CDMV5.0.1.backup.csv";
 	private Button newProjectBtn;
@@ -256,7 +259,14 @@ public class Main extends Application{
 				
 				//get the height of the targetTreeView
 				
-				
+				saveFile.setOnAction(new EventHandler<ActionEvent>(){
+
+					@Override
+					public void handle(ActionEvent arg0) {
+						doSave(chooseFile(true, FILTER_GZ));
+					}
+					
+				});
 				
 				
 				
@@ -728,60 +738,7 @@ public class Main extends Application{
 										type = (String) typeButton.getValue();
 										System.out.println("here is the answer: " +  password +  "  "+ username +  "  "+ dbName+ "   "+ ipName);
 									
-										nextButton.setOnAction(new EventHandler<ActionEvent>() {
-											public void handle (ActionEvent e) {
-												try {
-													Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
-													//TODO: add in table
-													manualEnterButton = (Button) newScene.lookup("#manually_enter");
-													ignoreButton = (Button) newScene.lookup("#ignore_button");
-													newWindow.setScene(newScene);
-												} catch (IOException e1) {
-													e1.printStackTrace();
-												}
-												
-												manualEnterButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-													public void handle(MouseEvent arg0) {
-														
-														
-													}
-													
-												});
-												
-												ignoreButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-													public void handle(MouseEvent arg0) {
-														newWindow.close();
-														try {
-															Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen7_try.fxml")));
-															saveSQL = (Button) newScene.lookup("#save_as_sql");
-															
-															primaryStage.setScene(newScene);
-														} catch (IOException e) {
-															e.printStackTrace();
-														}
-														
-														saveSQL.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-															public void handle(MouseEvent arg0) {
-																try {
-																	doSaveSQL(chooseFile(true, FILTER_SQL), ObjectExchange.conceptIDString);
-																} catch (FileNotFoundException e) {
-																	//TODO Handle File Not Found
-																}
-																
-															}
-															
-														});
-														
-													}
-													
-												});
-												
-											}
-											
-										});
+										
 										
 										try {
 											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try_2.fxml")));
@@ -798,6 +755,7 @@ public class Main extends Application{
 											for (Map.Entry<Field, Field> item : ObjectExchange.conceptIDFieldMap.entrySet()) {
 												showScanningPath.setText(item.getKey().getTable().getName() + "." + item.getKey().getName());
 												List<org.ohdsi.utilities.collections.Pair<String, String>> list = doScanTable(myDBType, ipName, "", username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
+												ObjectExchange.dbScanResult = list;
 												LinkedList<String> l = new LinkedList<>();
 												for (org.ohdsi.utilities.collections.Pair<String, String> item2 : list) {
 													if (!l.contains(item2.getItem2())) {
@@ -805,9 +763,96 @@ public class Main extends Application{
 													}
 												}
 												Map<String, Integer> conceptIDMap = ConceptIDFetcher.fetchConceptIDs(l, "src/org/ohdsi/rabbitInAHat/dataModel/CONCEPT_TRUNCATED.csv.gz");
+												ObjectExchange.conceptIDDataMap = conceptIDMap;
 												ObjectExchange.conceptIDString += ETLSQLGenerator.getConceptIDMap(item.getValue(), conceptIDMap, list);
 												
 											}
+											
+											nextButton.setOnAction(new EventHandler<ActionEvent>() {
+												/* (non-Javadoc)
+												 * @see javafx.event.EventHandler#handle(javafx.event.Event)
+												 */
+												@SuppressWarnings("unchecked")
+												public void handle (ActionEvent e) {
+													TableView manualEnterTable = null;
+													try {
+														Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
+														//TODO: add in table
+														manualEnterTable = (TableView) newScene.lookup("#conceptTable");
+														manualEnterButton = (Button) newScene.lookup("#manually_enter");
+														ignoreButton = (Button) newScene.lookup("#ignore_button");
+														newWindow.setScene(newScene);
+													} catch (IOException e1) {
+														e1.printStackTrace();
+													}
+													
+													ObservableList<myConceptTable> data = FXCollections.observableArrayList();
+													List<org.ohdsi.utilities.collections.Pair<String, String>> dbScanResult = ObjectExchange.dbScanResult;
+													
+													for (org.ohdsi.utilities.collections.Pair<String, String> entry : dbScanResult)
+													{
+														String item = entry.getItem2();
+														if (!ObjectExchange.conceptIDDataMap.containsKey(item)) {
+															ObservableList<String> itemList = FXCollections.observableArrayList();
+															
+															data.add(new myConceptTable(item, ""));
+														}
+													}
+													
+													((TableColumn<myConceptTable, String>) manualEnterTable.getColumns().get(1)).setCellValueFactory(new PropertyValueFactory<myConceptTable, String>("mapName"));
+													((TableColumn<myConceptTable, String>) manualEnterTable.getColumns().get(0)).setCellValueFactory(new PropertyValueFactory<myConceptTable, String>("srcName"));
+													
+													manualEnterTable.setItems(data);
+													manualEnterTable.setEditable(true);
+													
+													final TableView<myConceptTable> finalManualEnterTable = manualEnterTable;
+													
+													manualEnterButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+														@Override
+														public void handle(MouseEvent arg0) {
+															for (myConceptTable obj : (ObservableList<myConceptTable>) finalManualEnterTable.getItems()) {
+																ObjectExchange.conceptIDDataMap.put(obj.getSrcName(), Integer.parseInt(obj.getMapName()));
+															}
+															ignoreButton.getOnMouseClicked().handle(null);
+															
+														}
+														
+													});
+													
+													ignoreButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+														public void handle(MouseEvent arg0) {
+															newWindow.close();
+															try {
+																Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen7_try.fxml")));
+																saveSQL = (Button) newScene.lookup("#save_as_sql");
+																
+																primaryStage.setScene(newScene);
+															} catch (IOException e) {
+																e.printStackTrace();
+															}
+															
+															saveSQL.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+																public void handle(MouseEvent arg0) {
+																	try {
+																		doSaveSQL(chooseFile(true, FILTER_SQL), ObjectExchange.conceptIDString);
+																	} catch (FileNotFoundException e) {
+																		//TODO Handle File Not Found
+																	}
+																	
+																}
+																
+															});
+															
+														}
+														
+													});
+													
+												}
+												
+											});
 											
 											System.out.println("done");
 											nextButton.fire();
@@ -818,6 +863,7 @@ public class Main extends Application{
 										} catch (InterruptedException e1) {
 											e1.printStackTrace();
 										}
+										
 									}
 								});
 								primaryStage.show();
@@ -1387,5 +1433,12 @@ public class Main extends Application{
 		}
 	}
 	
+	private void doSave(String filename) {
+		if (filename != null) {
+			ETL.FileFormat fileFormat = filename.endsWith("json.gz") ? ETL.FileFormat.GzipJson : filename.endsWith("json") ? ETL.FileFormat.Json
+					: ETL.FileFormat.Binary;
+			ObjectExchange.etl.save(filename, fileFormat);
+		}
+	}
 
 }

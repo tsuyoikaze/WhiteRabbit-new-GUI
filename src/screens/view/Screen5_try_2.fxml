@@ -25,20 +25,8 @@
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Text id="showType" layoutX="107.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.21875">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text id="showPath" layoutX="145.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.21874904632568">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <Text id="showIP" layoutX="294.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="170.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+      <Text id="showType" layoutX="90.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="160.0" />
+      <Text id="showPath" layoutX="90.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="160.0" />
+      <Text id="showIP" layoutX="320.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="170.0" />
    </children>
 </Pane>

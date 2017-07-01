@@ -17,6 +17,7 @@
  ******************************************************************************/
 package org.ohdsi.whiteRabbit;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JFrame;
@@ -33,5 +34,7 @@ public class ObjectExchange {
 	public static ETL		etl;
 	public static String	conceptIDString = "";
 	public static Map<Field, Field> conceptIDFieldMap;
+	public static Map<String, Integer> conceptIDDataMap;
+	public static List<org.ohdsi.utilities.collections.Pair<String, String>> dbScanResult;
 	
 }
