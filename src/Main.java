@@ -1,3 +1,4 @@
+import java.awt.Event;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -82,6 +83,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.Callback;
 import javafx.util.Pair;
 import javafx.application.*;
@@ -97,6 +99,8 @@ public class Main extends Application{
 	private static final String FXML_MAIN_SCREEN_PATH = "screens/view/Screen2.fxml";
 	private static final ExtensionFilter FILTER_XLSX = new FileChooser.ExtensionFilter("Excel spreadsheet", "*.xlsx");
 	private static final ExtensionFilter FILTER_SQL = new FileChooser.ExtensionFilter("SQL File", "*.sql");
+	private static final ExtensionFilter FILTER_JSON = new FileChooser.ExtensionFilter("JavaScript Object Notation", "*.json");
+	private static final ExtensionFilter FILTER_GZ = new FileChooser.ExtensionFilter("GZip Compressed file", "*.tar.gz");
 	private static final String FXML_WELCOME_SCREEN_PATH = "screens/view/Screen1.fxml";
 	private static final String DEFAULT_CDM_CSV_PATH = "src/org/ohdsi/rabbitInAHat/dataModel/CDMV5.0.1.backup.csv";
 	private Button newProjectBtn;
@@ -109,10 +113,16 @@ public class Main extends Application{
 	private Button ignoreButton;
 	private Button saveSQL;
 	
+	private Button yesButton;
+	private Button noButton;
+	
+	private ProgressBar progressBar;
+	
 	private ComboBox typeButton;
 
 	private Stage primaryStage;
 	private Stage newWindow;
+	private Stage toSaveWindow;
 	private Pane mainLayout;
 	
 	FileChooser chooser;
@@ -150,6 +160,7 @@ public class Main extends Application{
 	private Menu fileMenu;
 	private MenuItem saveFile;
 	private MenuItem nextStep;
+	private MenuItem closeFile;
 	
 	private TreeView srcTreeView;
 	private TreeView targetTreeView;
@@ -237,6 +248,7 @@ public class Main extends Application{
 				fileMenu = myMenuBar.getMenus().get(0);
 				saveFile = fileMenu.getItems().get(0);
 				nextStep = fileMenu.getItems().get(1);
+				closeFile = fileMenu.getItems().get(2);
 //				
 //				saveFile = new MenuItem("Save");
 //				nextStep = new MenuItem("Next");
@@ -245,15 +257,18 @@ public class Main extends Application{
 				thePane = (Pane) newScene.lookup("#thePane");
 				myPane = (Pane) newScene.lookup("#myPane");
 				myScrollPane = (ScrollPane) newScene.lookup("#myScrollPane");
+
 				myHBox = (HBox) newScene.lookup("#myHBox");
-				myProgressBar = (ProgressBar) newScene.lookup("#myProgressBar");
+//				myProgressBar = (ProgressBar) newScene.lookup("#myProgressBar");
 				addPane = (Pane) newScene.lookup("#add_pane");
+				progressBar = (ProgressBar) newScene.lookup("#progress_bar");
+
 				
 				thePane = (Pane)myScrollPane.getParent();
 				myPane = (Pane) myScrollPane.getContent();
-				srcTreeView = (TreeView) myPane.getChildren().get(0);
-				targetTreeView = (TreeView) myPane.getChildren().get(1);
-				addPane = (Pane) myPane.getChildren().get(2);
+
+				srcTreeView = (TreeView) myPane.getChildren().get(2);
+				targetTreeView = (TreeView) myPane.getChildren().get(3);
 				
 				line_array = new LinkedList<Line>();
 				
@@ -273,16 +288,116 @@ public class Main extends Application{
 				myMenuBar.prefHeightProperty().bind(thePane.heightProperty());
 				myHBox.prefWidthProperty().bind(thePane.widthProperty());
 				myHBox.prefHeightProperty().bind(thePane.heightProperty());
-				srcTreeView.prefWidthProperty().bind(thePane.widthProperty());
-				srcTreeView.prefHeightProperty().bind(thePane.heightProperty());
-				targetTreeView.prefWidthProperty().bind(thePane.widthProperty());
-				targetTreeView.prefHeightProperty().bind(thePane.heightProperty());
-				myProgressBar.prefWidthProperty().bind(thePane.widthProperty());
-				myProgressBar.prefHeightProperty().bind(thePane.heightProperty());
-				addPane.prefWidthProperty().bind(thePane.widthProperty());
-				addPane.prefHeightProperty().bind(thePane.heightProperty());
+//				srcTreeView.prefWidthProperty().bind(thePane.widthProperty());
+//				srcTreeView.prefHeightProperty().bind(thePane.heightProperty());
+//				targetTreeView.prefWidthProperty().bind(thePane.widthProperty());
+//				targetTreeView.prefHeightProperty().bind(thePane.heightProperty());
+				progressBar.prefWidthProperty().bind(thePane.widthProperty());
+				progressBar.prefHeightProperty().bind(thePane.heightProperty());
+//				addPane.prefWidthProperty().bind(thePane.widthProperty());
+//				addPane.prefHeightProperty().bind(thePane.heightProperty());
 				
+				saveFile.setOnAction(new EventHandler<ActionEvent>(){
+
+					@Override
+					public void handle(ActionEvent arg0) {
+						doSave(chooseFile(true, FILTER_GZ));
+					}
+					
+				});
 				
+				primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+					
+					@Override
+					public void handle(WindowEvent event) {
+						
+
+try {
+							
+							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen8.fxml")));
+							toSaveWindow = new Stage();
+							yesButton = (Button) newScene.lookup("#yes_button");
+							noButton = (Button) newScene.lookup("#no_button");
+							
+							toSaveWindow.setTitle("Exit Confirmation");
+							toSaveWindow.setScene(newScene);
+							toSaveWindow.show();
+							
+							noButton.setOnAction(new EventHandler<ActionEvent>() {
+								
+								@Override
+								public void handle(ActionEvent args) {
+									toSaveWindow.close();
+									if (newWindow != null) {
+										newWindow.close();
+									}
+									primaryStage.close();
+								}
+							});
+							
+							yesButton.setOnAction(new EventHandler<ActionEvent>() {
+								
+								@Override
+								public void handle(ActionEvent args) {
+									//save the process
+								}
+							});
+							
+							
+						
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+		                
+					}
+				});
+				
+				closeFile.setOnAction(new EventHandler<ActionEvent>() {
+					
+					@Override
+					public void handle(ActionEvent args) {
+						
+						try {
+							
+							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen8.fxml")));
+							toSaveWindow = new Stage();
+							yesButton = (Button) newScene.lookup("#yes_button");
+							noButton = (Button) newScene.lookup("#no_button");
+							
+							toSaveWindow.setTitle("Exit Confirmation");
+							toSaveWindow.setScene(newScene);
+							toSaveWindow.show();
+							
+							noButton.setOnAction(new EventHandler<ActionEvent>() {
+								
+								@Override
+								public void handle(ActionEvent args) {
+									toSaveWindow.close();
+									if (newWindow != null) {
+										newWindow.close();
+									}
+									primaryStage.close();
+								}
+							});
+							
+							yesButton.setOnAction(new EventHandler<ActionEvent>() {
+								
+								@Override
+								public void handle(ActionEvent args) {
+									//save the process
+								}
+							});
+							
+							
+						
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+					}
+				});
 				
 				
 				
@@ -307,6 +422,16 @@ public class Main extends Application{
 			}
 		}
 	}
+	
+//	public void exitApplication(ActionEvent event) {
+//		System.out.println("$$$$$$$$$$");
+//		Platform.exit();
+//	}
+//	
+//	@Override
+//	public void stop() {
+//		
+//	}
 	
 	
 	public void start(final Stage primaryStage) throws IOException {
@@ -503,8 +628,8 @@ public class Main extends Application{
 						        							System.out.println("theText is " + theText + "with length " + theText.length());
 						        							System.out.println("theText2 is " + theText2 + "with length " + theText2.length());
 						        							if (theText.equals(theText2)) {
-						        								targetX = subText.localToScene(0,0).getX();
-						        								targetY = subText.localToScene(0, 0).getY();
+						        								targetX = subText.localToScene(subText.getBoundsInLocal()).getMinX() - 10;
+						        								targetY = subText.localToScene(subText.getBoundsInLocal()).getMaxY() + 12;
 						        								System.out.print("Reach this line");
 						        								break;
 						        							}
@@ -548,11 +673,11 @@ public class Main extends Application{
 				});
 				
 				
-				
 				srcTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
 						Node node = event.getPickResult().getIntersectedNode();
+						System.err.println("Event Type is: " + ((TreeItem)((TreeItem)srcTreeView.getSelectionModel().getSelectedItem())));
 						
 						String name = "";
 					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
@@ -604,7 +729,6 @@ public class Main extends Application{
 					        		}
 					        	}
 					        	
-					        	
 		        				//Testing
 		        				ObservableList<TreeItem> firstLevel= srcTreeView.getRoot().getChildren();
 		        				for (TreeItem treeItem : firstLevel) {
@@ -628,9 +752,9 @@ public class Main extends Application{
 		        							
 		        							
 		        							if (theText.equals(subText.getText())) {
-		        								srcX = subText.localToScene(100, 100).getX();
-		        								srcY = subText.localToScene(100, 100).getY();
-		        								System.out.println("Reach the src line and srcX and srcY are " + srcX + srcY);
+		        								srcX = subText.localToScene(subText.getBoundsInLocal()).getMaxX() + 10;
+		        								srcY = subText.localToScene(subText.getBoundsInLocal()).getMaxY() + 112;
+		        								System.out.println("Reach the src line and srcX and srcY are " + srcX + "\t" + srcY);
 		        								break;
 		        							}
 		        						}
@@ -660,8 +784,8 @@ public class Main extends Application{
 							okayButton = (Button) newScene.lookup("#okay_button");
 							mainPane_3 = (Pane) newScene.lookup("#thePane");
 							
-							conceptTable.prefHeightProperty().bind(mainPane_3.heightProperty());
-							conceptTable.prefWidthProperty().bind(mainPane_3.widthProperty());
+//							conceptTable.prefHeightProperty().bind(mainPane_3.heightProperty());
+//							conceptTable.prefWidthProperty().bind(mainPane_3.widthProperty());
 							
 							ObservableList<myConceptTable> data = FXCollections.observableArrayList();
 							
@@ -696,6 +820,7 @@ public class Main extends Application{
 							conceptTable.setItems(data);
 							
 							newWindow.show();
+							progressBar.setProgress(0.67);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -759,6 +884,8 @@ public class Main extends Application{
 										type = (String) typeButton.getValue();
 										System.out.println("here is the answer: " +  password +  "  "+ username +  "  "+ dbName+ "   "+ ipName);
 									
+										
+										
 										try {
 											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try_2.fxml")));
 											nextButton = (Button) newScene.lookup("#next_button");
@@ -772,7 +899,9 @@ public class Main extends Application{
 											DbType myDBType = new DbType(type);
 											int percent = 100;
 											for (Map.Entry<Field, Field> item : ObjectExchange.conceptIDFieldMap.entrySet()) {
+												showScanningPath.setText(item.getKey().getTable().getName() + "." + item.getKey().getName());
 												List<org.ohdsi.utilities.collections.Pair<String, String>> list = doScanTable(myDBType, ipName, "", username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
+												ObjectExchange.dbScanResult = list;
 												LinkedList<String> l = new LinkedList<>();
 												for (org.ohdsi.utilities.collections.Pair<String, String> item2 : list) {
 													if (!l.contains(item2.getItem2())) {
@@ -780,15 +909,99 @@ public class Main extends Application{
 													}
 												}
 												Map<String, Integer> conceptIDMap = ConceptIDFetcher.fetchConceptIDs(l, "src/org/ohdsi/rabbitInAHat/dataModel/CONCEPT_TRUNCATED.csv.gz");
+												ObjectExchange.conceptIDDataMap = conceptIDMap;
 												ObjectExchange.conceptIDString += ETLSQLGenerator.getConceptIDMap(item.getValue(), conceptIDMap, list);
 												
 											}
 											
+											nextButton.setOnAction(new EventHandler<ActionEvent>() {
+												/* (non-Javadoc)
+												 * @see javafx.event.EventHandler#handle(javafx.event.Event)
+												 */
+												@SuppressWarnings("unchecked")
+												public void handle (ActionEvent e) {
+													TableView manualEnterTable = null;
+													try {
+														Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
+														//TODO: add in table
+														manualEnterTable = (TableView) newScene.lookup("#conceptTable");
+														manualEnterButton = (Button) newScene.lookup("#manually_enter");
+														ignoreButton = (Button) newScene.lookup("#ignore_button");
+														newWindow.setScene(newScene);
+													} catch (IOException e1) {
+														e1.printStackTrace();
+													}
+													
+													ObservableList<myConceptTable> data = FXCollections.observableArrayList();
+													List<org.ohdsi.utilities.collections.Pair<String, String>> dbScanResult = ObjectExchange.dbScanResult;
+													
+													for (org.ohdsi.utilities.collections.Pair<String, String> entry : dbScanResult)
+													{
+														String item = entry.getItem2();
+														if (!ObjectExchange.conceptIDDataMap.containsKey(item)) {
+															ObservableList<String> itemList = FXCollections.observableArrayList();
+															
+															data.add(new myConceptTable(item, ""));
+														}
+													}
+													
+													((TableColumn<myConceptTable, String>) manualEnterTable.getColumns().get(1)).setCellValueFactory(new PropertyValueFactory<myConceptTable, String>("mapName"));
+													((TableColumn<myConceptTable, String>) manualEnterTable.getColumns().get(0)).setCellValueFactory(new PropertyValueFactory<myConceptTable, String>("srcName"));
+													
+													manualEnterTable.setItems(data);
+													manualEnterTable.setEditable(true);
+													
+													final TableView<myConceptTable> finalManualEnterTable = manualEnterTable;
+													
+													manualEnterButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+														@Override
+														public void handle(MouseEvent arg0) {
+															for (myConceptTable obj : (ObservableList<myConceptTable>) finalManualEnterTable.getItems()) {
+																ObjectExchange.conceptIDDataMap.put(obj.getSrcName(), Integer.parseInt(obj.getMapName()));
+															}
+															ignoreButton.getOnMouseClicked().handle(null);
+															
+														}
+														
+													});
+													
+													ignoreButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+														public void handle(MouseEvent arg0) {
+															newWindow.close();
+															try {
+																Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen7_try.fxml")));
+																saveSQL = (Button) newScene.lookup("#save_as_sql");
+																
+																primaryStage.setScene(newScene);
+															} catch (IOException e) {
+																e.printStackTrace();
+															}
+															
+															saveSQL.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+																public void handle(MouseEvent arg0) {
+																	try {
+																		doSaveSQL(chooseFile(true, FILTER_SQL), ObjectExchange.conceptIDString);
+																	} catch (FileNotFoundException e) {
+																		//TODO Handle File Not Found
+																	}
+																	
+																}
+																
+															});
+															
+														}
+														
+													});
+													
+												}
+												
+											});
+											
 											System.out.println("done");
-											
-											
-										
-										
+											nextButton.fire();
 										}catch (SQLException e1) {
 											e1.printStackTrace();
 										} catch (IOException e1) {
@@ -797,71 +1010,8 @@ public class Main extends Application{
 											e1.printStackTrace();
 										}
 										
-										nextButton.setOnAction(new EventHandler<ActionEvent>() {
-											public void handle (ActionEvent e) {
-												try {
-													Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
-													//TODO: add in table
-													manualEnterButton = (Button) newScene.lookup("#manually_enter");
-													ignoreButton = (Button) newScene.lookup("#ignore_button");
-													newWindow.setScene(newScene);
-												} catch (IOException e1) {
-													e1.printStackTrace();
-												}
-												
-												manualEnterButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-													public void handle(MouseEvent arg0) {
-														
-														
-													}
-													
-												});
-												
-												ignoreButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-													public void handle(MouseEvent arg0) {
-														newWindow.close();
-														try {
-															Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen7_try.fxml")));
-															saveSQL = (Button) newScene.lookup("#save_as_sql");
-															
-															primaryStage.setScene(newScene);
-														} catch (IOException e) {
-															e.printStackTrace();
-														}
-														
-														saveSQL.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-															public void handle(MouseEvent arg0) {
-																try {
-																	doSaveSQL(chooseFile(true, FILTER_SQL), ObjectExchange.conceptIDString);
-																} catch (FileNotFoundException e) {
-																	//TODO Handle File Not Found
-																}
-																
-															}
-															
-														});
-														
-													}
-													
-												});
-												
-											}
-											
-										});
-										
-									
 									}
-									
-									
 								});
-								
-								
-								
-								
-								
 								primaryStage.show();
 								
 								
@@ -969,10 +1119,10 @@ public class Main extends Application{
 				}
 				//draw line between table names
 				Line line = new Line();
-				line.setStartX(((Text)src_treeItem.getValue()).localToScene(0, 0).getX());
-				line.setStartY(((Text)src_treeItem.getValue()).localToScene(0, 0).getY() - 170);
-				line.setEndX(((Text)target_treeItem.getValue()).localToScene(0, 0).getX());
-				line.setEndY(((Text)target_treeItem.getValue()).localToScene(0, 0).getY() - 70);
+				line.setStartX(((Text)src_treeItem.getValue()).localToScene(((Text)src_treeItem.getValue()).getBoundsInLocal()).getMaxX() + 10);
+				line.setStartY(((Text)src_treeItem.getValue()).localToScene(((Text)src_treeItem.getValue()).getBoundsInLocal()).getMaxY() + 112);
+				line.setEndX(((Text)target_treeItem.getValue()).localToScene(((Text)target_treeItem.getValue()).getBoundsInLocal()).getMinX() - 10);
+				line.setEndY(((Text)target_treeItem.getValue()).localToScene(((Text)target_treeItem.getValue()).getBoundsInLocal()).getMaxY() + 12);
 				line_array.add(line);
 				myPane.getChildren().add(line);
 				
@@ -1370,8 +1520,20 @@ public class Main extends Application{
 		System.out.println("source table: " + field.getTable() + "\tsource field: " + field + "\ttarget table: " + targetTable + "\tcon: " + con);
 		System.out.println(ETLSQLGenerator.getUniqueSourceField(table, targetTable));
 		ResultSet set = con.createStatement().executeQuery("SELECT " + ETLSQLGenerator.getUniqueSourceField(table, targetTable).getName() + "," + field.getName() + " FROM " + table.getName() + ";");
+		
+		//progress bar
+		int count = 0;
+		int toUse = 0;
+		while (set.next()) {
+			count++;
+		}
+		
 		while (set.next()) {
 			result.add(new org.ohdsi.utilities.collections.Pair<>(set.getString(1), set.getString(2)));
+			
+			//progress bar
+			progressBar.setProgress(toUse/count);
+			toUse++;
 		}
 		return result;
 	}
@@ -1431,5 +1593,12 @@ public class Main extends Application{
 		}
 	}
 	
+	private void doSave(String filename) {
+		if (filename != null) {
+			ETL.FileFormat fileFormat = filename.endsWith("json.gz") ? ETL.FileFormat.GzipJson : filename.endsWith("json") ? ETL.FileFormat.Json
+					: ETL.FileFormat.Binary;
+			ObjectExchange.etl.save(filename, fileFormat);
+		}
+	}
 
 }

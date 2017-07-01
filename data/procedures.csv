@@ -1,0 +1,838 @@
+DATE,PATIENT,ENCOUNTER,CODE,DESCRIPTION,REASONCODE,REASONDESCRIPTION
+2011-05-23,92b02539-377f-4a45-b180-99974a9ed149,ba2cbb9e-6a14-4e0b-bf9c-863eb5f61f33,428191000124101,Documentation of current medications,,
+2013-07-07,92b02539-377f-4a45-b180-99974a9ed149,1b8ce50f-c080-4da4-bf97-5fb79e2cf104,428191000124101,Documentation of current medications,,
+2015-05-22,db52e68b-4737-48a9-ac4f-fac0c5af1718,31cd23c9-e64b-4d5d-b68e-ea35647e8ebd,428191000124101,Documentation of current medications,,
+2015-07-28,db52e68b-4737-48a9-ac4f-fac0c5af1718,86ea3e61-e0f4-41f0-aecb-8557d21374ba,428191000124101,Documentation of current medications,,
+2016-05-05,db52e68b-4737-48a9-ac4f-fac0c5af1718,7a6336d6-3adf-41d1-961c-4107ae595947,428191000124101,Documentation of current medications,,
+2017-04-24,db52e68b-4737-48a9-ac4f-fac0c5af1718,a1c6a180-eae8-4725-a27a-aea5413fb25b,428191000124101,Documentation of current medications,,
+2008-03-25,a89f450c-0faa-4332-96dd-b462479c6e81,40e7d6e9-a281-4ddc-907a-916bc72ed815,428191000124101,Documentation of current medications,,
+2008-10-27,a89f450c-0faa-4332-96dd-b462479c6e81,1965d4d7-fbac-48af-9285-9ca4ffb15526,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2017-02-04,a89f450c-0faa-4332-96dd-b462479c6e81,861ed940-5694-4a7b-aa3e-157a00bdad20,428191000124101,Documentation of current medications,,
+2007-12-07,64730185-a3aa-4624-930b-2f9a1ae8b814,e8f32739-88cd-4ada-a28a-d54996029d8b,428191000124101,Documentation of current medications,,
+2009-12-14,64730185-a3aa-4624-930b-2f9a1ae8b814,d046cc89-3421-4081-8e8a-c5c0f0f626d9,428191000124101,Documentation of current medications,,
+2012-04-27,64730185-a3aa-4624-930b-2f9a1ae8b814,cbc6f138-9bc0-449b-b9fc-4fed767d8c52,73761001,Colonoscopy,,
+2012-04-27,64730185-a3aa-4624-930b-2f9a1ae8b814,cbc6f138-9bc0-449b-b9fc-4fed767d8c52,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2012-04-27,64730185-a3aa-4624-930b-2f9a1ae8b814,cbc6f138-9bc0-449b-b9fc-4fed767d8c52,274031008,Rectal polypectomy,68496003,Polyp of colon
+2013-09-21,64730185-a3aa-4624-930b-2f9a1ae8b814,069cbf3b-1720-4ef9-a6ec-4cad2e438d3d,73761001,Colonoscopy,,
+2017-05-19,64730185-a3aa-4624-930b-2f9a1ae8b814,1ccc763e-7d4a-4991-a068-73fd24cf5d77,428191000124101,Documentation of current medications,,
+2014-02-18,f6693f7a-fe4d-4911-96e2-c09d582f12a7,27082b69-73c6-4560-8628-18b8a6762d40,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2014-06-13,f6693f7a-fe4d-4911-96e2-c09d582f12a7,431e7e39-339a-4712-9559-d000c1f01ca0,428191000124101,Documentation of current medications,,
+2017-05-15,f6693f7a-fe4d-4911-96e2-c09d582f12a7,5ca8aa39-2bfa-44d4-9d8b-47e5f64c7fa6,428191000124101,Documentation of current medications,,
+2016-11-17,0605ac3c-4cc7-4257-b46e-fbafeff3168e,c4faf9ba-3afe-4fa1-9823-b4a0a9054549,428191000124101,Documentation of current medications,,
+2017-01-23,0605ac3c-4cc7-4257-b46e-fbafeff3168e,c3700f81-06a7-4509-abd3-4fc2c597b1b5,428191000124101,Documentation of current medications,,
+2009-01-02,1757997f-19de-42b8-9f99-8d9e24c88fc5,eaa40913-c6d3-4b64-87b8-4067eb0a13c9,428191000124101,Documentation of current medications,,
+2011-11-23,1757997f-19de-42b8-9f99-8d9e24c88fc5,75f019df-960e-4fcb-8881-15033b990bae,428191000124101,Documentation of current medications,,
+2014-11-15,1757997f-19de-42b8-9f99-8d9e24c88fc5,d536ab31-9ce7-4234-838c-7fbe84f48a7b,428191000124101,Documentation of current medications,,
+2011-11-01,7b1d08d5-8945-4976-a6d5-2896b51472da,1f7136cb-44ff-49d7-aaee-e4f0b2e21264,311791003,Information gathering (procedure),,
+2013-07-10,7b1d08d5-8945-4976-a6d5-2896b51472da,55e51606-acac-48c3-872a-c3940069c672,228557008,Cognitive and behavioral therapy,192127007,Child attention deficit disorder
+2013-08-13,7b1d08d5-8945-4976-a6d5-2896b51472da,81fc59c1-918e-4d27-a095-ef60502da0ef,228557008,Cognitive and behavioral therapy,192127007,Child attention deficit disorder
+2013-09-14,7b1d08d5-8945-4976-a6d5-2896b51472da,c69b241e-67d8-48e4-8ece-01bfb499af2d,228557008,Cognitive and behavioral therapy,192127007,Child attention deficit disorder
+2015-12-04,7b1d08d5-8945-4976-a6d5-2896b51472da,02a244fa-4bdc-497b-98ee-3ce2aa86c8d5,399208008,Plain chest X-ray (procedure),10509002,Acute bronchitis (disorder)
+2014-06-27,12bd1d7f-ff3f-4784-b9e7-12139b5377b0,79998bae-d491-4c86-bd1b-ee4130ed2c56,80146002,Appendectomy,74400008,Appendicitis
+2014-10-25,12bd1d7f-ff3f-4784-b9e7-12139b5377b0,58254caa-6018-438f-8229-baf693e1f331,428191000124101,Documentation of current medications,,
+2007-12-20,3a1cd2a0-aab8-4505-ac7b-b4df4ae37e2b,39ddc8c4-febc-4199-bb1d-54a43968e371,73761001,Colonoscopy,,
+2009-10-13,3a1cd2a0-aab8-4505-ac7b-b4df4ae37e2b,8af9ac36-2c43-4ac5-b507-21f87c2cc1a3,428191000124101,Documentation of current medications,,
+2012-11-16,3a1cd2a0-aab8-4505-ac7b-b4df4ae37e2b,fb6bba90-71c8-456e-bcb2-7b074bf3cf98,428191000124101,Documentation of current medications,,
+2012-12-20,3a1cd2a0-aab8-4505-ac7b-b4df4ae37e2b,570fc6c9-690c-48eb-8e87-74be1adf1ee1,73761001,Colonoscopy,,
+2014-02-04,3a1cd2a0-aab8-4505-ac7b-b4df4ae37e2b,8805021f-6c82-4614-b8c6-637d115fb19d,428191000124101,Documentation of current medications,,
+2017-03-27,3a1cd2a0-aab8-4505-ac7b-b4df4ae37e2b,7ab01438-c200-40af-817c-4c8b21860677,428191000124101,Documentation of current medications,,
+2008-09-22,adda52d0-e73b-449d-b8da-a76bb0da256a,a4a7e4bd-960e-44a5-888e-64e7c4bfcd03,428191000124101,Documentation of current medications,,
+2014-02-18,adda52d0-e73b-449d-b8da-a76bb0da256a,46e926f6-1cff-4c69-aa6f-61ae5180272b,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2014-03-06,adda52d0-e73b-449d-b8da-a76bb0da256a,8a75c1b0-5f3e-4753-aaa8-e813d06231f5,428191000124101,Documentation of current medications,,
+2016-03-27,adda52d0-e73b-449d-b8da-a76bb0da256a,1b733963-0fd5-432c-b4e6-e3c1a40f0ad4,428191000124101,Documentation of current medications,,
+2007-12-17,a2597b79-b1b3-4b64-8355-e0c68ef57990,d94ad17a-122f-4e5b-a503-b2bec2881448,428191000124101,Documentation of current medications,,
+2010-01-11,a2597b79-b1b3-4b64-8355-e0c68ef57990,116bb9fe-672f-4729-a313-6be3536728c7,428191000124101,Documentation of current medications,,
+2011-01-27,a2597b79-b1b3-4b64-8355-e0c68ef57990,969b8d90-67c0-4340-b7f8-ef62abe6d1bf,428191000124101,Documentation of current medications,,
+2014-01-09,a2597b79-b1b3-4b64-8355-e0c68ef57990,3c4bac33-b044-46c1-8d12-f870a41a66df,428191000124101,Documentation of current medications,,
+2015-01-15,a2597b79-b1b3-4b64-8355-e0c68ef57990,c3e6219f-7256-435c-9e3f-10b1a92522f0,428191000124101,Documentation of current medications,,
+2016-02-11,a2597b79-b1b3-4b64-8355-e0c68ef57990,24de1d8c-c3ec-40da-bd4d-a0315f65acd7,428191000124101,Documentation of current medications,,
+2007-12-21,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,a90571d1-d11e-4aa9-9acc-0b09e519c051,73761001,Colonoscopy,,
+2009-04-06,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,34b4ee80-b143-4894-b864-4fada8911920,428191000124101,Documentation of current medications,,
+2010-05-17,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,ceeeb22e-b070-4168-b589-7a873f38b26d,428191000124101,Documentation of current medications,,
+2011-05-22,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,357d2c16-46f2-4eee-bf06-a8f7dae54e21,428191000124101,Documentation of current medications,,
+2012-12-21,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,80c5c9b5-25fe-4a2a-a9af-4d63f23b9364,73761001,Colonoscopy,,
+2013-07-09,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,d4873a37-b106-4979-9765-158f83d3fb8a,428191000124101,Documentation of current medications,,
+2015-05-17,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,705f4c34-d742-4a6a-9689-f63c1e502348,428191000124101,Documentation of current medications,,
+2016-09-10,a1ee9427-ca7f-4a35-b26b-18049cbda5fa,0b59d374-38a1-4680-94a0-cc5326b1348b,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2016-07-13,6718e33a-64fc-4d90-b839-9569ded2ab01,3b565df1-3d10-41f9-ab26-524f99d88d05,428191000124101,Documentation of current medications,,
+2016-10-29,6718e33a-64fc-4d90-b839-9569ded2ab01,3f897447-9d51-44e6-a24d-b29bbb54dd5d,428191000124101,Documentation of current medications,,
+2017-02-11,6718e33a-64fc-4d90-b839-9569ded2ab01,82942f0d-ff08-4ae4-9453-c24ee240267a,428191000124101,Documentation of current medications,,
+2007-10-12,ec5b001e-2bff-48c5-863b-f1a2d8ec1c3f,f8dacf0d-db23-454a-ba78-5dfb2649f1fa,428191000124101,Documentation of current medications,,
+2009-08-15,ec5b001e-2bff-48c5-863b-f1a2d8ec1c3f,18a955da-6dd7-4175-bfe2-e0f768328b37,428191000124101,Documentation of current medications,,
+2010-10-08,ec5b001e-2bff-48c5-863b-f1a2d8ec1c3f,2b4adaad-2a5d-480f-8dd1-b29227b32581,428191000124101,Documentation of current medications,,
+2014-08-30,ec5b001e-2bff-48c5-863b-f1a2d8ec1c3f,3b72654a-f66c-4870-a1d8-e3e4cfa7e426,428191000124101,Documentation of current medications,,
+2009-06-24,2d2608e6-c842-4098-a0da-d7d6d03f1723,2e83c33d-15cb-4d67-bf1d-775f8641162f,428191000124101,Documentation of current medications,,
+2010-01-25,2d2608e6-c842-4098-a0da-d7d6d03f1723,b9740bb1-d05d-4d66-b36b-e9ca42647672,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2009-01-18,f35362f4-b134-4877-bd5c-b85ad24e49ff,46a6fe3c-d27d-4244-9668-2bc79521535e,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2009-08-30,f35362f4-b134-4877-bd5c-b85ad24e49ff,6003d52e-4917-4ce6-949a-621d17271b95,237001001,Augmentation of labor,72892002,Normal pregnancy
+2009-08-30,f35362f4-b134-4877-bd5c-b85ad24e49ff,6003d52e-4917-4ce6-949a-621d17271b95,11466000,Cesarean section,72892002,Normal pregnancy
+2012-12-06,f35362f4-b134-4877-bd5c-b85ad24e49ff,ac99cfbb-c9de-4fa8-928c-5715188f577c,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2013-06-27,f35362f4-b134-4877-bd5c-b85ad24e49ff,54c8e6a0-e204-411b-9264-d48a1c6f524c,18946005,Epidural anesthesia,72892002,Normal pregnancy
+2013-06-27,f35362f4-b134-4877-bd5c-b85ad24e49ff,54c8e6a0-e204-411b-9264-d48a1c6f524c,65588006,Premature birth of newborn,72892002,Normal pregnancy
+2016-12-09,f35362f4-b134-4877-bd5c-b85ad24e49ff,1109da0c-e6bd-40ce-9247-529281559e36,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2007-07-01,4f8c30d5-3af0-4523-88d4-4a16c1f21535,ee3f0935-b334-4320-82ad-678350590729,428191000124101,Documentation of current medications,,
+2009-09-01,4f8c30d5-3af0-4523-88d4-4a16c1f21535,f95cb5ff-224f-425d-a545-53b7f4b9a1db,428191000124101,Documentation of current medications,,
+2010-08-25,4f8c30d5-3af0-4523-88d4-4a16c1f21535,6fc3ccc9-e821-4c3c-a981-b36e1bdf1192,428191000124101,Documentation of current medications,,
+2010-09-13,4f8c30d5-3af0-4523-88d4-4a16c1f21535,36b6cc92-ca69-4576-b51d-c1970d472c4b,395142003,Allergy screening test,,
+2010-10-06,4f8c30d5-3af0-4523-88d4-4a16c1f21535,9c3d4677-5bc5-4dc6-8af0-803d45cccb22,180256009,Subcutaneous immunotherapy,,
+2010-10-31,4f8c30d5-3af0-4523-88d4-4a16c1f21535,d77a6934-cf86-4b22-b489-4db57e9b4692,180256009,Subcutaneous immunotherapy,,
+2010-11-28,4f8c30d5-3af0-4523-88d4-4a16c1f21535,23a8ffc2-54ec-45a3-8039-7010e4a85334,180256009,Subcutaneous immunotherapy,,
+2010-12-26,4f8c30d5-3af0-4523-88d4-4a16c1f21535,68465670-dd0a-4f14-93a2-ded061dbbe5f,180256009,Subcutaneous immunotherapy,,
+2011-01-20,4f8c30d5-3af0-4523-88d4-4a16c1f21535,1610d69c-a9b3-4f7a-909f-896d48771ef5,180256009,Subcutaneous immunotherapy,,
+2011-02-15,4f8c30d5-3af0-4523-88d4-4a16c1f21535,e08b8daf-3954-4b59-b3a8-5975216130d0,180256009,Subcutaneous immunotherapy,,
+2011-03-14,4f8c30d5-3af0-4523-88d4-4a16c1f21535,30fa8ec6-c69b-447a-9e1e-5114c8cfb3be,180256009,Subcutaneous immunotherapy,,
+2011-04-10,4f8c30d5-3af0-4523-88d4-4a16c1f21535,fbb056bc-45a0-4aa2-86ea-20e2d4f44b53,180256009,Subcutaneous immunotherapy,,
+2011-05-06,4f8c30d5-3af0-4523-88d4-4a16c1f21535,eb131082-00e6-4a11-abb5-5d805c3fd8c9,180256009,Subcutaneous immunotherapy,,
+2011-06-01,4f8c30d5-3af0-4523-88d4-4a16c1f21535,c724aca1-0942-4556-b445-5e7528f7fa95,180256009,Subcutaneous immunotherapy,,
+2011-06-27,4f8c30d5-3af0-4523-88d4-4a16c1f21535,c3921683-828e-491a-abc0-2b6f2f9e3a9a,180256009,Subcutaneous immunotherapy,,
+2011-07-24,4f8c30d5-3af0-4523-88d4-4a16c1f21535,ed9af5ab-7652-4a85-9465-ba4890edc6f1,180256009,Subcutaneous immunotherapy,,
+2011-08-03,4f8c30d5-3af0-4523-88d4-4a16c1f21535,b0de7660-e635-4635-a806-339bf1e5eabd,428191000124101,Documentation of current medications,,
+2011-08-18,4f8c30d5-3af0-4523-88d4-4a16c1f21535,829b1c09-1ff5-4831-8075-5d69d8fb1672,180256009,Subcutaneous immunotherapy,,
+2011-09-15,4f8c30d5-3af0-4523-88d4-4a16c1f21535,2e4a85b1-17b5-4d06-941f-55ed80642b00,180256009,Subcutaneous immunotherapy,,
+2011-10-11,4f8c30d5-3af0-4523-88d4-4a16c1f21535,01cc0be5-23e1-4384-9123-6e1d62ef2483,180256009,Subcutaneous immunotherapy,,
+2011-11-04,4f8c30d5-3af0-4523-88d4-4a16c1f21535,2b67b4aa-f475-4590-87d4-7b331c1993aa,180256009,Subcutaneous immunotherapy,,
+2011-11-28,4f8c30d5-3af0-4523-88d4-4a16c1f21535,c2b7f12f-c2f4-497c-ae8e-3d3d3f9096c1,180256009,Subcutaneous immunotherapy,,
+2011-12-22,4f8c30d5-3af0-4523-88d4-4a16c1f21535,2b694a9f-7aff-4b2a-af21-b603e943c1b4,180256009,Subcutaneous immunotherapy,,
+2012-01-18,4f8c30d5-3af0-4523-88d4-4a16c1f21535,f63034b8-b6eb-4a29-89bd-1dc2bc6fa419,180256009,Subcutaneous immunotherapy,,
+2012-02-11,4f8c30d5-3af0-4523-88d4-4a16c1f21535,c1ece4e0-1147-4b66-952c-acdc1f677552,180256009,Subcutaneous immunotherapy,,
+2012-03-09,4f8c30d5-3af0-4523-88d4-4a16c1f21535,9922da36-b5be-4da9-8b28-68df8f119d70,180256009,Subcutaneous immunotherapy,,
+2012-04-03,4f8c30d5-3af0-4523-88d4-4a16c1f21535,7fd01a3e-d6ae-45d1-bd12-6e2a5693eadb,180256009,Subcutaneous immunotherapy,,
+2012-04-28,4f8c30d5-3af0-4523-88d4-4a16c1f21535,5962e255-3153-442f-8514-569abd40d887,180256009,Subcutaneous immunotherapy,,
+2012-05-23,4f8c30d5-3af0-4523-88d4-4a16c1f21535,79ce7e3c-dd7b-4feb-8ac8-54c7dec6a351,180256009,Subcutaneous immunotherapy,,
+2012-06-15,4f8c30d5-3af0-4523-88d4-4a16c1f21535,9bc43724-9a25-446c-8191-da3732286b1d,180256009,Subcutaneous immunotherapy,,
+2012-07-12,4f8c30d5-3af0-4523-88d4-4a16c1f21535,1daeb0fd-eed3-4f03-bbc5-430b5c1d80e6,180256009,Subcutaneous immunotherapy,,
+2012-08-06,4f8c30d5-3af0-4523-88d4-4a16c1f21535,5df9bcae-152b-409b-b6ad-09f00007650b,180256009,Subcutaneous immunotherapy,,
+2012-08-31,4f8c30d5-3af0-4523-88d4-4a16c1f21535,5cc990e4-b9a2-4a32-b227-480ddc1ebb19,180256009,Subcutaneous immunotherapy,,
+2012-09-27,4f8c30d5-3af0-4523-88d4-4a16c1f21535,8074d709-2837-49d0-829c-8797ec3a8cc4,180256009,Subcutaneous immunotherapy,,
+2012-10-25,4f8c30d5-3af0-4523-88d4-4a16c1f21535,9610c167-6774-4d06-bdff-f97f7a1eabbe,180256009,Subcutaneous immunotherapy,,
+2012-11-20,4f8c30d5-3af0-4523-88d4-4a16c1f21535,f9d4c834-d36b-455f-8c71-e27b041685dd,180256009,Subcutaneous immunotherapy,,
+2012-12-12,4f8c30d5-3af0-4523-88d4-4a16c1f21535,096082f2-fc2a-4020-9975-29acae4d8e20,180256009,Subcutaneous immunotherapy,,
+2013-01-07,4f8c30d5-3af0-4523-88d4-4a16c1f21535,3bd0512c-f8ae-4261-94d5-68e36bd7b67d,180256009,Subcutaneous immunotherapy,,
+2013-01-30,4f8c30d5-3af0-4523-88d4-4a16c1f21535,1dab39d4-e9c9-45a8-bb24-390ceddc0e69,180256009,Subcutaneous immunotherapy,,
+2013-02-22,4f8c30d5-3af0-4523-88d4-4a16c1f21535,c3ace1f8-8c76-4bac-8102-8c88d00c85bf,180256009,Subcutaneous immunotherapy,,
+2013-03-19,4f8c30d5-3af0-4523-88d4-4a16c1f21535,7a81d0bb-b5e5-4c3c-9561-289007ec960b,180256009,Subcutaneous immunotherapy,,
+2013-04-15,4f8c30d5-3af0-4523-88d4-4a16c1f21535,026e41f0-91ac-4690-9d01-1f6a3c772f62,180256009,Subcutaneous immunotherapy,,
+2013-05-10,4f8c30d5-3af0-4523-88d4-4a16c1f21535,f110ca5e-6278-4a8b-b2d8-bc85d37f860d,180256009,Subcutaneous immunotherapy,,
+2013-06-06,4f8c30d5-3af0-4523-88d4-4a16c1f21535,9f45da4e-a78b-4827-841e-8ea75d96e966,180256009,Subcutaneous immunotherapy,,
+2013-06-28,4f8c30d5-3af0-4523-88d4-4a16c1f21535,c9297857-e98c-4ed9-931d-6924a7d8cffd,180256009,Subcutaneous immunotherapy,,
+2013-07-15,4f8c30d5-3af0-4523-88d4-4a16c1f21535,264cc37b-e703-47b9-9bfa-eff0f5e93cbe,428191000124101,Documentation of current medications,,
+2013-07-24,4f8c30d5-3af0-4523-88d4-4a16c1f21535,87d5b968-62dc-4506-b37e-3872a0d91696,180256009,Subcutaneous immunotherapy,,
+2013-08-17,4f8c30d5-3af0-4523-88d4-4a16c1f21535,2c922d20-8d5a-476f-be28-ad2631237a12,180256009,Subcutaneous immunotherapy,,
+2013-09-08,4f8c30d5-3af0-4523-88d4-4a16c1f21535,995477cd-215e-4e77-b5d4-30a411ed0395,180256009,Subcutaneous immunotherapy,,
+2013-10-02,4f8c30d5-3af0-4523-88d4-4a16c1f21535,8ae754e1-0e19-4755-9486-02b3acdf3662,180256009,Subcutaneous immunotherapy,,
+2013-10-25,4f8c30d5-3af0-4523-88d4-4a16c1f21535,64030e56-f754-4506-8e7f-df251ce5390c,180256009,Subcutaneous immunotherapy,,
+2013-11-21,4f8c30d5-3af0-4523-88d4-4a16c1f21535,fd4b227d-d7c1-4803-bf96-e064ba43e899,180256009,Subcutaneous immunotherapy,,
+2013-12-15,4f8c30d5-3af0-4523-88d4-4a16c1f21535,a6b2bad6-8ae7-447c-9397-2181cce0cd3d,180256009,Subcutaneous immunotherapy,,
+2014-01-12,4f8c30d5-3af0-4523-88d4-4a16c1f21535,0849d80b-16c7-4999-8bf2-a89ab7fde98c,180256009,Subcutaneous immunotherapy,,
+2014-02-03,4f8c30d5-3af0-4523-88d4-4a16c1f21535,75ea8150-8416-4ed1-bb59-ea77909f4172,180256009,Subcutaneous immunotherapy,,
+2014-02-24,4f8c30d5-3af0-4523-88d4-4a16c1f21535,7e090bef-13aa-475b-ae3d-f1f1c59de726,180256009,Subcutaneous immunotherapy,,
+2014-03-23,4f8c30d5-3af0-4523-88d4-4a16c1f21535,a4b8ae38-e247-4171-8d9d-243d9ee114df,180256009,Subcutaneous immunotherapy,,
+2014-04-14,4f8c30d5-3af0-4523-88d4-4a16c1f21535,a0d2c2c0-33fc-40a7-b58a-47bf2f7d0976,180256009,Subcutaneous immunotherapy,,
+2014-05-08,4f8c30d5-3af0-4523-88d4-4a16c1f21535,d1b19493-8ad2-43d6-aeb2-9200755f246f,180256009,Subcutaneous immunotherapy,,
+2014-06-03,4f8c30d5-3af0-4523-88d4-4a16c1f21535,838e64db-bc06-4eca-97b8-88f64cabeeb4,180256009,Subcutaneous immunotherapy,,
+2014-06-25,4f8c30d5-3af0-4523-88d4-4a16c1f21535,92cec430-d0ee-4c14-93d3-66dcb5b488da,180256009,Subcutaneous immunotherapy,,
+2014-07-22,4f8c30d5-3af0-4523-88d4-4a16c1f21535,3662635e-a594-4bef-a9fe-dca56be2e708,180256009,Subcutaneous immunotherapy,,
+2014-08-17,4f8c30d5-3af0-4523-88d4-4a16c1f21535,5c604bc3-1718-405f-9759-eb82fb31dc9a,180256009,Subcutaneous immunotherapy,,
+2014-09-14,4f8c30d5-3af0-4523-88d4-4a16c1f21535,19c063a8-ac77-4527-83f0-30c80802e2ea,180256009,Subcutaneous immunotherapy,,
+2014-10-09,4f8c30d5-3af0-4523-88d4-4a16c1f21535,680a9c8a-e870-4700-a7c1-539e2aaf8f62,180256009,Subcutaneous immunotherapy,,
+2014-11-04,4f8c30d5-3af0-4523-88d4-4a16c1f21535,5eff600b-dacc-43fa-959b-7d557315efae,180256009,Subcutaneous immunotherapy,,
+2014-11-28,4f8c30d5-3af0-4523-88d4-4a16c1f21535,e475abd8-0c03-47f4-9688-9820d96f9e30,395142003,Allergy screening test,,
+2016-10-27,4f8c30d5-3af0-4523-88d4-4a16c1f21535,066902df-fa82-46d8-b33c-c7e244f5b792,428191000124101,Documentation of current medications,,
+2010-08-28,1398c856-71f0-4069-986b-785112f5a603,0bca1bfe-1eaa-4005-afe1-4167a22852e7,428191000124101,Documentation of current medications,,
+2014-12-12,1398c856-71f0-4069-986b-785112f5a603,bda8397c-f7a7-4410-8a96-01f021afd052,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2016-11-07,1398c856-71f0-4069-986b-785112f5a603,b38e2a7c-4a83-40e6-9b2f-6445c1201cdd,428191000124101,Documentation of current medications,,
+2008-03-02,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,dd0d63a1-b3c5-4059-a2e7-c5a590d671d7,428191000124101,Documentation of current medications,,
+2009-03-11,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,0cfadda3-7666-476f-a322-311dab614561,127783003,Spirometry (procedure),87433001,Pulmonary emphysema (disorder)
+2010-03-26,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,9ea35e33-52c6-45c2-9b52-fbb6277101ca,127783003,Spirometry (procedure),87433001,Pulmonary emphysema (disorder)
+2010-03-26,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,9ea35e33-52c6-45c2-9b52-fbb6277101ca,428191000124101,Documentation of current medications,,
+2011-04-23,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,63c0183e-4c30-4e38-bfff-ac6db09d1e9e,127783003,Spirometry (procedure),87433001,Pulmonary emphysema (disorder)
+2011-04-23,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,63c0183e-4c30-4e38-bfff-ac6db09d1e9e,428191000124101,Documentation of current medications,,
+2012-05-27,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,4ce95d7c-0824-4a27-874c-58bf821158e9,127783003,Spirometry (procedure),87433001,Pulmonary emphysema (disorder)
+2012-05-27,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,4ce95d7c-0824-4a27-874c-58bf821158e9,428191000124101,Documentation of current medications,,
+2013-01-03,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,cd4322d5-2ac7-48e3-9cb8-d9589f5fb7af,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2013-06-05,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,8a89a7d4-a8ca-451b-a1d8-7d6a25c212ed,127783003,Spirometry (procedure),87433001,Pulmonary emphysema (disorder)
+2014-03-26,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,1bd3c1f8-d960-4a4a-a90e-fcb11a53ee69,399208008,Plain chest X-ray (procedure),162573006,Suspected lung cancer (situation)
+2014-04-02,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,9268de6e-6811-4924-adfd-e254a13bf052,418891003,Computed tomography of chest and abdomen,162573006,Suspected lung cancer (situation)
+2014-04-06,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,4a6316cc-8e04-4198-97a3-8d586568ca97,173160006,Diagnostic fiberoptic bronchoscopy (procedure),162573006,Suspected lung cancer (situation)
+2014-04-08,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,b2f56722-f8be-4118-94ee-762f711ae06e,698354004,Magnetic resonance imaging for measurement of brain volume (procedure),424132000,Non-small cell carcinoma of lung  TNM stage 1 (disorder)
+2014-04-08,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,b2f56722-f8be-4118-94ee-762f711ae06e,703423002,Combined chemotherapy and radiation therapy (procedure),424132000,Non-small cell carcinoma of lung  TNM stage 1 (disorder)
+2014-05-07,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,048c9c3d-6236-4f34-b687-124a28fcba05,703423002,Combined chemotherapy and radiation therapy (procedure),424132000,Non-small cell carcinoma of lung  TNM stage 1 (disorder)
+2014-06-08,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,329fd7d0-e467-4da0-8179-644be25d3821,703423002,Combined chemotherapy and radiation therapy (procedure),424132000,Non-small cell carcinoma of lung  TNM stage 1 (disorder)
+2014-06-19,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,0a6865de-637f-4e2e-a129-4a27a56cd9ef,127783003,Spirometry (procedure),87433001,Pulmonary emphysema (disorder)
+2014-06-19,2ae9a9b8-df7f-459d-b097-84f1b7d0ae61,0a6865de-637f-4e2e-a129-4a27a56cd9ef,428191000124101,Documentation of current medications,,
+2012-07-14,0f940a6b-196b-4320-b1e1-93d7409cb369,fadf2701-d187-47d3-b29f-6b528f37a517,428191000124101,Documentation of current medications,,
+2012-08-22,0f940a6b-196b-4320-b1e1-93d7409cb369,36f61fb5-7bc3-44f4-ba6c-4920b50bcc41,428191000124101,Documentation of current medications,,
+2012-10-30,0f940a6b-196b-4320-b1e1-93d7409cb369,808b6166-9f2e-4ba9-a9d4-200421be396c,428191000124101,Documentation of current medications,,
+2012-12-31,0f940a6b-196b-4320-b1e1-93d7409cb369,fdc266bd-304f-4125-8f8a-b339d76eb068,428191000124101,Documentation of current medications,,
+2013-07-16,0f940a6b-196b-4320-b1e1-93d7409cb369,4ea85f04-409c-46d6-920e-1851b2f76976,428191000124101,Documentation of current medications,,
+2010-06-21,5941ce14-61f9-4cc9-8df1-106eef22b60a,bfe96550-5c65-4f66-995e-2e313cf16144,428191000124101,Documentation of current medications,,
+2015-10-10,5941ce14-61f9-4cc9-8df1-106eef22b60a,c45620f2-f7bb-470e-8c56-71559f25e2d9,428191000124101,Documentation of current medications,,
+2011-09-02,e421e3a4-9a51-4cad-a00a-4083f75e2de3,ea01ac9c-d516-4bbf-b8d8-db7cb78318d2,399208008,Plain chest X-ray (procedure),162573006,Suspected lung cancer (situation)
+2011-09-08,e421e3a4-9a51-4cad-a00a-4083f75e2de3,8b41f5e7-f291-4a71-92ce-2eedb5ce7f70,418891003,Computed tomography of chest and abdomen,162573006,Suspected lung cancer (situation)
+2011-09-12,e421e3a4-9a51-4cad-a00a-4083f75e2de3,4a070442-045a-4d64-9ed2-867504a5ae44,173160006,Diagnostic fiberoptic bronchoscopy (procedure),162573006,Suspected lung cancer (situation)
+2011-09-14,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,698354004,Magnetic resonance imaging for measurement of brain volume (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2011-09-14,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2011-10-18,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2011-10-27,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,428191000124101,Documentation of current medications,,
+2011-11-19,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2011-12-22,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-01-20,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-02-09,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,73761001,Colonoscopy,,
+2012-02-24,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-03-26,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-04-25,e421e3a4-9a51-4cad-a00a-4083f75e2de3,e7449314-967f-47cf-9104-fdc458f05bae,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2013-03-20,b91ff5ec-ea15-48b9-a979-3540e1d2abf7,600d1b78-999b-4e42-bd18-4d90adf18f29,428191000124101,Documentation of current medications,,
+2013-07-09,b91ff5ec-ea15-48b9-a979-3540e1d2abf7,ed922279-bb82-4dca-9349-fe8d3a9b2e36,428191000124101,Documentation of current medications,,
+2014-07-27,b91ff5ec-ea15-48b9-a979-3540e1d2abf7,7c8e0ea5-a45f-40f7-8cbc-bb98af1f9277,428191000124101,Documentation of current medications,,
+2015-12-22,b91ff5ec-ea15-48b9-a979-3540e1d2abf7,7f6e1acd-f0c7-4b6a-aa10-3b548ede39bc,428191000124101,Documentation of current medications,,
+2016-08-31,b91ff5ec-ea15-48b9-a979-3540e1d2abf7,c4c66467-4ec8-4d7d-bada-b2f8aabaa8ef,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2017-01-18,b91ff5ec-ea15-48b9-a979-3540e1d2abf7,5359f084-68ca-473d-8644-1398ca1e05ee,428191000124101,Documentation of current medications,,
+2007-11-24,387749ac-cd9c-46a8-ac8c-a7d46bc8fafe,4f08d4c5-767a-4306-89c6-303661320284,428191000124101,Documentation of current medications,,
+2013-06-25,387749ac-cd9c-46a8-ac8c-a7d46bc8fafe,606b8f80-0a8f-40ca-a5a3-087bfd1ddd58,428191000124101,Documentation of current medications,,
+2014-02-27,387749ac-cd9c-46a8-ac8c-a7d46bc8fafe,fc236349-c663-4d06-b039-d75d6223ed22,274474001,Bone immobilization,65966004,Fracture of forearm
+2011-04-07,488bc65c-4294-4108-a549-b3a7e6d46adf,b04f4d70-3443-4dd2-8642-245e1e151d8f,288086009,Suture open wound,284551006,Laceration of foot
+2011-12-13,488bc65c-4294-4108-a549-b3a7e6d46adf,1d417b51-01c5-40dd-a516-907cbf540358,428191000124101,Documentation of current medications,,
+2012-05-07,488bc65c-4294-4108-a549-b3a7e6d46adf,4289d594-9e1f-45e3-a856-72bc37940649,288086009,Suture open wound,284549007,Laceration of hand
+2012-05-07,488bc65c-4294-4108-a549-b3a7e6d46adf,4289d594-9e1f-45e3-a856-72bc37940649,384700001,Injection of tetanus antitoxin,284549007,Laceration of hand
+2016-04-17,488bc65c-4294-4108-a549-b3a7e6d46adf,d50fc0d3-6e15-4dd9-b8ca-a4de108e56da,428191000124101,Documentation of current medications,,
+2016-04-26,488bc65c-4294-4108-a549-b3a7e6d46adf,274e1de1-98ae-4a47-9fb8-2fb9ac22849e,288086009,Suture open wound,283385000,Laceration of thigh
+2017-04-26,488bc65c-4294-4108-a549-b3a7e6d46adf,52dd0b9c-3b91-43a6-b5b4-207c6c2e978f,428191000124101,Documentation of current medications,,
+2008-01-14,8486e3d7-25c4-464b-abe1-414fc555ab9e,21b0db64-cc36-4de3-8902-a7c45f36f0ac,428191000124101,Documentation of current medications,,
+2017-01-12,8486e3d7-25c4-464b-abe1-414fc555ab9e,6e2fbd7a-dfc3-4d86-8e48-9e8be2829ee1,428191000124101,Documentation of current medications,,
+2010-07-09,16440d8c-cab3-4427-8a71-4519774e2408,b993e7c4-88d2-4942-ad0f-6f1229d8e6d6,73761001,Colonoscopy,,
+2010-11-16,16440d8c-cab3-4427-8a71-4519774e2408,2ba2bb57-ac7d-46b9-a3ad-d33298f086dd,428191000124101,Documentation of current medications,,
+2011-01-20,16440d8c-cab3-4427-8a71-4519774e2408,769b7023-cca0-49b3-b4dd-6cecd8dd308c,274474001,Bone immobilization,16114001,Fracture of ankle
+2012-12-06,16440d8c-cab3-4427-8a71-4519774e2408,2093f53b-9369-479a-91b0-7c46a68d4045,428191000124101,Documentation of current medications,,
+2013-03-02,16440d8c-cab3-4427-8a71-4519774e2408,fb48ad8e-7d07-473c-add3-d3a164c17bad,80146002,Appendectomy,74400008,Appendicitis
+2014-10-29,16440d8c-cab3-4427-8a71-4519774e2408,5ba25501-a3c2-4eda-bdff-f73729a489c0,428191000124101,Documentation of current medications,,
+2015-07-09,16440d8c-cab3-4427-8a71-4519774e2408,d8802361-1959-4f25-be9b-61e36f86238b,73761001,Colonoscopy,,
+2015-10-10,16440d8c-cab3-4427-8a71-4519774e2408,040fef6c-e2b5-4ef0-90d8-bdcb2a5b1ce0,428191000124101,Documentation of current medications,,
+2016-11-20,16440d8c-cab3-4427-8a71-4519774e2408,c59ad86c-3590-44e2-ac7b-7de7733b52bb,428191000124101,Documentation of current medications,,
+2007-06-05,1d62a222-4183-4327-b4a5-71108b96c7aa,06349f6f-f03d-4491-982a-d67657799897,428191000124101,Documentation of current medications,,
+2007-11-14,1d62a222-4183-4327-b4a5-71108b96c7aa,8a06f088-de8f-44ea-b438-a6e32d2087f6,73761001,Colonoscopy,,
+2007-11-14,1d62a222-4183-4327-b4a5-71108b96c7aa,8a06f088-de8f-44ea-b438-a6e32d2087f6,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2007-11-14,1d62a222-4183-4327-b4a5-71108b96c7aa,8a06f088-de8f-44ea-b438-a6e32d2087f6,274031008,Rectal polypectomy,68496003,Polyp of colon
+2009-01-19,1d62a222-4183-4327-b4a5-71108b96c7aa,20667478-508e-4ad3-894a-4ca2ccc5ee8a,73761001,Colonoscopy,,
+2009-01-19,1d62a222-4183-4327-b4a5-71108b96c7aa,20667478-508e-4ad3-894a-4ca2ccc5ee8a,274031008,Rectal polypectomy,713197008,Recurrent rectal polyp
+2009-02-01,1d62a222-4183-4327-b4a5-71108b96c7aa,38798392-1212-4b4f-972a-66ea62d2992b,43075005,Partial resection of colon,363406005,Malignant tumor of colon
+2009-02-28,1d62a222-4183-4327-b4a5-71108b96c7aa,78a88e1f-6a3b-405e-ba6b-b7a074ad5b9b,703423002,Combined chemotherapy and radiation therapy (procedure),363406005,Malignant tumor of colon
+2009-03-02,1d62a222-4183-4327-b4a5-71108b96c7aa,6b3058dc-9023-486b-a69f-771a70cd3d6b,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2009-04-02,1d62a222-4183-4327-b4a5-71108b96c7aa,5a90447a-5b03-41bb-92f4-4eea38d9770e,703423002,Combined chemotherapy and radiation therapy (procedure),363406005,Malignant tumor of colon
+2009-04-30,1d62a222-4183-4327-b4a5-71108b96c7aa,9a1e138f-35b5-4b5b-8db1-9c3aedc79a24,703423002,Combined chemotherapy and radiation therapy (procedure),363406005,Malignant tumor of colon
+2009-05-29,1d62a222-4183-4327-b4a5-71108b96c7aa,32358594-3595-4d7a-9647-071ba00a6ee4,703423002,Combined chemotherapy and radiation therapy (procedure),363406005,Malignant tumor of colon
+2009-06-30,1d62a222-4183-4327-b4a5-71108b96c7aa,d33c6dbc-b7b1-4157-8355-918a6b8cd10b,703423002,Combined chemotherapy and radiation therapy (procedure),363406005,Malignant tumor of colon
+2009-07-30,1d62a222-4183-4327-b4a5-71108b96c7aa,a22475f9-9c76-4d7c-9cce-edada8d0fd62,703423002,Combined chemotherapy and radiation therapy (procedure),363406005,Malignant tumor of colon
+2009-08-19,1d62a222-4183-4327-b4a5-71108b96c7aa,2990adf1-8cf5-4fbe-be0a-af0d55243d21,428191000124101,Documentation of current medications,,
+2010-02-06,1d62a222-4183-4327-b4a5-71108b96c7aa,2d5fdce4-63f1-48ad-8879-74109f02df37,433112001,Percutaneous mechanical thrombectomy of portal vein using fluoroscopic guidance,,
+2009-02-19,10a31d31-642b-44e4-9ffe-d267c8acde27,3ca36694-5b9f-43f4-be93-026d4c8081d9,428191000124101,Documentation of current medications,,
+2009-06-09,10a31d31-642b-44e4-9ffe-d267c8acde27,ecdc74c1-73e5-4131-9f22-5c5a62fd25b2,428191000124101,Documentation of current medications,,
+2009-08-21,10a31d31-642b-44e4-9ffe-d267c8acde27,d1ba10e2-4636-4e4b-9ddb-ca14bb8ec2d6,428191000124101,Documentation of current medications,,
+2010-06-14,10a31d31-642b-44e4-9ffe-d267c8acde27,10b9a880-7e66-4f59-a87f-6a1d4f16ef46,428191000124101,Documentation of current medications,,
+2010-09-05,10a31d31-642b-44e4-9ffe-d267c8acde27,217b67a4-f5a7-4aea-aad7-86a9f2386025,428191000124101,Documentation of current medications,,
+2011-02-15,10a31d31-642b-44e4-9ffe-d267c8acde27,a8e65edd-b055-4f3d-8e32-62dda38d1732,428191000124101,Documentation of current medications,,
+2011-08-16,10a31d31-642b-44e4-9ffe-d267c8acde27,74ca784b-6cfd-444f-88a1-912ec47f6ff8,428191000124101,Documentation of current medications,,
+2012-01-04,10a31d31-642b-44e4-9ffe-d267c8acde27,75e948d6-297b-4cc3-b08e-e7be578b5468,428191000124101,Documentation of current medications,,
+2013-01-20,10a31d31-642b-44e4-9ffe-d267c8acde27,e6a8447c-7bb3-42f4-a6a0-a25efb5454a4,428191000124101,Documentation of current medications,,
+2014-01-10,10a31d31-642b-44e4-9ffe-d267c8acde27,fffd36e4-55f6-4c87-bd48-209c33bdcbcb,428191000124101,Documentation of current medications,,
+2014-04-15,10a31d31-642b-44e4-9ffe-d267c8acde27,45a766f2-4517-4b05-991b-26ae3bdae1a0,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2014-05-20,10a31d31-642b-44e4-9ffe-d267c8acde27,31c59dc7-66f1-4a66-9bb0-00deccd0132f,428191000124101,Documentation of current medications,,
+2014-09-12,10a31d31-642b-44e4-9ffe-d267c8acde27,258428ce-baaa-479d-baa4-75153baf4a93,305428000,Admission to orthopedic department,58150001,Fracture of clavicle
+2015-01-24,10a31d31-642b-44e4-9ffe-d267c8acde27,4d7cdb9a-e8cf-491e-adab-e349d9f1de85,428191000124101,Documentation of current medications,,
+2015-09-22,10a31d31-642b-44e4-9ffe-d267c8acde27,e22eae68-0cb6-49c1-8490-07bdeab7488f,428191000124101,Documentation of current medications,,
+2009-03-24,60e19be8-c3ac-4141-822f-e717a9a3e8fe,8f637a43-5c52-454c-92d0-b7218a0bc7c5,428191000124101,Documentation of current medications,,
+2010-11-29,60e19be8-c3ac-4141-822f-e717a9a3e8fe,af04e587-dbfe-40f1-9b9e-00b92994d27d,428191000124101,Documentation of current medications,,
+2012-03-25,60e19be8-c3ac-4141-822f-e717a9a3e8fe,8af6bc23-af5c-4c58-a1ae-966a5a6037c6,428191000124101,Documentation of current medications,,
+2013-04-19,60e19be8-c3ac-4141-822f-e717a9a3e8fe,04244148-eb0e-40a9-bd48-19357086c114,428191000124101,Documentation of current medications,,
+2013-05-03,60e19be8-c3ac-4141-822f-e717a9a3e8fe,bd08c0db-daab-455d-89f5-d7fd66aa3dd2,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2014-04-03,60e19be8-c3ac-4141-822f-e717a9a3e8fe,10e399c4-bb17-4157-81af-00769df5fbd5,428191000124101,Documentation of current medications,,
+2015-03-13,60e19be8-c3ac-4141-822f-e717a9a3e8fe,a0f7cc27-691b-4cdd-8cc0-9f5f03b1d479,428191000124101,Documentation of current medications,,
+2016-02-13,60e19be8-c3ac-4141-822f-e717a9a3e8fe,2c785959-ca27-41ee-a40b-e7960779f6b9,428191000124101,Documentation of current medications,,
+2017-01-06,60e19be8-c3ac-4141-822f-e717a9a3e8fe,7984d734-8d0f-413d-8b16-6ec6b0420e78,428191000124101,Documentation of current medications,,
+2008-02-25,288ebc36-701a-4a9a-9767-cf61fd6d1ce2,a672bff5-5ff1-4619-bf21-0e6a5a195977,428191000124101,Documentation of current medications,,
+2011-03-11,288ebc36-701a-4a9a-9767-cf61fd6d1ce2,e2007319-8595-4416-b3a2-a5a74506b9ae,428191000124101,Documentation of current medications,,
+2014-08-24,288ebc36-701a-4a9a-9767-cf61fd6d1ce2,d9bddb49-2b2e-4005-881f-375e883f0698,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2017-01-30,288ebc36-701a-4a9a-9767-cf61fd6d1ce2,91f4ef7f-0ea7-42d9-89fa-21351a0efeda,428191000124101,Documentation of current medications,,
+2007-08-11,47764130-8832-47fd-a0f1-e030cc2ff245,1729a869-cff0-417d-8545-bae75b13e3ed,428191000124101,Documentation of current medications,,
+2008-03-08,47764130-8832-47fd-a0f1-e030cc2ff245,d00cbf6e-cbe5-407f-a659-0869b4ddc2cd,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2008-08-09,47764130-8832-47fd-a0f1-e030cc2ff245,7e63ea33-b46f-4851-a9d5-336107599287,428191000124101,Documentation of current medications,,
+2010-08-09,47764130-8832-47fd-a0f1-e030cc2ff245,cf158b62-7661-4d42-8e72-8f7cd8b6af76,428191000124101,Documentation of current medications,,
+2013-10-05,47764130-8832-47fd-a0f1-e030cc2ff245,4d2ec648-53bd-494e-9bea-b5257da79f78,428191000124101,Documentation of current medications,,
+2015-08-09,47764130-8832-47fd-a0f1-e030cc2ff245,c0c191ad-455c-4691-b367-11982eb9921f,428191000124101,Documentation of current medications,,
+2012-01-08,70f0792e-f669-428f-b615-845d0fbe1b0f,f3902bc3-0ff1-4196-bca9-2b075a4c316e,428191000124101,Documentation of current medications,,
+2015-12-10,70f0792e-f669-428f-b615-845d0fbe1b0f,0ac6df6f-d7fb-4771-8e19-3cfe0260007c,428191000124101,Documentation of current medications,,
+2007-06-26,df86220e-ecb6-4f5d-a2d5-95c233c26710,e3b9a153-ad1e-4414-9c00-df5637100ab5,428191000124101,Documentation of current medications,,
+2007-08-03,df86220e-ecb6-4f5d-a2d5-95c233c26710,aa717031-892c-4193-8866-641c315b2b9b,428191000124101,Documentation of current medications,,
+2007-10-17,df86220e-ecb6-4f5d-a2d5-95c233c26710,951b0599-adcc-4904-9600-be700e832615,428191000124101,Documentation of current medications,,
+2008-01-01,df86220e-ecb6-4f5d-a2d5-95c233c26710,75225138-d811-4d68-9fe6-7de9adf6788b,428191000124101,Documentation of current medications,,
+2008-10-19,df86220e-ecb6-4f5d-a2d5-95c233c26710,27cf6982-409e-4a93-9994-3e5c0f0144c7,428191000124101,Documentation of current medications,,
+2009-06-08,df86220e-ecb6-4f5d-a2d5-95c233c26710,c82ed593-4f8b-4b17-a600-be88777c2a9f,305428000,Admission to orthopedic department,58150001,Fracture of clavicle
+2010-08-25,df86220e-ecb6-4f5d-a2d5-95c233c26710,8cbe253b-3ed2-4c9b-a2e3-05e07094d67f,428191000124101,Documentation of current medications,,
+2011-07-09,df86220e-ecb6-4f5d-a2d5-95c233c26710,13109f03-5a99-4575-9776-dd55842f4cb1,288086009,Suture open wound,284549007,Laceration of hand
+2011-07-09,df86220e-ecb6-4f5d-a2d5-95c233c26710,13109f03-5a99-4575-9776-dd55842f4cb1,384700001,Injection of tetanus antitoxin,284549007,Laceration of hand
+2011-09-06,df86220e-ecb6-4f5d-a2d5-95c233c26710,6502a255-bd90-4b5b-8b67-9e2a529c40ea,428191000124101,Documentation of current medications,,
+2012-10-13,df86220e-ecb6-4f5d-a2d5-95c233c26710,ba42e34c-985e-4223-9f56-5d44f4384112,428191000124101,Documentation of current medications,,
+2016-03-06,df86220e-ecb6-4f5d-a2d5-95c233c26710,649d87c3-3698-4aa9-a149-6614e2c1999b,428191000124101,Documentation of current medications,,
+2017-02-09,df86220e-ecb6-4f5d-a2d5-95c233c26710,a258e9e2-8fa8-4870-85ab-0f7090cb4a2e,428191000124101,Documentation of current medications,,
+2016-05-02,3e3a02b1-039d-4df2-bb38-d36396762098,640abd3f-a460-404c-aa9d-224b28c50b8a,428191000124101,Documentation of current medications,,
+2016-11-02,3e3a02b1-039d-4df2-bb38-d36396762098,ae77d8da-016b-44c1-acb0-722c2e15e31e,428191000124101,Documentation of current medications,,
+2008-01-30,c78e9f59-b95b-46bf-a02a-fda0de5a261e,748cd426-3ae1-46eb-8bec-983a3f248818,428191000124101,Documentation of current medications,,
+2009-11-27,c78e9f59-b95b-46bf-a02a-fda0de5a261e,ab84ff08-7ca8-45c6-b6fe-e84ab6675c40,428191000124101,Documentation of current medications,,
+2011-01-20,c78e9f59-b95b-46bf-a02a-fda0de5a261e,69e5c765-f944-4c50-b92b-c4a595ef68f9,428191000124101,Documentation of current medications,,
+2012-02-17,c78e9f59-b95b-46bf-a02a-fda0de5a261e,138a6cad-7dfb-4c49-b582-107b7845ad68,428191000124101,Documentation of current medications,,
+2013-01-08,c78e9f59-b95b-46bf-a02a-fda0de5a261e,6d9ef4c0-5030-41b5-a2e9-3fd7b9f95491,428191000124101,Documentation of current medications,,
+2009-08-11,59777681-3bec-416d-a1e4-2da68de3229d,d290640e-924c-49dd-8857-cb735c5b0e80,428191000124101,Documentation of current medications,,
+2010-09-26,59777681-3bec-416d-a1e4-2da68de3229d,9d1be93a-8a4e-46af-a25a-116a48ba8e08,428191000124101,Documentation of current medications,,
+2011-05-31,59777681-3bec-416d-a1e4-2da68de3229d,4352cc4a-fdd5-42d2-a197-1ccadfcc3e3c,428191000124101,Documentation of current medications,,
+2013-03-27,59777681-3bec-416d-a1e4-2da68de3229d,c16eb755-c9ec-487b-ba14-5a4d942777cc,428191000124101,Documentation of current medications,,
+2013-09-03,59777681-3bec-416d-a1e4-2da68de3229d,47d0a417-b2bb-41d8-9644-f24eb416a59c,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2010-08-12,cd5cf1f6-b98b-404e-af4f-6dd9bb8a1cea,0247b57e-6940-4e59-a401-915ed5aa5841,428191000124101,Documentation of current medications,,
+2013-02-28,cd5cf1f6-b98b-404e-af4f-6dd9bb8a1cea,fd227767-df81-4cb2-9857-4a4ecc97de67,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2014-11-29,cd5cf1f6-b98b-404e-af4f-6dd9bb8a1cea,d5cbd37e-41fc-4656-ae3f-13ef676ad12e,428191000124101,Documentation of current medications,,
+2007-10-23,288108c5-054f-411f-96b9-eeadbe79aa48,ef90d641-99da-4ec8-88af-3bf98f68e704,428191000124101,Documentation of current medications,,
+2008-03-23,288108c5-054f-411f-96b9-eeadbe79aa48,cd466be2-9112-427b-8a20-fc71d2b17f2a,288086009,Suture open wound,370247008,Facial laceration
+2008-12-04,288108c5-054f-411f-96b9-eeadbe79aa48,f38a65b0-7790-4634-83ef-e1cf4d4865cf,428191000124101,Documentation of current medications,,
+2009-11-16,288108c5-054f-411f-96b9-eeadbe79aa48,16398072-be4c-47e9-9226-38a3f1ff64f7,428191000124101,Documentation of current medications,,
+2010-11-01,288108c5-054f-411f-96b9-eeadbe79aa48,e401ce32-ba51-4756-9e6b-50055bd520e6,428191000124101,Documentation of current medications,,
+2011-05-25,288108c5-054f-411f-96b9-eeadbe79aa48,eee8ad85-7953-4f0a-88ce-5c57c8660956,288086009,Suture open wound,370247008,Facial laceration
+2012-01-02,288108c5-054f-411f-96b9-eeadbe79aa48,0fb5a9fa-0988-48e1-8d8a-7ded37b3be52,428191000124101,Documentation of current medications,,
+2017-04-06,288108c5-054f-411f-96b9-eeadbe79aa48,0e629083-e6be-4f96-b83f-bdf37589ff2c,428191000124101,Documentation of current medications,,
+2007-10-11,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,81b4e36b-60fd-4733-8b66-acf143590d99,428191000124101,Documentation of current medications,,
+2008-08-14,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,2727879f-4c23-4f8f-b7d2-eeb378af2686,428191000124101,Documentation of current medications,,
+2008-11-28,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,f3414936-9473-4087-8d23-49a064f6b110,428191000124101,Documentation of current medications,,
+2009-01-11,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,a728fbd7-0d86-425e-951b-bfe859e6f7ab,73761001,Colonoscopy,,
+2009-09-10,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,8765a853-0034-43ee-8582-e874a842a72f,433112001,Percutaneous mechanical thrombectomy of portal vein using fluoroscopic guidance,,
+2011-12-08,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,1f3f8d22-9ac4-4653-973d-690eed8806bf,428191000124101,Documentation of current medications,,
+2011-12-23,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,ff925323-81ac-42e2-86f6-cdb4a7bbfead,399208008,Plain chest X-ray (procedure),162573006,Suspected lung cancer (situation)
+2011-12-29,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,dd57f117-827e-466a-a98d-35cf368e3d13,418891003,Computed tomography of chest and abdomen,162573006,Suspected lung cancer (situation)
+2012-01-02,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,9102e4e5-a2e6-4324-b261-bf56c10135ce,167995008,Sputum microscopy (procedure),162573006,Suspected lung cancer (situation)
+2012-01-03,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,698354004,Magnetic resonance imaging for measurement of brain volume (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-01-03,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-02-06,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-03-09,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-04-11,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-05-10,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-06-13,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-07-12,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-08-11,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2012-09-10,eaee20a0-5c90-4589-9828-3ffb1c6d3e50,c1eea916-1c06-4f19-b3c4-8a9395d6fe07,703423002,Combined chemotherapy and radiation therapy (procedure),423121009,Non-small cell carcinoma of lung  TNM stage 4 (disorder)
+2015-07-08,319f499f-19e3-49fd-be5b-b320f23f23c7,9f335658-7c5a-4315-8d6c-ff2ed5cf2281,305428000,Admission to orthopedic department,359817006,Closed fracture of hip
+2007-06-18,1eb19c96-f32d-4057-aac5-265d87e50911,990e565d-5f8a-443e-a96e-48b76523bb39,428191000124101,Documentation of current medications,,
+2008-01-27,1eb19c96-f32d-4057-aac5-265d87e50911,11d19443-9c42-4d8e-ba73-299e9f8ccbbe,73761001,Colonoscopy,,
+2009-07-23,1eb19c96-f32d-4057-aac5-265d87e50911,53c31087-82b7-4a66-9f0c-f29b44286a5b,428191000124101,Documentation of current medications,,
+2010-08-03,1eb19c96-f32d-4057-aac5-265d87e50911,0f674865-1b63-47b7-b88a-733d81fca1ee,428191000124101,Documentation of current medications,,
+2012-10-19,1eb19c96-f32d-4057-aac5-265d87e50911,2c1cd59d-7a85-4ad3-8e34-274109398619,428191000124101,Documentation of current medications,,
+2013-01-27,1eb19c96-f32d-4057-aac5-265d87e50911,693af60a-4d11-4a2e-86dc-ee992342ae73,73761001,Colonoscopy,,
+2013-01-27,1eb19c96-f32d-4057-aac5-265d87e50911,693af60a-4d11-4a2e-86dc-ee992342ae73,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2013-01-27,1eb19c96-f32d-4057-aac5-265d87e50911,693af60a-4d11-4a2e-86dc-ee992342ae73,274031008,Rectal polypectomy,68496003,Polyp of colon
+2014-05-02,1eb19c96-f32d-4057-aac5-265d87e50911,354aed06-415d-403a-953b-4a9d54e279f7,73761001,Colonoscopy,,
+2014-11-28,1eb19c96-f32d-4057-aac5-265d87e50911,2cb44150-bdc6-4a91-aa8e-25036f51ef22,428191000124101,Documentation of current medications,,
+2017-04-06,82daa51e-9238-43d6-8b2c-1fa156bbc2d0,4983428f-a915-45a0-8cdd-198a1b7fb470,428191000124101,Documentation of current medications,,
+2007-09-05,8f36725c-0669-418c-8c9b-bc7c83ff44ee,3ed91924-8da5-4a5e-8a74-d15e15aaf43d,428191000124101,Documentation of current medications,,
+2008-10-28,8f36725c-0669-418c-8c9b-bc7c83ff44ee,97d010e5-a940-4879-b33e-863d2bffe4c8,428191000124101,Documentation of current medications,,
+2009-09-21,8f36725c-0669-418c-8c9b-bc7c83ff44ee,9fd0d167-cadf-4355-8995-92cb6c01a92f,428191000124101,Documentation of current medications,,
+2013-01-15,8f36725c-0669-418c-8c9b-bc7c83ff44ee,bfc8ad39-cadb-409a-ad59-ded2d18c6970,428191000124101,Documentation of current medications,,
+2014-12-22,8f36725c-0669-418c-8c9b-bc7c83ff44ee,5e1d046d-0993-45a4-95e4-95353d9481d6,428191000124101,Documentation of current medications,,
+2015-11-17,8f36725c-0669-418c-8c9b-bc7c83ff44ee,54d37320-93e3-4a6d-b500-7afbda102f0c,428191000124101,Documentation of current medications,,
+2017-01-28,8f36725c-0669-418c-8c9b-bc7c83ff44ee,f4bb2e49-cc61-40cf-ac4a-48a6ca147fda,428191000124101,Documentation of current medications,,
+2010-03-02,ac101350-0700-4e5c-8360-6bd82a9d2613,f9e8814b-0c55-44a2-8163-0ca9288362ad,428191000124101,Documentation of current medications,,
+2011-09-09,ac101350-0700-4e5c-8360-6bd82a9d2613,7a9b54f4-c978-4568-8f6f-c18f3894c3c7,714812005,Induced termination of pregnancy,72892002,Normal pregnancy
+2012-12-21,ac101350-0700-4e5c-8360-6bd82a9d2613,4962c250-1d04-45b0-822b-6b9345af0161,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2013-06-08,ac101350-0700-4e5c-8360-6bd82a9d2613,74578c42-24d5-4980-96a0-0fdf56e52e20,428191000124101,Documentation of current medications,,
+2013-07-19,ac101350-0700-4e5c-8360-6bd82a9d2613,585b83f8-b7db-4de7-bab3-650b8f23c0e5,237001001,Augmentation of labor,72892002,Normal pregnancy
+2013-07-19,ac101350-0700-4e5c-8360-6bd82a9d2613,585b83f8-b7db-4de7-bab3-650b8f23c0e5,66348005,Childbirth,72892002,Normal pregnancy
+2016-01-16,ac101350-0700-4e5c-8360-6bd82a9d2613,193bf9c7-4d2f-4035-a11c-fc4fe666fa57,428191000124101,Documentation of current medications,,
+2008-10-16,77df8bd4-7198-49e0-917d-845c973a5a19,06a47e96-2120-4d4c-8e3a-d4909b78711c,428191000124101,Documentation of current medications,,
+2009-05-29,77df8bd4-7198-49e0-917d-845c973a5a19,cf48feb3-ec16-409d-8d8f-dfdb63100ee7,73761001,Colonoscopy,,
+2009-05-29,77df8bd4-7198-49e0-917d-845c973a5a19,cf48feb3-ec16-409d-8d8f-dfdb63100ee7,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2009-05-29,77df8bd4-7198-49e0-917d-845c973a5a19,cf48feb3-ec16-409d-8d8f-dfdb63100ee7,274031008,Rectal polypectomy,68496003,Polyp of colon
+2010-08-26,77df8bd4-7198-49e0-917d-845c973a5a19,e05debcf-4616-484d-9995-0423d4eba6bd,73761001,Colonoscopy,,
+2010-10-09,77df8bd4-7198-49e0-917d-845c973a5a19,b8a2ce2c-6bd1-45ff-a652-a6dd6e17c5d4,428191000124101,Documentation of current medications,,
+2011-11-28,77df8bd4-7198-49e0-917d-845c973a5a19,e05f64da-6732-4341-a0cb-1e6c19759436,428191000124101,Documentation of current medications,,
+2012-09-18,77df8bd4-7198-49e0-917d-845c973a5a19,56eda015-42cc-4383-8007-1dad3d36538a,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2013-02-21,77df8bd4-7198-49e0-917d-845c973a5a19,382c35cd-c15c-43ac-9255-886c45e83b9e,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2013-12-12,77df8bd4-7198-49e0-917d-845c973a5a19,9bf4e59e-be21-4b41-9282-8d87e1f47012,428191000124101,Documentation of current medications,,
+2015-02-09,77df8bd4-7198-49e0-917d-845c973a5a19,ec7e624c-aa79-461b-974f-df54d47264de,428191000124101,Documentation of current medications,,
+2015-08-26,77df8bd4-7198-49e0-917d-845c973a5a19,88f344cd-d2f8-4e5c-a2f1-96c17ae45c0f,73761001,Colonoscopy,,
+2015-08-26,77df8bd4-7198-49e0-917d-845c973a5a19,88f344cd-d2f8-4e5c-a2f1-96c17ae45c0f,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2015-08-26,77df8bd4-7198-49e0-917d-845c973a5a19,88f344cd-d2f8-4e5c-a2f1-96c17ae45c0f,274031008,Rectal polypectomy,68496003,Polyp of colon
+2016-11-26,77df8bd4-7198-49e0-917d-845c973a5a19,90bd4e27-b6c1-4402-9a33-2b0197ef176e,73761001,Colonoscopy,,
+2017-01-28,77df8bd4-7198-49e0-917d-845c973a5a19,c9932a34-b80d-491f-9ff1-cdcca942b1a4,415070008,Percutaneous coronary intervention,,
+2017-01-28,77df8bd4-7198-49e0-917d-845c973a5a19,c9932a34-b80d-491f-9ff1-cdcca942b1a4,232717009,Coronary artery bypass grafting,,
+2007-11-17,68664ac8-d124-4add-9efe-f67c1a5c855d,57757fc2-45d8-4a1e-91a2-79a47c90baf1,428191000124101,Documentation of current medications,,
+2008-12-14,68664ac8-d124-4add-9efe-f67c1a5c855d,18bbe26a-e6b9-43a3-9928-713ccd79a314,428191000124101,Documentation of current medications,,
+2009-12-12,68664ac8-d124-4add-9efe-f67c1a5c855d,45f9dc05-77ec-4f5e-8460-0c727b6da954,428191000124101,Documentation of current medications,,
+2011-12-22,68664ac8-d124-4add-9efe-f67c1a5c855d,3770acc6-0d4a-4f4d-a3c6-ca9b2d526f7d,428191000124101,Documentation of current medications,,
+2013-12-26,68664ac8-d124-4add-9efe-f67c1a5c855d,5f619234-b9b2-4c63-ab50-410a9be86e48,428191000124101,Documentation of current medications,,
+2016-02-01,68664ac8-d124-4add-9efe-f67c1a5c855d,f00cf143-eb15-49ef-95e9-d3f37259c586,428191000124101,Documentation of current medications,,
+2016-05-17,68664ac8-d124-4add-9efe-f67c1a5c855d,9d1dc924-d421-48db-8957-53e2cf3e741e,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2016-12-27,68664ac8-d124-4add-9efe-f67c1a5c855d,d0769c47-22a2-4aa1-8948-30dadcbbf7d4,85548006,Episiotomy,72892002,Normal pregnancy
+2016-12-27,68664ac8-d124-4add-9efe-f67c1a5c855d,d0769c47-22a2-4aa1-8948-30dadcbbf7d4,66348005,Childbirth,72892002,Normal pregnancy
+2012-02-24,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,cbaaa855-4a29-436e-a904-3fd15fd0caa1,428191000124101,Documentation of current medications,,
+2012-06-10,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,97a330cd-85f9-4fa6-b6c1-465cfede0a2b,428191000124101,Documentation of current medications,,
+2012-08-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,0a974f45-6879-4608-bf5b-17842c31dda6,311791003,Information gathering (procedure),,
+2012-09-11,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,098e49e4-b2db-4d8c-a5da-ab5b7fc4c982,428191000124101,Documentation of current medications,,
+2012-09-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,b33b6cb3-8898-4b6a-821f-a1dd478c0039,311791003,Information gathering (procedure),,
+2012-10-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,31a5c2f0-4fda-4d50-8b7f-b337f6bba638,311791003,Information gathering (procedure),,
+2013-02-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,0fe57d83-960e-444b-8d97-2af6ebaeee8f,311791003,Information gathering (procedure),,
+2013-03-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,abfdbe58-e01e-49ab-b10a-fe9acf466326,311791003,Information gathering (procedure),,
+2013-04-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,5b5bd317-eca6-48d8-a0c1-b062df069a23,311791003,Information gathering (procedure),,
+2013-06-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,feb693ab-7c20-4a38-a035-7b17fe1776c8,311791003,Information gathering (procedure),,
+2013-07-01,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,3fd39fc0-53b5-49e7-bbd0-e3afbffa8a3b,428191000124101,Documentation of current medications,,
+2013-12-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,f70f437a-21d1-4b01-8868-b1587ed51bc2,311791003,Information gathering (procedure),,
+2014-02-18,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,cb6b981b-7616-4f70-a0f0-be703e1241f7,311791003,Information gathering (procedure),,
+2014-07-15,8abd6da8-9c46-4f33-a701-37dcb1b0b6dd,21aaebdf-8932-4b4e-a135-3231792f3783,428191000124101,Documentation of current medications,,
+2007-06-19,97b10525-4dab-4c6b-aa0d-53c2fc7a0da4,6b16d4ca-3fe3-413e-9807-9af8759c3050,73761001,Colonoscopy,,
+2008-04-07,97b10525-4dab-4c6b-aa0d-53c2fc7a0da4,3d42dbd5-98a7-4745-8065-9c4569ca47f7,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2008-05-21,97b10525-4dab-4c6b-aa0d-53c2fc7a0da4,8fb5b157-9f9f-4d60-8b8d-69746edd255d,127783003,Spirometry (procedure),87433001,Pulmonary emphysema (disorder)
+2009-05-13,544d4cc5-4aa3-4005-a241-568f17a0ca1b,48ddad30-92c7-45b7-8e61-02bf32314b54,428191000124101,Documentation of current medications,,
+2011-07-12,544d4cc5-4aa3-4005-a241-568f17a0ca1b,3b84d742-0cdc-43d4-a81b-90ae6e853201,428191000124101,Documentation of current medications,,
+2012-09-17,544d4cc5-4aa3-4005-a241-568f17a0ca1b,35f45556-944d-455c-924f-5e9226cbc068,428191000124101,Documentation of current medications,,
+2015-01-25,544d4cc5-4aa3-4005-a241-568f17a0ca1b,ec3518dc-07ef-4383-bcb6-7badeb511a4d,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2007-12-07,abd664bf-8df1-4972-9016-53527df23e9f,de6aa1ba-22d7-48e0-b1c4-113a0df583d7,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2008-08-14,abd664bf-8df1-4972-9016-53527df23e9f,e4e4b78c-18f8-43e0-8da2-f06d2e24ce2e,428191000124101,Documentation of current medications,,
+2008-11-05,abd664bf-8df1-4972-9016-53527df23e9f,bff09c18-0d59-49dc-a96e-44e7daaa6a7a,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2011-09-30,abd664bf-8df1-4972-9016-53527df23e9f,1f1868f2-0847-47a1-8042-6e903f56bd98,428191000124101,Documentation of current medications,,
+2007-11-26,859a60e6-d7da-47ef-b1fd-824b73f092f1,c3ebb45c-0d3a-4946-8f77-938ec3bd5504,428191000124101,Documentation of current medications,,
+2008-11-21,859a60e6-d7da-47ef-b1fd-824b73f092f1,22b40cf1-cbdc-4ddb-bf0b-0d48ade49928,428191000124101,Documentation of current medications,,
+2010-01-13,859a60e6-d7da-47ef-b1fd-824b73f092f1,1b2b4304-a7ce-407d-b924-d2d0d9738c5a,428191000124101,Documentation of current medications,,
+2011-05-06,859a60e6-d7da-47ef-b1fd-824b73f092f1,b029463d-9de9-44f3-92d0-227cadad8044,305428000,Admission to orthopedic department,359817006,Closed fracture of hip
+2011-05-06,859a60e6-d7da-47ef-b1fd-824b73f092f1,b029463d-9de9-44f3-92d0-227cadad8044,312681000,Bone density scan (procedure),359817006,Closed fracture of hip
+2012-02-21,859a60e6-d7da-47ef-b1fd-824b73f092f1,3fc87063-934d-4289-af24-4fa3a847d98c,428191000124101,Documentation of current medications,,
+2012-03-13,859a60e6-d7da-47ef-b1fd-824b73f092f1,631a09de-817e-4ae1-a27b-796b166b345a,73761001,Colonoscopy,,
+2012-03-13,859a60e6-d7da-47ef-b1fd-824b73f092f1,631a09de-817e-4ae1-a27b-796b166b345a,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2012-03-13,859a60e6-d7da-47ef-b1fd-824b73f092f1,631a09de-817e-4ae1-a27b-796b166b345a,274031008,Rectal polypectomy,68496003,Polyp of colon
+2013-02-19,859a60e6-d7da-47ef-b1fd-824b73f092f1,0b013ef8-b476-415e-a3f8-07d2e1af9b7a,428191000124101,Documentation of current medications,,
+2013-05-30,859a60e6-d7da-47ef-b1fd-824b73f092f1,4efa2ae5-7a76-4019-aea6-4f66e5619d26,73761001,Colonoscopy,,
+2013-05-30,859a60e6-d7da-47ef-b1fd-824b73f092f1,4efa2ae5-7a76-4019-aea6-4f66e5619d26,274031008,Rectal polypectomy,713197008,Recurrent rectal polyp
+2014-01-31,859a60e6-d7da-47ef-b1fd-824b73f092f1,9600cc05-b493-4858-9791-ee71a78fc530,428191000124101,Documentation of current medications,,
+2014-06-26,859a60e6-d7da-47ef-b1fd-824b73f092f1,c9190336-5f38-4b20-8c2d-7c314a22a1e0,73761001,Colonoscopy,,
+2016-04-05,859a60e6-d7da-47ef-b1fd-824b73f092f1,d2e78100-b6fb-459d-8380-60f7806f3de0,428191000124101,Documentation of current medications,,
+2007-06-10,08179873-913b-4a4d-9223-5269a8d29182,5e81f215-43e5-43dd-aaa0-664f55bc99da,428191000124101,Documentation of current medications,,
+2008-06-07,08179873-913b-4a4d-9223-5269a8d29182,6a8611fd-de1e-4ae7-a689-17422dd05ed4,428191000124101,Documentation of current medications,,
+2011-06-13,08179873-913b-4a4d-9223-5269a8d29182,d2a089ff-0dbf-4b63-946c-774e5902580e,428191000124101,Documentation of current medications,,
+2013-06-13,08179873-913b-4a4d-9223-5269a8d29182,93137199-64b8-4c68-87ef-5cec2443fdfa,428191000124101,Documentation of current medications,,
+2014-05-31,08179873-913b-4a4d-9223-5269a8d29182,f79843a6-d650-4a65-a447-b1cc97378f91,428191000124101,Documentation of current medications,,
+2015-03-23,08179873-913b-4a4d-9223-5269a8d29182,ab76d871-18b5-4ff1-82f4-d995d5da9e7e,288086009,Suture open wound,283371005,Laceration of forearm
+2016-06-10,08179873-913b-4a4d-9223-5269a8d29182,6803fc63-98b1-4813-819b-6e92331ba21a,428191000124101,Documentation of current medications,,
+2009-01-13,dd7523ae-d2ab-4631-af4f-9220f4a726d2,bd8a467f-4234-479b-a763-d23c3aad3206,428191000124101,Documentation of current medications,,
+2013-02-10,dd7523ae-d2ab-4631-af4f-9220f4a726d2,fe4442d6-72b1-4c78-a203-3d5f5f03816c,428191000124101,Documentation of current medications,,
+2014-05-17,dd7523ae-d2ab-4631-af4f-9220f4a726d2,e21b80d2-a0d9-4925-bc47-16d2636435ce,274474001,Bone immobilization,65966004,Fracture of forearm
+2015-01-28,dd7523ae-d2ab-4631-af4f-9220f4a726d2,60f77ab7-109b-4506-aee8-e2f8776c1a37,428191000124101,Documentation of current medications,,
+2016-05-20,dd7523ae-d2ab-4631-af4f-9220f4a726d2,35f62821-68ee-4d06-9791-27943923284e,73761001,Colonoscopy,,
+2007-09-07,b6313f59-99df-4fdc-869f-0076d283ac05,253ee7f7-e997-48c5-8819-7691304c75a7,428191000124101,Documentation of current medications,,
+2008-07-31,b6313f59-99df-4fdc-869f-0076d283ac05,335ed3f9-cfe1-48af-ae3a-8269883b92d2,428191000124101,Documentation of current medications,,
+2009-12-22,b6313f59-99df-4fdc-869f-0076d283ac05,e5dc8160-4529-4a86-9e02-d58f56832724,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2010-06-27,b6313f59-99df-4fdc-869f-0076d283ac05,570b8d12-c295-4d06-b639-2e116ac33e0d,428191000124101,Documentation of current medications,,
+2011-07-14,b6313f59-99df-4fdc-869f-0076d283ac05,7fc6c1a2-77ac-4a7f-85ee-e9531b5cf11f,428191000124101,Documentation of current medications,,
+2012-08-05,b6313f59-99df-4fdc-869f-0076d283ac05,81b0ee24-339f-4311-96ee-78bd3d2ab321,428191000124101,Documentation of current medications,,
+2013-07-06,b6313f59-99df-4fdc-869f-0076d283ac05,6faaae52-c64d-44ca-b56b-b344e0ad0871,428191000124101,Documentation of current medications,,
+2007-06-14,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,968526de-ee19-4363-a9ed-fa7335c68219,428191000124101,Documentation of current medications,,
+2008-04-27,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,f7498d11-e24c-4774-a592-9ccfe462f3a3,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2011-11-28,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,2f1ba06a-dc8c-44ef-b43b-4f116dae1139,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2013-06-02,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,6f7e3530-97b1-4d70-8a02-ebafb8a55cf4,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2015-10-03,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,124ff49e-d080-4c57-8850-3760458f1d39,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2016-04-07,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,06c91585-ef2d-47af-9e25-188a0b4949e7,428191000124101,Documentation of current medications,,
+2016-05-07,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,3e940c78-83e5-4d26-b959-31ded46e6c0d,237001001,Augmentation of labor,72892002,Normal pregnancy
+2016-05-07,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,3e940c78-83e5-4d26-b959-31ded46e6c0d,66348005,Childbirth,72892002,Normal pregnancy
+2016-08-19,e0fc6237-9c0e-4c8b-9e16-0c194e98673e,93c2c79b-abb9-4f72-9108-69e99c586731,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2008-11-06,e5f3e78c-65a3-469d-99f0-76bd87715635,d5a0ea49-2d01-438b-a520-8036cef6d4c9,288086009,Suture open wound,283385000,Laceration of thigh
+2009-01-31,e5f3e78c-65a3-469d-99f0-76bd87715635,6f56e7ed-00ee-41ff-abf0-6f7ce40b9d10,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2009-07-09,e5f3e78c-65a3-469d-99f0-76bd87715635,69261684-d10b-4d09-a01b-b71a786ee966,428191000124101,Documentation of current medications,,
+2010-08-07,e5f3e78c-65a3-469d-99f0-76bd87715635,b5d03719-4f91-4911-91dc-4cc82d11398f,428191000124101,Documentation of current medications,,
+2012-09-21,e5f3e78c-65a3-469d-99f0-76bd87715635,898722fe-f235-47cc-afff-3bdf373df177,428191000124101,Documentation of current medications,,
+2014-07-21,e5f3e78c-65a3-469d-99f0-76bd87715635,77671f2a-b3d4-4aee-b54b-f065fa0ee61c,428191000124101,Documentation of current medications,,
+2015-05-12,e5f3e78c-65a3-469d-99f0-76bd87715635,655588fa-7890-4823-842b-09a17f77e743,428191000124101,Documentation of current medications,,
+2016-06-16,e5f3e78c-65a3-469d-99f0-76bd87715635,c8896a6e-0204-4a79-8f8d-c275e3c2ad9b,428191000124101,Documentation of current medications,,
+2008-08-14,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,be4b68e5-0631-4f1a-811f-4067891f818c,428191000124101,Documentation of current medications,,
+2008-11-04,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,757189f3-eff9-457c-8ebc-dfe4bfc6bfb7,311791003,Information gathering (procedure),,
+2008-12-04,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,dbd8cfa1-22d9-40a6-ac15-d5069357c31b,311791003,Information gathering (procedure),,
+2009-01-04,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,650540e3-62c1-4413-81a2-436dfa059529,311791003,Information gathering (procedure),,
+2009-04-04,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,fdecbebb-0b86-47c8-9899-d3b74e9a0321,311791003,Information gathering (procedure),,
+2009-07-04,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,5bdd73ee-8650-4d58-a912-d3cc12ae3daf,311791003,Information gathering (procedure),,
+2009-07-10,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,dce5394c-9fce-4fd4-ac90-a190dbf3c46e,428191000124101,Documentation of current medications,,
+2010-02-04,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,fe90b95e-6aa8-4f15-984a-5a7ba2fa3e19,311791003,Information gathering (procedure),,
+2012-10-24,72e31902-aba0-4b27-b0f9-f41ddf7c6c01,ef20de0d-90b4-4148-8cb7-f33e9e285b3c,428191000124101,Documentation of current medications,,
+2007-07-05,e98e9be5-fe9a-4abc-b7e5-23c142009b37,77dcf376-3094-498a-a9aa-0cc1fb8b3aa6,18946005,Epidural anesthesia,72892002,Normal pregnancy
+2007-07-05,e98e9be5-fe9a-4abc-b7e5-23c142009b37,77dcf376-3094-498a-a9aa-0cc1fb8b3aa6,66348005,Childbirth,72892002,Normal pregnancy
+2008-03-26,e98e9be5-fe9a-4abc-b7e5-23c142009b37,eecfb498-161f-4e1e-b4c5-86d9d682c386,428191000124101,Documentation of current medications,,
+2009-03-22,e98e9be5-fe9a-4abc-b7e5-23c142009b37,2ef9e74e-9164-475f-9105-4735d60ef499,428191000124101,Documentation of current medications,,
+2009-09-22,e98e9be5-fe9a-4abc-b7e5-23c142009b37,0743ffae-36e3-4151-bf1e-27e6ed4ab2e4,428191000124101,Documentation of current medications,,
+2011-02-16,e98e9be5-fe9a-4abc-b7e5-23c142009b37,081253d1-bee9-4c74-8f63-554cb1b247af,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2011-07-08,e98e9be5-fe9a-4abc-b7e5-23c142009b37,6cfacb9d-3ddc-43ec-83ed-48e9dba688e4,428191000124101,Documentation of current medications,,
+2012-06-20,e98e9be5-fe9a-4abc-b7e5-23c142009b37,86f01d47-cbbf-430e-a6ea-26eda6f6d6a5,428191000124101,Documentation of current medications,,
+2014-08-19,e98e9be5-fe9a-4abc-b7e5-23c142009b37,4ddee2eb-dd83-4afe-bd8a-daa45e7714e9,428191000124101,Documentation of current medications,,
+2015-10-05,e98e9be5-fe9a-4abc-b7e5-23c142009b37,037dcaaa-101c-4cd2-9555-3a6324cadeb7,428191000124101,Documentation of current medications,,
+2009-01-17,7f84c577-d8b5-47f9-ada1-1232b428a0c9,a7c62a8d-de52-45c9-9461-ad061b9c7765,428191000124101,Documentation of current medications,,
+2010-01-19,7f84c577-d8b5-47f9-ada1-1232b428a0c9,35ccd8e6-2886-4fe9-84af-3bbbca7e20c6,428191000124101,Documentation of current medications,,
+2008-10-27,300a7a41-352e-49c4-957a-a73ef066b1ab,c3f4c8e0-b93d-40e8-bc85-a707bee9986d,428191000124101,Documentation of current medications,,
+2010-09-17,300a7a41-352e-49c4-957a-a73ef066b1ab,9a7ba4c5-dafa-4041-bec9-d05f331f206a,428191000124101,Documentation of current medications,,
+2012-10-21,300a7a41-352e-49c4-957a-a73ef066b1ab,53c9272c-0ef7-43a8-891f-b4f5629d51b7,428191000124101,Documentation of current medications,,
+2013-11-09,300a7a41-352e-49c4-957a-a73ef066b1ab,2c2bcac7-fff9-44b0-8b42-2285313fee31,428191000124101,Documentation of current medications,,
+2015-09-11,300a7a41-352e-49c4-957a-a73ef066b1ab,0ced6548-43dd-4aee-aa0e-1659bc4db0e6,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2015-12-22,300a7a41-352e-49c4-957a-a73ef066b1ab,46f6e828-35fa-472a-8520-e19090c40793,428191000124101,Documentation of current medications,,
+2017-03-16,300a7a41-352e-49c4-957a-a73ef066b1ab,82e5416e-af16-4a67-b583-e5fd4f1a9ad6,428191000124101,Documentation of current medications,,
+2008-06-20,707603a3-b371-4413-abd8-35c0e2a238ea,97bff45a-0746-492d-bc16-265fcd95f7c0,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2008-10-15,707603a3-b371-4413-abd8-35c0e2a238ea,b00b9250-2458-4b96-b6c2-c1e8da083771,428191000124101,Documentation of current medications,,
+2010-08-15,707603a3-b371-4413-abd8-35c0e2a238ea,7f7986de-da15-4e69-8dad-992ed68b47d6,428191000124101,Documentation of current medications,,
+2014-07-28,707603a3-b371-4413-abd8-35c0e2a238ea,1623a4d5-0264-4970-b188-5e83100fb784,428191000124101,Documentation of current medications,,
+2015-08-01,707603a3-b371-4413-abd8-35c0e2a238ea,ee4ac593-7ac2-4b94-9be7-8bc840b2c7e8,428191000124101,Documentation of current medications,,
+2016-10-15,707603a3-b371-4413-abd8-35c0e2a238ea,89be7b4f-680a-4648-9f01-c21f3f681af5,428191000124101,Documentation of current medications,,
+2009-10-17,52dc79e4-ea69-4045-96bf-f496e18fb72f,9bb9d5c7-129e-4523-837f-f553e32b783b,428191000124101,Documentation of current medications,,
+2009-11-22,52dc79e4-ea69-4045-96bf-f496e18fb72f,c4a25535-7e3b-448a-b19f-62819a7ea44b,428191000124101,Documentation of current medications,,
+2010-02-01,52dc79e4-ea69-4045-96bf-f496e18fb72f,9eca74a0-7fad-4857-ae5c-5ea43b4dc3cb,428191000124101,Documentation of current medications,,
+2010-04-20,52dc79e4-ea69-4045-96bf-f496e18fb72f,6bb6a35a-f242-4b12-8c06-88687d650a08,428191000124101,Documentation of current medications,,
+2010-08-02,52dc79e4-ea69-4045-96bf-f496e18fb72f,b1dcd4c6-9de9-48c0-868f-5a162b7df995,428191000124101,Documentation of current medications,,
+2011-02-10,52dc79e4-ea69-4045-96bf-f496e18fb72f,7768c9a5-0b25-4042-aeae-a7e0433f6afe,428191000124101,Documentation of current medications,,
+2012-05-26,52dc79e4-ea69-4045-96bf-f496e18fb72f,0cc605b2-5b5e-424e-a146-0070dea05e40,428191000124101,Documentation of current medications,,
+2012-11-29,52dc79e4-ea69-4045-96bf-f496e18fb72f,6dfa6f5a-71d9-4b99-af4d-367460975d4d,428191000124101,Documentation of current medications,,
+2014-02-16,52dc79e4-ea69-4045-96bf-f496e18fb72f,0ce7fdbd-ba75-496a-886f-06499026d888,428191000124101,Documentation of current medications,,
+2009-08-12,8f69aebb-f19f-42bf-9725-f1e905e64cd4,9521b3af-17eb-4c3a-98a2-fbdcd4ed7ecb,428191000124101,Documentation of current medications,,
+2013-11-09,8f69aebb-f19f-42bf-9725-f1e905e64cd4,196d50cd-60f4-43b7-b821-4d09bb3bf754,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2016-02-21,8f69aebb-f19f-42bf-9725-f1e905e64cd4,e34cb42c-9121-45e4-8a92-31c090d7d880,428191000124101,Documentation of current medications,,
+2008-06-28,d1dc410b-b783-4cfe-96dc-ee7003b610fa,a872cf0f-f631-4133-a0ff-43f4a818ff47,428191000124101,Documentation of current medications,,
+2010-05-01,d1dc410b-b783-4cfe-96dc-ee7003b610fa,70637c29-7b5e-4af5-b8e9-991f82e7011e,428191000124101,Documentation of current medications,,
+2011-07-22,d1dc410b-b783-4cfe-96dc-ee7003b610fa,68f2f056-b880-444f-b398-5c32d7d03a6f,288086009,Suture open wound,284551006,Laceration of foot
+2012-09-22,d1dc410b-b783-4cfe-96dc-ee7003b610fa,39cf11fb-ecff-4971-ae49-3bb055e0eb1a,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2015-06-20,d1dc410b-b783-4cfe-96dc-ee7003b610fa,6060ae35-d6dc-443f-a32e-77adc0b5710f,428191000124101,Documentation of current medications,,
+2016-10-25,d1dc410b-b783-4cfe-96dc-ee7003b610fa,85708d4c-0f2d-4a35-87b4-d7c77e6a7c08,274474001,Bone immobilization,65966004,Fracture of forearm
+2016-10-25,d1dc410b-b783-4cfe-96dc-ee7003b610fa,85708d4c-0f2d-4a35-87b4-d7c77e6a7c08,312681000,Bone density scan (procedure),65966004,Fracture of forearm
+2007-12-19,04906851-294d-4544-9faa-21d753efa2ba,f10ce730-e564-4f6b-b499-9218007a2d5e,428191000124101,Documentation of current medications,,
+2010-11-05,25bd6afb-dc05-42e7-a19f-55b21a603abe,90254a7e-addc-4952-b89e-e27d187e260c,73761001,Colonoscopy,,
+2010-11-05,25bd6afb-dc05-42e7-a19f-55b21a603abe,90254a7e-addc-4952-b89e-e27d187e260c,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2010-11-05,25bd6afb-dc05-42e7-a19f-55b21a603abe,90254a7e-addc-4952-b89e-e27d187e260c,274031008,Rectal polypectomy,68496003,Polyp of colon
+2011-02-07,25bd6afb-dc05-42e7-a19f-55b21a603abe,05593bff-44e2-45de-9478-7c33a9f96dea,428191000124101,Documentation of current medications,,
+2012-01-19,25bd6afb-dc05-42e7-a19f-55b21a603abe,39228314-460a-4ddd-a4c8-c90ebddf705e,73761001,Colonoscopy,,
+2012-01-19,25bd6afb-dc05-42e7-a19f-55b21a603abe,39228314-460a-4ddd-a4c8-c90ebddf705e,274031008,Rectal polypectomy,713197008,Recurrent rectal polyp
+2013-01-04,25bd6afb-dc05-42e7-a19f-55b21a603abe,d095f8b4-21ab-4bd3-8d4f-63047f5f047f,428191000124101,Documentation of current medications,,
+2013-01-28,25bd6afb-dc05-42e7-a19f-55b21a603abe,e7c75ad4-6ec7-40b9-91ff-60c348f939c3,73761001,Colonoscopy,,
+2014-02-12,25bd6afb-dc05-42e7-a19f-55b21a603abe,5da08621-4e31-4fc7-b88b-62b8a2365526,428191000124101,Documentation of current medications,,
+2007-07-19,6cc78c26-cbe7-423d-b764-155c7e2c065b,4f08d387-790e-4533-be08-04dd15302de9,428191000124101,Documentation of current medications,,
+2008-01-23,6cc78c26-cbe7-423d-b764-155c7e2c065b,4033cb4b-7614-4216-81e4-74aa3c6621db,73761001,Colonoscopy,,
+2008-07-29,6cc78c26-cbe7-423d-b764-155c7e2c065b,73fb4c7c-e0a4-4dac-851c-66af5bbc6b00,428191000124101,Documentation of current medications,,
+2008-10-19,6cc78c26-cbe7-423d-b764-155c7e2c065b,655bbd3e-578c-4fec-b2ae-1aa74cbe390f,305428000,Admission to orthopedic department,58150001,Fracture of clavicle
+2008-10-20,6cc78c26-cbe7-423d-b764-155c7e2c065b,655bbd3e-578c-4fec-b2ae-1aa74cbe390f,312681000,Bone density scan (procedure),58150001,Fracture of clavicle
+2009-06-10,6cc78c26-cbe7-423d-b764-155c7e2c065b,b3c1d035-d9dc-476e-81b9-f8b6d1145c0c,428191000124101,Documentation of current medications,,
+2012-03-13,6cc78c26-cbe7-423d-b764-155c7e2c065b,df69750e-67de-4f07-9bdc-8212f38ce232,428191000124101,Documentation of current medications,,
+2013-01-23,6cc78c26-cbe7-423d-b764-155c7e2c065b,f1a1f3b5-575a-49e8-89fb-d6c17813cd6e,73761001,Colonoscopy,,
+2015-08-18,6cc78c26-cbe7-423d-b764-155c7e2c065b,840e1b42-f63a-4a8c-90f1-fa09f8ffef87,428191000124101,Documentation of current medications,,
+2016-09-17,6cc78c26-cbe7-423d-b764-155c7e2c065b,f5ac0dcb-cfd1-4d77-97de-1c42a60300f0,428191000124101,Documentation of current medications,,
+2008-07-12,2727e1e9-1097-4bd5-bd29-178bd2ef72bf,c6305316-7837-47be-a016-a3f0fe23ef51,428191000124101,Documentation of current medications,,
+2010-04-12,2727e1e9-1097-4bd5-bd29-178bd2ef72bf,b9c79a18-a3a0-4583-91c7-07bd6fddde52,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2011-11-22,2727e1e9-1097-4bd5-bd29-178bd2ef72bf,b111a9af-fc22-4a86-a7a4-8ac38f1268d0,399208008,Plain chest X-ray (procedure),10509002,Acute bronchitis (disorder)
+2013-03-28,2727e1e9-1097-4bd5-bd29-178bd2ef72bf,ce56b60a-6fa3-4a47-b7cd-3a8d0d11a672,288086009,Suture open wound,283385000,Laceration of thigh
+2014-08-10,2727e1e9-1097-4bd5-bd29-178bd2ef72bf,d16f92f8-181e-46bc-9f67-8665ae451305,428191000124101,Documentation of current medications,,
+2016-07-13,2727e1e9-1097-4bd5-bd29-178bd2ef72bf,83dc0275-2286-4b9d-867e-d1dfbb13d56e,428191000124101,Documentation of current medications,,
+2007-08-28,3b3a04f8-db7c-4a75-a383-22976dc84b1e,2ce4abe3-427e-4efa-bad0-bf2a7c1caa73,428191000124101,Documentation of current medications,,
+2012-06-12,3b3a04f8-db7c-4a75-a383-22976dc84b1e,c15caf58-0ffa-445f-aaf1-2235609d5901,428191000124101,Documentation of current medications,,
+2014-06-27,3b3a04f8-db7c-4a75-a383-22976dc84b1e,80ddbcce-ea99-4b6b-b208-1178172aae5b,288086009,Suture open wound,284551006,Laceration of foot
+2016-06-13,3b3a04f8-db7c-4a75-a383-22976dc84b1e,446096bc-d08a-41ef-81b8-aa5f82176327,428191000124101,Documentation of current medications,,
+2008-08-24,0d41da90-c59d-488f-ac54-e316441c36b5,20d6a85d-706f-4966-bf20-54e56509d5d4,428191000124101,Documentation of current medications,,
+2009-11-27,0d41da90-c59d-488f-ac54-e316441c36b5,1f47dd61-b511-4025-848d-c39f71719932,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2010-07-19,0d41da90-c59d-488f-ac54-e316441c36b5,75e69571-ba9d-4f02-8bb3-b6bcbf99dfd1,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2010-10-17,0d41da90-c59d-488f-ac54-e316441c36b5,20691a55-062e-4db8-94c0-08d79ebffc30,428191000124101,Documentation of current medications,,
+2015-12-09,0d41da90-c59d-488f-ac54-e316441c36b5,be1a7503-0402-499a-8231-681afc57c390,428191000124101,Documentation of current medications,,
+2016-03-18,0d41da90-c59d-488f-ac54-e316441c36b5,8f7bca4c-113c-41b5-b92a-872d5767b64d,288086009,Suture open wound,284549007,Laceration of hand
+2010-04-06,c2cd0c46-d27d-432c-b99e-bca32f2da9a4,5e87ce7b-ad64-4582-8602-e5e3936d65fa,428191000124101,Documentation of current medications,,
+2012-02-16,c2cd0c46-d27d-432c-b99e-bca32f2da9a4,e04962a5-f80b-4162-acce-fd9c4d02c072,428191000124101,Documentation of current medications,,
+2013-02-27,c2cd0c46-d27d-432c-b99e-bca32f2da9a4,6b313ace-e195-46d9-aea0-86f83cb57832,428191000124101,Documentation of current medications,,
+2016-04-22,c2cd0c46-d27d-432c-b99e-bca32f2da9a4,c64ef973-5b19-426d-a4e6-685f0f238102,428191000124101,Documentation of current medications,,
+2017-05-31,c2cd0c46-d27d-432c-b99e-bca32f2da9a4,9e01903a-623d-4e9d-929b-3005ba1256e3,428191000124101,Documentation of current medications,,
+2008-02-13,8069683b-2c60-4c30-95bd-f80e21e9f830,2d1fc477-eaef-4dd7-899d-3da90914deaf,274474001,Bone immobilization,16114001,Fracture of ankle
+2008-02-13,8069683b-2c60-4c30-95bd-f80e21e9f830,2d1fc477-eaef-4dd7-899d-3da90914deaf,312681000,Bone density scan (procedure),16114001,Fracture of ankle
+2008-03-24,8069683b-2c60-4c30-95bd-f80e21e9f830,9865d08a-855e-4915-9e0f-c46bfa4a99ed,428191000124101,Documentation of current medications,,
+2009-02-23,8069683b-2c60-4c30-95bd-f80e21e9f830,ceb0095c-6251-4a67-bdf7-c87a53b9b57d,428191000124101,Documentation of current medications,,
+2008-07-24,e7fd523c-e9ca-42df-bfd0-97176320a895,d893280f-394c-4cd9-8776-c2e48dbc1336,428191000124101,Documentation of current medications,,
+2008-11-13,e7fd523c-e9ca-42df-bfd0-97176320a895,364f0d56-a39a-40fe-a76f-ed329450f4eb,288086009,Suture open wound,370247008,Facial laceration
+2009-07-14,e7fd523c-e9ca-42df-bfd0-97176320a895,70354145-406f-4671-b58b-81d24686109f,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2011-04-02,e7fd523c-e9ca-42df-bfd0-97176320a895,8d82c7bc-e199-4953-9ed8-1df767cafaaf,428191000124101,Documentation of current medications,,
+2016-01-03,e7fd523c-e9ca-42df-bfd0-97176320a895,ae7b659e-aaf1-4224-a22a-9ab8049d0a58,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2009-10-19,6daa5bb0-52d0-4a95-84cd-999041d38334,2b43c49b-61ae-4690-ba1c-7d4b90474662,428191000124101,Documentation of current medications,,
+2010-10-28,6daa5bb0-52d0-4a95-84cd-999041d38334,5392a3e2-0c49-48a3-8cce-86763aceac60,428191000124101,Documentation of current medications,,
+2011-10-28,6daa5bb0-52d0-4a95-84cd-999041d38334,95a6ec2b-52de-4f02-a902-cda275ad5e05,428191000124101,Documentation of current medications,,
+2013-01-07,6daa5bb0-52d0-4a95-84cd-999041d38334,2610cd15-ae9f-4c88-8a51-5365eeaa54d4,428191000124101,Documentation of current medications,,
+2012-12-06,c5a9806d-8de1-430f-b206-9ab1b43d4c63,425e3376-5a40-428d-9e44-e16a390be8fa,428191000124101,Documentation of current medications,,
+2015-10-20,c5a9806d-8de1-430f-b206-9ab1b43d4c63,9f993be0-e2d0-4412-8047-4a9458424e81,428191000124101,Documentation of current medications,,
+2009-09-27,3f166d1a-6682-46e4-8815-88acdf7672fd,95dca893-d110-44bc-bb87-6c5baf028cb4,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2013-01-06,3f166d1a-6682-46e4-8815-88acdf7672fd,e64db19c-5aac-455b-a50d-e5d3ff40e7ef,428191000124101,Documentation of current medications,,
+2016-12-21,3f166d1a-6682-46e4-8815-88acdf7672fd,d0379600-053b-436f-b91a-670d6635aae0,428191000124101,Documentation of current medications,,
+2010-12-20,c6f308c1-4459-4d0a-9d0e-ca5436aa7500,c7b99f84-2b2f-41f2-a5ff-59eae34395ba,428191000124101,Documentation of current medications,,
+2011-01-21,c6f308c1-4459-4d0a-9d0e-ca5436aa7500,5104dc8d-162b-42a6-8dc5-9c1f08a227df,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2014-03-22,c6f308c1-4459-4d0a-9d0e-ca5436aa7500,9ffa2e92-1d2f-45de-bc44-46f7da530dc5,428191000124101,Documentation of current medications,,
+2016-09-30,c6f308c1-4459-4d0a-9d0e-ca5436aa7500,615bbf35-1b8e-4621-b1da-d856ae39c92e,428191000124101,Documentation of current medications,,
+2007-09-17,15815231-2782-4ec8-9496-28af60feed74,07ea2452-d721-4886-8674-5308247ba7cd,428191000124101,Documentation of current medications,,
+2008-09-07,15815231-2782-4ec8-9496-28af60feed74,b2d790d8-8cab-49f1-a379-718695da39c1,428191000124101,Documentation of current medications,,
+2009-10-08,15815231-2782-4ec8-9496-28af60feed74,74b28579-b3f2-43c1-b762-4857b7f27f02,428191000124101,Documentation of current medications,,
+2010-04-09,15815231-2782-4ec8-9496-28af60feed74,7effd549-1d8f-428b-9f5b-c75ebab11202,274474001,Bone immobilization,33737001,Fracture of rib
+2010-04-09,15815231-2782-4ec8-9496-28af60feed74,7effd549-1d8f-428b-9f5b-c75ebab11202,312681000,Bone density scan (procedure),33737001,Fracture of rib
+2012-02-09,15815231-2782-4ec8-9496-28af60feed74,e599e443-33b4-4fdb-b8a3-3b986c29ed4a,428191000124101,Documentation of current medications,,
+2013-01-24,15815231-2782-4ec8-9496-28af60feed74,b39da358-6575-4acf-ad7f-6d202858a1bb,428191000124101,Documentation of current medications,,
+2014-02-17,15815231-2782-4ec8-9496-28af60feed74,002f5906-fc24-4fb0-9885-3ac2866a9fb4,428191000124101,Documentation of current medications,,
+2014-05-19,3db2a86d-2040-4def-b40f-4c7c8819a937,177c4a27-f89f-434e-8ba7-19a22f70a022,73761001,Colonoscopy,,
+2015-12-28,3db2a86d-2040-4def-b40f-4c7c8819a937,19c4a093-f9f0-4ecf-a463-7959df2d0ed0,428191000124101,Documentation of current medications,,
+2017-03-28,3db2a86d-2040-4def-b40f-4c7c8819a937,f0302c9e-81bd-475b-968e-f68977771ca3,428191000124101,Documentation of current medications,,
+2008-06-05,1ad8b489-c775-4971-a1b1-d9f5997bb183,9f350184-feb6-4724-ab0e-eb11da92c94a,428191000124101,Documentation of current medications,,
+2008-10-24,1ad8b489-c775-4971-a1b1-d9f5997bb183,dcb2c77f-e7ca-4ff1-88fb-755dde4bb470,274474001,Bone immobilization,33737001,Fracture of rib
+2008-10-24,1ad8b489-c775-4971-a1b1-d9f5997bb183,dcb2c77f-e7ca-4ff1-88fb-755dde4bb470,312681000,Bone density scan (procedure),33737001,Fracture of rib
+2010-07-20,1ad8b489-c775-4971-a1b1-d9f5997bb183,30e774fd-1008-4292-a938-29fa3cf0707f,428191000124101,Documentation of current medications,,
+2011-10-19,1ad8b489-c775-4971-a1b1-d9f5997bb183,7af9da7f-7ba3-472a-b78b-81a0ef9feac9,73761001,Colonoscopy,,
+2012-05-23,1ad8b489-c775-4971-a1b1-d9f5997bb183,43c2e05d-bf22-45d9-8c7d-cba4f3e065ac,428191000124101,Documentation of current medications,,
+2013-05-29,1ad8b489-c775-4971-a1b1-d9f5997bb183,5bc11752-bef3-4a16-9c8d-6449c64e5aa0,428191000124101,Documentation of current medications,,
+2015-08-30,1ad8b489-c775-4971-a1b1-d9f5997bb183,63c5dc39-81c6-4a86-ba54-d97a9af5344e,428191000124101,Documentation of current medications,,
+2016-02-07,1ad8b489-c775-4971-a1b1-d9f5997bb183,bb74d5d3-6191-4e82-8f4c-605d76be6d56,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2016-10-19,1ad8b489-c775-4971-a1b1-d9f5997bb183,8f6d31db-30b4-404b-8193-d162afd420cb,73761001,Colonoscopy,,
+2010-09-10,f059db17-5846-4e80-848e-3f6179fc5cab,364e6648-4c4c-46a0-80cb-2bf46c3c9664,274474001,Bone immobilization,65966004,Fracture of forearm
+2011-09-05,f059db17-5846-4e80-848e-3f6179fc5cab,1731ad8f-1c32-45ac-b7c2-5bec69618ca6,428191000124101,Documentation of current medications,,
+2012-08-25,f059db17-5846-4e80-848e-3f6179fc5cab,6c2fff8b-fe54-4a2b-821e-1837b7ca1714,428191000124101,Documentation of current medications,,
+2013-08-25,f059db17-5846-4e80-848e-3f6179fc5cab,f6903e73-f483-4d41-bdc5-27b96d122db5,428191000124101,Documentation of current medications,,
+2014-06-16,f059db17-5846-4e80-848e-3f6179fc5cab,e4fad604-8ae6-4b96-83f2-4279be39e9d0,428191000124101,Documentation of current medications,,
+2015-06-06,f059db17-5846-4e80-848e-3f6179fc5cab,210591a9-02cb-414d-bb36-794f18ef5fa7,428191000124101,Documentation of current medications,,
+2016-05-18,f059db17-5846-4e80-848e-3f6179fc5cab,fdcd262e-5c07-4a00-9425-c37e2ffa3593,428191000124101,Documentation of current medications,,
+2007-12-04,bd4ae45d-4d11-43b4-bcb0-d5d0f0ce270f,bc40d681-552d-4aca-b88f-d2111f6fc270,428191000124101,Documentation of current medications,,
+2008-11-30,bd4ae45d-4d11-43b4-bcb0-d5d0f0ce270f,e0cb5d0a-0495-47d0-ad81-48ee1588c5a8,428191000124101,Documentation of current medications,,
+2009-12-06,bd4ae45d-4d11-43b4-bcb0-d5d0f0ce270f,7d7161ba-0267-4b23-a275-003bbd417e19,428191000124101,Documentation of current medications,,
+2013-02-07,bd4ae45d-4d11-43b4-bcb0-d5d0f0ce270f,8c2bc436-973c-4f1a-9d34-54cf0529a44f,428191000124101,Documentation of current medications,,
+2015-03-09,bd4ae45d-4d11-43b4-bcb0-d5d0f0ce270f,a1288919-b590-4454-b963-487911f0f391,428191000124101,Documentation of current medications,,
+2016-03-29,bd4ae45d-4d11-43b4-bcb0-d5d0f0ce270f,3d7c68a3-16a0-4d74-ad1f-d58859a814cd,428191000124101,Documentation of current medications,,
+2017-02-10,bd4ae45d-4d11-43b4-bcb0-d5d0f0ce270f,fecd33c8-3984-4da3-af62-c48f74d823cd,428191000124101,Documentation of current medications,,
+2008-02-15,d220733a-acd0-4731-840b-1383e9ec051d,9948f7c9-5d53-480b-ad2c-84121d2d09f4,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2008-09-19,d220733a-acd0-4731-840b-1383e9ec051d,7bbb5554-141d-496b-aa49-9642c4dc5e6c,18946005,Epidural anesthesia,72892002,Normal pregnancy
+2008-09-19,d220733a-acd0-4731-840b-1383e9ec051d,7bbb5554-141d-496b-aa49-9642c4dc5e6c,66348005,Childbirth,72892002,Normal pregnancy
+2010-06-10,d220733a-acd0-4731-840b-1383e9ec051d,0704226d-83ea-4b9d-a0b3-f17e3ccc910f,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2010-07-05,d220733a-acd0-4731-840b-1383e9ec051d,8c2c6b8f-9b87-4815-8345-e1ff8ff38076,428191000124101,Documentation of current medications,,
+2011-01-20,d220733a-acd0-4731-840b-1383e9ec051d,79dbef79-65cb-43fb-b818-8ff77f15cff3,66348005,Childbirth,72892002,Normal pregnancy
+2015-10-08,d220733a-acd0-4731-840b-1383e9ec051d,12fc3969-59ec-4c47-9d1f-ca50ee9e4da4,428191000124101,Documentation of current medications,,
+2015-10-11,d220733a-acd0-4731-840b-1383e9ec051d,566969d7-cf20-4235-9553-bee682b5d797,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2016-05-08,d220733a-acd0-4731-840b-1383e9ec051d,e8caf1c2-f893-4125-8907-0ec688e61d32,236974004,Instrumental delivery,72892002,Normal pregnancy
+2016-05-08,d220733a-acd0-4731-840b-1383e9ec051d,e8caf1c2-f893-4125-8907-0ec688e61d32,66348005,Childbirth,72892002,Normal pregnancy
+2007-12-22,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,e23e676e-4ffe-44b9-a57d-38ddbbf3c838,237001001,Augmentation of labor,72892002,Normal pregnancy
+2007-12-22,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,e23e676e-4ffe-44b9-a57d-38ddbbf3c838,66348005,Childbirth,72892002,Normal pregnancy
+2009-12-11,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,90295950-0d00-4e75-9240-091f3b057ab5,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2010-11-07,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,0fd03a01-ef9b-4294-a200-8e3b586a0ee3,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2011-08-01,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,c34ba115-7f69-48dd-8193-40ae93c64bfc,428191000124101,Documentation of current medications,,
+2014-02-02,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,c37dfaf3-8420-4099-99c4-2a76471eacef,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2014-08-10,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,3c1451b6-1f11-4a54-805e-1a6564a97b7e,428191000124101,Documentation of current medications,,
+2015-10-26,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,d69ece2b-c01f-4135-87e5-5870b536b8a6,428191000124101,Documentation of current medications,,
+2016-09-18,9ff59d00-8bc7-48b8-8c9f-b4c016d3cbd1,99d6ffa3-fa1e-4a5e-a0f3-a473020f02e8,428191000124101,Documentation of current medications,,
+2007-06-21,7b7131a4-83d6-4c00-b27a-19518f7eca1c,663aa060-a84a-482f-97f6-1331edcb0b5e,288086009,Suture open wound,283371005,Laceration of forearm
+2008-01-27,7b7131a4-83d6-4c00-b27a-19518f7eca1c,2596b0d4-f1be-48f4-90c5-427d9704be23,73761001,Colonoscopy,,
+2012-01-14,7b7131a4-83d6-4c00-b27a-19518f7eca1c,087c18b5-679e-428b-aafa-c74a31725aad,428191000124101,Documentation of current medications,,
+2013-01-27,7b7131a4-83d6-4c00-b27a-19518f7eca1c,b9232401-9e54-47da-8e47-f3d9ca3b42ef,73761001,Colonoscopy,,
+2007-07-09,5751f73b-15e7-437c-a8a2-e92e4f47a8c0,99ca5905-3d14-4bb3-9db8-1413a2b95146,428191000124101,Documentation of current medications,,
+2008-08-05,5751f73b-15e7-437c-a8a2-e92e4f47a8c0,241cecad-0c6b-4c27-9dba-d792bea659e8,428191000124101,Documentation of current medications,,
+2008-08-13,5751f73b-15e7-437c-a8a2-e92e4f47a8c0,fae50687-ee4b-4faf-ba8d-114ef2da1c70,274474001,Bone immobilization,16114001,Fracture of ankle
+2008-08-13,5751f73b-15e7-437c-a8a2-e92e4f47a8c0,fae50687-ee4b-4faf-ba8d-114ef2da1c70,312681000,Bone density scan (procedure),16114001,Fracture of ankle
+2011-08-17,5751f73b-15e7-437c-a8a2-e92e4f47a8c0,b3b77898-0dde-4b24-bede-f83da7811e46,428191000124101,Documentation of current medications,,
+2012-07-13,5751f73b-15e7-437c-a8a2-e92e4f47a8c0,77f7c5ce-fa93-48ff-b314-efbbcd11182a,428191000124101,Documentation of current medications,,
+2014-08-04,5751f73b-15e7-437c-a8a2-e92e4f47a8c0,987b6f31-fd8e-42a8-a861-a9b22b187092,428191000124101,Documentation of current medications,,
+2009-08-22,c3798fc4-a853-4021-9061-935fb254b86d,2ce907c5-7130-43df-8682-752a9cd9a4e1,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2012-05-16,c3798fc4-a853-4021-9061-935fb254b86d,1a55b4ec-b76c-4ecf-871c-259dc7d2c506,428191000124101,Documentation of current medications,,
+2009-12-21,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,0fce8a77-f294-491a-b38e-81f433933dba,428191000124101,Documentation of current medications,,
+2010-01-31,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,982c6ee9-f54f-4b29-8131-3182c9697555,428191000124101,Documentation of current medications,,
+2010-04-16,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,7d9bf57c-0806-43b1-a057-6aae5e92d2e9,428191000124101,Documentation of current medications,,
+2011-07-09,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,b1bcea0a-a05e-4c7a-b40c-eeab37be7fed,428191000124101,Documentation of current medications,,
+2012-01-29,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,79a2eb85-8c2c-498e-8e3c-0b568fd8c3e4,428191000124101,Documentation of current medications,,
+2014-02-23,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,d1a4486c-4caa-490e-a6ea-2922a8681890,288086009,Suture open wound,284551006,Laceration of foot
+2015-03-25,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,9e2dfbcd-2607-4a43-bcd2-4c7c9c8dd1ea,428191000124101,Documentation of current medications,,
+2017-05-11,ad8bc2fd-c3e2-4130-bebf-5a376d162a86,c6d46595-72e5-4032-a2cc-bd3e8b11b550,428191000124101,Documentation of current medications,,
+2007-10-24,72904e31-e5df-4e85-9834-2ed7143b8207,8a708100-a889-4049-9fa1-90fa3584d3a1,428191000124101,Documentation of current medications,,
+2010-12-17,72904e31-e5df-4e85-9834-2ed7143b8207,ca9b22d7-f802-48fa-a122-6e274033139a,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2011-01-03,72904e31-e5df-4e85-9834-2ed7143b8207,9deafc0f-fbcd-443f-8995-1da8d8e9d08e,428191000124101,Documentation of current medications,,
+2014-03-09,72904e31-e5df-4e85-9834-2ed7143b8207,8eecf668-4490-4eaa-8fa5-51e730f59838,428191000124101,Documentation of current medications,,
+2015-01-11,72904e31-e5df-4e85-9834-2ed7143b8207,3b7d3515-1fbe-4c0f-8250-e97dcc462a3c,428191000124101,Documentation of current medications,,
+2016-05-01,72904e31-e5df-4e85-9834-2ed7143b8207,9af8e29d-b361-4f97-88e5-e1b6d93e1ff7,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2017-01-06,72904e31-e5df-4e85-9834-2ed7143b8207,a4240fae-4d7a-4402-af9f-04f3643763cc,428191000124101,Documentation of current medications,,
+2009-07-30,9086c7f1-1a6b-40b6-9803-d094361e2ab1,8aa2043e-122a-4f73-9377-2061a210a23e,428191000124101,Documentation of current medications,,
+2009-04-07,53c139ea-24ef-43f2-ac2f-65d4279d5c72,73e80ea4-8029-4fe8-83f2-c5165f56fd7e,428191000124101,Documentation of current medications,,
+2015-11-18,53c139ea-24ef-43f2-ac2f-65d4279d5c72,6226cdee-d03a-4032-a5d1-269c464d8cc6,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2008-02-21,342ba3d3-2d4f-412f-a6f8-88c8af801288,0c1a44bf-205a-41a7-a6f8-914bc10d8470,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2009-04-22,342ba3d3-2d4f-412f-a6f8-88c8af801288,6398e4a5-ed11-4066-ad9d-3cef957a37a9,73761001,Colonoscopy,,
+2010-03-17,342ba3d3-2d4f-412f-a6f8-88c8af801288,b7e67eb6-5b3b-456b-955c-c04b964934b1,428191000124101,Documentation of current medications,,
+2011-04-24,342ba3d3-2d4f-412f-a6f8-88c8af801288,765fbe89-33a7-4609-9786-a769d4985f13,428191000124101,Documentation of current medications,,
+2012-06-12,342ba3d3-2d4f-412f-a6f8-88c8af801288,dba9a3ed-82f2-4341-8230-24e02a057395,312681000,Bone density scan (procedure),,
+2013-06-05,342ba3d3-2d4f-412f-a6f8-88c8af801288,d0546edc-11ab-4399-992b-fda500371e3e,433112001,Percutaneous mechanical thrombectomy of portal vein using fluoroscopic guidance,,
+2013-06-07,342ba3d3-2d4f-412f-a6f8-88c8af801288,d0546edc-11ab-4399-992b-fda500371e3e,428191000124101,Documentation of current medications,,
+2014-07-19,342ba3d3-2d4f-412f-a6f8-88c8af801288,c0db22f7-46c5-4578-9a46-d40d41e0a6ff,428191000124101,Documentation of current medications,,
+2015-08-12,342ba3d3-2d4f-412f-a6f8-88c8af801288,13dfd86b-7821-4dc0-b6e8-7df160ecb975,428191000124101,Documentation of current medications,,
+2016-08-01,342ba3d3-2d4f-412f-a6f8-88c8af801288,43d86b5c-e8f0-411a-858e-4abed83e2cef,428191000124101,Documentation of current medications,,
+2016-11-27,342ba3d3-2d4f-412f-a6f8-88c8af801288,127107c4-f072-4fbe-ad3f-ee31a8336940,274474001,Bone immobilization,16114001,Fracture of ankle
+2009-04-15,a2cd21fa-faa9-45fc-a160-3c7b64b1f1ad,16d110d7-aaa0-4ac6-9c73-c5e06d420692,428191000124101,Documentation of current medications,,
+2010-05-31,a2cd21fa-faa9-45fc-a160-3c7b64b1f1ad,da0bae45-edda-4b93-99bd-34e8e390e4dd,428191000124101,Documentation of current medications,,
+2010-12-31,a2cd21fa-faa9-45fc-a160-3c7b64b1f1ad,e9c2b498-67a9-424c-96f9-6445589c8434,288086009,Suture open wound,283385000,Laceration of thigh
+2012-06-30,a2cd21fa-faa9-45fc-a160-3c7b64b1f1ad,2fab627c-be4e-411c-95dd-f2b52b18bcaa,428191000124101,Documentation of current medications,,
+2014-05-15,a2cd21fa-faa9-45fc-a160-3c7b64b1f1ad,d4155247-03fd-4e2b-a54a-4e424c14531a,428191000124101,Documentation of current medications,,
+2014-07-10,a2cd21fa-faa9-45fc-a160-3c7b64b1f1ad,b789fea1-ecb6-4cde-af87-10499218a455,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2008-01-22,c8b64227-1f04-4c2a-af74-b422e04d1610,67432698-39e9-4912-a85d-4e52499b430f,428191000124101,Documentation of current medications,,
+2009-03-06,c8b64227-1f04-4c2a-af74-b422e04d1610,2d9869f2-0edf-4972-a7a1-2209b544ab81,428191000124101,Documentation of current medications,,
+2010-04-19,c8b64227-1f04-4c2a-af74-b422e04d1610,838e78f2-0127-4866-a4aa-bd7e48bc1cce,428191000124101,Documentation of current medications,,
+2010-12-22,c8b64227-1f04-4c2a-af74-b422e04d1610,d6d9e91d-731b-4970-8830-caca83df1690,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2014-05-21,c8b64227-1f04-4c2a-af74-b422e04d1610,5629b2fe-6bcb-4cd2-8488-509628956425,428191000124101,Documentation of current medications,,
+2015-05-08,c8b64227-1f04-4c2a-af74-b422e04d1610,fb8e4f29-1af7-4fa6-b199-e3d69b4357c4,428191000124101,Documentation of current medications,,
+2007-10-12,7eb1bc06-64d4-4a7d-b5e6-a42a75051bcf,f5e146c4-05a1-4f29-8435-0024fd356998,428191000124101,Documentation of current medications,,
+2008-01-17,7eb1bc06-64d4-4a7d-b5e6-a42a75051bcf,838bc65d-96e0-41d9-8ef5-ad0b8c58f231,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2008-12-10,7eb1bc06-64d4-4a7d-b5e6-a42a75051bcf,51b823fe-a931-4b88-9143-e5ad5e471026,428191000124101,Documentation of current medications,,
+2009-12-27,7eb1bc06-64d4-4a7d-b5e6-a42a75051bcf,f457ee41-b901-4345-9b86-112747fdfb26,428191000124101,Documentation of current medications,,
+2016-03-28,7eb1bc06-64d4-4a7d-b5e6-a42a75051bcf,544ab50c-ba74-49ec-94c4-44461dcf1126,428191000124101,Documentation of current medications,,
+2017-03-24,7eb1bc06-64d4-4a7d-b5e6-a42a75051bcf,1018e4d9-f609-4ba7-9524-0c9138fc4125,428191000124101,Documentation of current medications,,
+2009-02-08,e24be22f-3773-4dc1-81bd-742e18f75138,87ca6fd6-695d-4580-becb-0aca3a517755,428191000124101,Documentation of current medications,,
+2009-07-27,e24be22f-3773-4dc1-81bd-742e18f75138,c7716d42-8e15-4a64-9ff0-f9ff7f336280,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2009-09-07,e24be22f-3773-4dc1-81bd-742e18f75138,c99e198f-4a0b-4ae1-942a-f3bcc9f2f679,395142003,Allergy screening test,,
+2009-10-03,e24be22f-3773-4dc1-81bd-742e18f75138,54860f3f-4b35-4bec-a52f-5a2053b6b112,180256009,Subcutaneous immunotherapy,,
+2009-10-27,e24be22f-3773-4dc1-81bd-742e18f75138,52eabbbd-8531-4019-9b33-c2a24b78a6f3,180256009,Subcutaneous immunotherapy,,
+2009-11-23,e24be22f-3773-4dc1-81bd-742e18f75138,335d2944-3831-4503-81b3-3cb34800bb78,180256009,Subcutaneous immunotherapy,,
+2009-12-16,e24be22f-3773-4dc1-81bd-742e18f75138,69cc434c-4d0f-41fe-9332-cc3eda940966,180256009,Subcutaneous immunotherapy,,
+2010-01-06,e24be22f-3773-4dc1-81bd-742e18f75138,650202cd-b845-4f77-8829-ea4422f99a39,180256009,Subcutaneous immunotherapy,,
+2010-02-03,e24be22f-3773-4dc1-81bd-742e18f75138,fbe15371-cf77-45f1-9913-57c88b11d78e,180256009,Subcutaneous immunotherapy,,
+2010-03-01,e24be22f-3773-4dc1-81bd-742e18f75138,5aa6204a-abba-4bd9-b3c8-8db8b05f7b83,180256009,Subcutaneous immunotherapy,,
+2010-03-09,e24be22f-3773-4dc1-81bd-742e18f75138,9183f375-0625-4ba7-8efe-f76bce2103f1,428191000124101,Documentation of current medications,,
+2010-03-23,e24be22f-3773-4dc1-81bd-742e18f75138,03fe21c7-870c-444a-9ef2-b087f60a6927,180256009,Subcutaneous immunotherapy,,
+2010-04-15,e24be22f-3773-4dc1-81bd-742e18f75138,a0ac6e3e-0ca2-4156-891f-3f6ba4564b89,180256009,Subcutaneous immunotherapy,,
+2010-05-11,e24be22f-3773-4dc1-81bd-742e18f75138,41807759-a2a3-458c-a591-d73176ea1e9f,180256009,Subcutaneous immunotherapy,,
+2010-06-07,e24be22f-3773-4dc1-81bd-742e18f75138,8586a702-dd4a-4543-ac3b-0fcf87b9a1b8,180256009,Subcutaneous immunotherapy,,
+2010-07-02,e24be22f-3773-4dc1-81bd-742e18f75138,7cd72bfa-e1c4-48aa-8636-d4a73e0ab1db,180256009,Subcutaneous immunotherapy,,
+2010-07-26,e24be22f-3773-4dc1-81bd-742e18f75138,1176b23e-5d85-436e-9e8e-cafd82c3ffd8,180256009,Subcutaneous immunotherapy,,
+2010-08-19,e24be22f-3773-4dc1-81bd-742e18f75138,d3a4a024-73aa-46ca-a5a7-e849774a5c1a,180256009,Subcutaneous immunotherapy,,
+2010-09-11,e24be22f-3773-4dc1-81bd-742e18f75138,9ca07461-8b21-427e-920a-d8f2d3f3fe49,180256009,Subcutaneous immunotherapy,,
+2010-10-05,e24be22f-3773-4dc1-81bd-742e18f75138,9284fd99-f638-45ec-8299-9ffc0b12a01e,180256009,Subcutaneous immunotherapy,,
+2010-10-27,e24be22f-3773-4dc1-81bd-742e18f75138,97b3bde1-6d95-48f3-977d-84b482510db3,180256009,Subcutaneous immunotherapy,,
+2010-11-19,e24be22f-3773-4dc1-81bd-742e18f75138,c332a694-ce10-4afb-814c-66d11ccddc0c,180256009,Subcutaneous immunotherapy,,
+2010-12-15,e24be22f-3773-4dc1-81bd-742e18f75138,538b6cfe-5922-4e51-aa81-54cc86b47303,180256009,Subcutaneous immunotherapy,,
+2011-01-06,e24be22f-3773-4dc1-81bd-742e18f75138,db1ffcb9-8056-4b82-b373-1e3b0e6f5103,180256009,Subcutaneous immunotherapy,,
+2011-02-01,e24be22f-3773-4dc1-81bd-742e18f75138,18acff41-5a11-48bb-a300-fb8207fa01b3,180256009,Subcutaneous immunotherapy,,
+2011-02-25,e24be22f-3773-4dc1-81bd-742e18f75138,d8356dd4-4ef0-4805-ab2d-f90ccb972889,180256009,Subcutaneous immunotherapy,,
+2011-03-19,e24be22f-3773-4dc1-81bd-742e18f75138,fee617a9-e4e6-459c-9825-9ba84a46153b,180256009,Subcutaneous immunotherapy,,
+2011-04-13,e24be22f-3773-4dc1-81bd-742e18f75138,cfb25c4f-76be-4091-94ce-95c56d7f0e90,180256009,Subcutaneous immunotherapy,,
+2011-05-10,e24be22f-3773-4dc1-81bd-742e18f75138,aecf9e8d-6bd1-4f61-85ed-2e98664d7ba7,180256009,Subcutaneous immunotherapy,,
+2011-06-01,e24be22f-3773-4dc1-81bd-742e18f75138,9ef33318-f020-4557-bbb4-1236b0ab5f30,180256009,Subcutaneous immunotherapy,,
+2011-06-29,e24be22f-3773-4dc1-81bd-742e18f75138,99bd1678-a11e-4fc6-a22a-e77397a942c2,180256009,Subcutaneous immunotherapy,,
+2011-07-21,e24be22f-3773-4dc1-81bd-742e18f75138,94f1bf0d-4806-4ed1-973a-75067f9623a0,180256009,Subcutaneous immunotherapy,,
+2011-08-15,e24be22f-3773-4dc1-81bd-742e18f75138,a340c595-a94a-4900-9771-6e9574f02f28,180256009,Subcutaneous immunotherapy,,
+2011-08-10,e24be22f-3773-4dc1-81bd-742e18f75138,a340c595-a94a-4900-9771-6e9574f02f28,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2011-09-07,e24be22f-3773-4dc1-81bd-742e18f75138,acd40b1c-d263-4ea7-a074-e475534d47c1,180256009,Subcutaneous immunotherapy,,
+2011-10-01,e24be22f-3773-4dc1-81bd-742e18f75138,b9be6deb-0cce-44eb-86c8-9b562ffc0cc0,180256009,Subcutaneous immunotherapy,,
+2011-10-26,e24be22f-3773-4dc1-81bd-742e18f75138,cc1b6784-d6a0-4493-a354-7d215e81dd3a,180256009,Subcutaneous immunotherapy,,
+2011-11-19,e24be22f-3773-4dc1-81bd-742e18f75138,085c38e4-c47f-45f2-a952-2139cb6942e6,180256009,Subcutaneous immunotherapy,,
+2011-12-17,e24be22f-3773-4dc1-81bd-742e18f75138,48e26980-7e42-41da-a6aa-af0597855875,180256009,Subcutaneous immunotherapy,,
+2012-01-07,e24be22f-3773-4dc1-81bd-742e18f75138,f2bfed96-dcc1-448f-991e-1183bc6df1b9,180256009,Subcutaneous immunotherapy,,
+2012-02-01,e24be22f-3773-4dc1-81bd-742e18f75138,2a6f4641-ba3e-4f72-9b80-12a1d4119909,180256009,Subcutaneous immunotherapy,,
+2012-02-26,e24be22f-3773-4dc1-81bd-742e18f75138,c978e8b6-3b1f-4108-9267-f59dfb75a598,180256009,Subcutaneous immunotherapy,,
+2012-03-17,e24be22f-3773-4dc1-81bd-742e18f75138,4ab72b48-b66b-44ea-b84a-9e9f7e4a015a,428191000124101,Documentation of current medications,,
+2012-03-20,e24be22f-3773-4dc1-81bd-742e18f75138,672eeba9-536a-4554-950b-83196912ca1c,180256009,Subcutaneous immunotherapy,,
+2012-04-14,e24be22f-3773-4dc1-81bd-742e18f75138,a2522cc0-fa19-462c-8c79-616e2b52cea3,180256009,Subcutaneous immunotherapy,,
+2012-05-09,e24be22f-3773-4dc1-81bd-742e18f75138,87a82aa9-98cd-4d72-9394-826afe3c1e72,180256009,Subcutaneous immunotherapy,,
+2012-06-02,e24be22f-3773-4dc1-81bd-742e18f75138,4a2a9074-3494-4025-8329-71eafabacf6e,180256009,Subcutaneous immunotherapy,,
+2012-06-27,e24be22f-3773-4dc1-81bd-742e18f75138,e4a4aba9-e49f-4193-8507-e6270210b1f9,180256009,Subcutaneous immunotherapy,,
+2012-07-19,e24be22f-3773-4dc1-81bd-742e18f75138,5933319a-7b9b-452f-9781-60106ec50643,180256009,Subcutaneous immunotherapy,,
+2012-08-10,e24be22f-3773-4dc1-81bd-742e18f75138,e9342cd6-857f-4c96-94cc-184fed316053,180256009,Subcutaneous immunotherapy,,
+2012-09-07,e24be22f-3773-4dc1-81bd-742e18f75138,611ab0db-cae1-488f-b025-eee103c57be7,180256009,Subcutaneous immunotherapy,,
+2012-09-30,e24be22f-3773-4dc1-81bd-742e18f75138,2ed5e250-2f74-4303-8daf-c4001c5bcd6b,180256009,Subcutaneous immunotherapy,,
+2012-10-27,e24be22f-3773-4dc1-81bd-742e18f75138,ab551deb-7ba2-41bb-aa76-6ab04e70e096,180256009,Subcutaneous immunotherapy,,
+2012-11-20,e24be22f-3773-4dc1-81bd-742e18f75138,b70f204c-009b-46c5-aabc-7531ff4bbde8,180256009,Subcutaneous immunotherapy,,
+2012-12-17,e24be22f-3773-4dc1-81bd-742e18f75138,bd12dc81-68f4-4571-a698-7cc3d9967b76,180256009,Subcutaneous immunotherapy,,
+2013-01-12,e24be22f-3773-4dc1-81bd-742e18f75138,5b26cab5-9f65-4e94-a45c-281ef61d3e3c,180256009,Subcutaneous immunotherapy,,
+2013-02-04,e24be22f-3773-4dc1-81bd-742e18f75138,50b40421-01ce-4ba7-8dc1-4d29c9e9f453,180256009,Subcutaneous immunotherapy,,
+2013-03-04,e24be22f-3773-4dc1-81bd-742e18f75138,43c8294c-805b-48cc-9c33-1176c9de0612,180256009,Subcutaneous immunotherapy,,
+2013-03-29,e24be22f-3773-4dc1-81bd-742e18f75138,c04ac45e-4010-4a9d-bdbf-f6ef347ca350,180256009,Subcutaneous immunotherapy,,
+2013-04-19,e24be22f-3773-4dc1-81bd-742e18f75138,f62c35f6-be7e-4ec0-9a90-f38836506f81,180256009,Subcutaneous immunotherapy,,
+2013-05-16,e24be22f-3773-4dc1-81bd-742e18f75138,e298cc81-17c1-4c7b-bb15-822748eb2493,180256009,Subcutaneous immunotherapy,,
+2013-06-11,e24be22f-3773-4dc1-81bd-742e18f75138,4102da87-5228-486a-bb67-bfdfd54ad8d8,180256009,Subcutaneous immunotherapy,,
+2013-07-09,e24be22f-3773-4dc1-81bd-742e18f75138,2aa208d3-6d1c-41c2-a83f-5c3ee900be12,180256009,Subcutaneous immunotherapy,,
+2013-08-03,e24be22f-3773-4dc1-81bd-742e18f75138,b1a707d7-3888-4082-87a6-fd85f680d27d,180256009,Subcutaneous immunotherapy,,
+2013-07-30,e24be22f-3773-4dc1-81bd-742e18f75138,b1a707d7-3888-4082-87a6-fd85f680d27d,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2013-08-29,e24be22f-3773-4dc1-81bd-742e18f75138,efa4fdba-e57c-4033-9dac-da850d6463e2,180256009,Subcutaneous immunotherapy,,
+2013-09-24,e24be22f-3773-4dc1-81bd-742e18f75138,20af0ee8-a116-4888-b4e6-58a672c6aae8,180256009,Subcutaneous immunotherapy,,
+2013-10-18,e24be22f-3773-4dc1-81bd-742e18f75138,c8256ac8-cfa7-4d6e-b5ea-47b5d82a7223,395142003,Allergy screening test,,
+2014-02-19,e24be22f-3773-4dc1-81bd-742e18f75138,f86c3625-8e9b-4da1-a106-c5befdbdd912,428191000124101,Documentation of current medications,,
+2017-05-16,e24be22f-3773-4dc1-81bd-742e18f75138,a19fedb6-2eed-4d13-a05a-ff59abed509c,252160004,Standard pregnancy test,72892002,Normal pregnancy
+2014-04-02,116b6ea5-a2d3-450c-877f-697fe8842ff3,73a8598a-4fb8-405f-9ccc-f44dd4f952c7,428191000124101,Documentation of current medications,,
+2015-04-09,116b6ea5-a2d3-450c-877f-697fe8842ff3,df95f4fe-c410-45a9-84f4-1c579eb4f28c,428191000124101,Documentation of current medications,,
+2016-04-07,116b6ea5-a2d3-450c-877f-697fe8842ff3,caf6de48-5a1c-4080-b823-0d51a30a1c0d,428191000124101,Documentation of current medications,,
+2010-08-27,3236b888-2627-4a8c-85ce-8ab992456afd,fa0059f7-9599-45e9-9c5e-e87e7366daaf,428191000124101,Documentation of current medications,,
+2010-10-06,3236b888-2627-4a8c-85ce-8ab992456afd,0a5f33a1-1307-465b-ab6f-9d255722f341,428191000124101,Documentation of current medications,,
+2010-12-13,3236b888-2627-4a8c-85ce-8ab992456afd,23467a29-60b2-4aeb-9201-24e4dcf15a48,428191000124101,Documentation of current medications,,
+2011-02-22,3236b888-2627-4a8c-85ce-8ab992456afd,b3327e6c-c25d-4c2c-b6b5-3c109514db66,428191000124101,Documentation of current medications,,
+2011-11-10,3236b888-2627-4a8c-85ce-8ab992456afd,2b59e4ab-b5d6-45c2-925e-067b076d7d65,395142003,Allergy screening test,,
+2012-01-13,3236b888-2627-4a8c-85ce-8ab992456afd,b7949a7d-8eb6-40bc-9863-0e8a72615b2b,428191000124101,Documentation of current medications,,
+2012-06-18,3236b888-2627-4a8c-85ce-8ab992456afd,4a8244d3-f38e-4a1a-87d2-82fb04cc0e1e,428191000124101,Documentation of current medications,,
+2013-01-05,3236b888-2627-4a8c-85ce-8ab992456afd,d9d46450-8be5-47dc-b35b-1e87ae59c95c,428191000124101,Documentation of current medications,,
+2013-07-15,3236b888-2627-4a8c-85ce-8ab992456afd,1ab22691-d264-4f7b-810d-8bed482eb04f,428191000124101,Documentation of current medications,,
+2015-01-16,3236b888-2627-4a8c-85ce-8ab992456afd,3330c4d3-6480-4bfa-8303-34892b7cc7f9,428191000124101,Documentation of current medications,,
+2016-01-14,3236b888-2627-4a8c-85ce-8ab992456afd,18510a23-c5fd-4aec-8a87-0ad26a2a9d38,428191000124101,Documentation of current medications,,
+2008-02-26,4a3f27e4-aae9-4975-91db-b12dacb43333,2c3224ae-4ac3-4858-aa70-0dbfcae7184b,428191000124101,Documentation of current medications,,
+2009-02-05,4a3f27e4-aae9-4975-91db-b12dacb43333,e555e52f-8d7e-48ab-8064-470d006f72e4,73761001,Colonoscopy,,
+2012-04-12,4a3f27e4-aae9-4975-91db-b12dacb43333,e422d82b-5ef9-4ec0-8d43-f3e48a0de1e9,428191000124101,Documentation of current medications,,
+2014-07-14,4a3f27e4-aae9-4975-91db-b12dacb43333,e99d68e6-ae08-4841-a636-c91fd20edd24,428191000124101,Documentation of current medications,,
+2014-07-14,4a3f27e4-aae9-4975-91db-b12dacb43333,e99d68e6-ae08-4841-a636-c91fd20edd24,312681000,Bone density scan (procedure),,
+2010-01-13,3296c546-6f97-486f-83b1-142ad97afc1d,76a3c6a4-5cda-455e-8176-bdb679c0a48f,428191000124101,Documentation of current medications,,
+2014-10-14,3296c546-6f97-486f-83b1-142ad97afc1d,0e948ab3-0b74-4f50-9d0f-37c0b803ec74,269911007,Sputum examination (procedure),10509002,Acute bronchitis (disorder)
+2016-12-11,3296c546-6f97-486f-83b1-142ad97afc1d,9cab9dd2-da98-4cf2-8324-f8b634604c3d,428191000124101,Documentation of current medications,,
+2009-08-19,a9a8c0eb-f201-4302-b97c-8428a35c4f00,536facb0-6250-479c-beb1-1ba8b3161137,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2010-07-23,a9a8c0eb-f201-4302-b97c-8428a35c4f00,96471151-3073-4ea5-bc4c-87fdc62bde1c,428191000124101,Documentation of current medications,,
+2011-09-11,a9a8c0eb-f201-4302-b97c-8428a35c4f00,8bba3c93-e31d-4e48-8add-c171b1e0fc14,428191000124101,Documentation of current medications,,
+2012-09-25,a9a8c0eb-f201-4302-b97c-8428a35c4f00,4fc128d4-b2bd-4dbe-9308-95f55c673870,305428000,Admission to orthopedic department,58150001,Fracture of clavicle
+2012-09-25,a9a8c0eb-f201-4302-b97c-8428a35c4f00,4fc128d4-b2bd-4dbe-9308-95f55c673870,312681000,Bone density scan (procedure),58150001,Fracture of clavicle
+2015-09-02,a9a8c0eb-f201-4302-b97c-8428a35c4f00,72661d86-4e84-45d8-b61f-471453624b11,428191000124101,Documentation of current medications,,
+2016-10-02,a9a8c0eb-f201-4302-b97c-8428a35c4f00,3e279b83-dd83-42d6-97db-e78ddb160880,428191000124101,Documentation of current medications,,
+2009-12-23,83da6232-18c9-47f1-894d-59c33e624449,2f4fa3fd-0cb5-48c4-925d-45a477d5d4c8,428191000124101,Documentation of current medications,,
+2012-02-23,83da6232-18c9-47f1-894d-59c33e624449,4f5e0548-1f6a-4dde-a6cd-2f66c3af6171,428191000124101,Documentation of current medications,,
+2013-03-06,83da6232-18c9-47f1-894d-59c33e624449,0cde31ba-a85a-4808-a243-24c95dee2f0f,428191000124101,Documentation of current medications,,
+2014-04-23,83da6232-18c9-47f1-894d-59c33e624449,0ae896e7-cbdd-488d-9d99-b7f0c1601bb7,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2016-06-04,83da6232-18c9-47f1-894d-59c33e624449,0c1a95bd-ae9d-4556-b8b2-de1f9f4e6dc3,428191000124101,Documentation of current medications,,
+2016-05-07,9c6df5b8-9c68-4c69-be34-0f2f955d6925,b561f359-88d4-4275-b3d6-23c2163448aa,428191000124101,Documentation of current medications,,
+2008-08-10,f2759b8c-aee3-4950-81c5-855f7e6d70bb,a79a48cd-8af3-458b-96a0-1b30d8fe5c45,428191000124101,Documentation of current medications,,
+2008-09-08,f2759b8c-aee3-4950-81c5-855f7e6d70bb,e1fdf3e0-e7a8-4822-976e-7f31008b6f57,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2009-08-05,f2759b8c-aee3-4950-81c5-855f7e6d70bb,1d1f19ee-5693-432a-8717-eec18347881c,428191000124101,Documentation of current medications,,
+2011-08-14,f2759b8c-aee3-4950-81c5-855f7e6d70bb,cd093198-0c86-49d8-bf32-fefcda64cb33,428191000124101,Documentation of current medications,,
+2012-07-30,f2759b8c-aee3-4950-81c5-855f7e6d70bb,cb5874a1-87e9-4d46-9638-3a91a936649b,428191000124101,Documentation of current medications,,
+2015-08-01,f2759b8c-aee3-4950-81c5-855f7e6d70bb,08dbdadc-19d3-4662-982a-de82cbf510e8,428191000124101,Documentation of current medications,,
+2016-09-23,f2759b8c-aee3-4950-81c5-855f7e6d70bb,e57cee66-7318-49cf-8ef0-4c7634430b8b,428191000124101,Documentation of current medications,,
+2008-10-24,221c6c4b-afe1-4e1b-97aa-73ce48f44f5d,a60918d2-a350-4579-8d76-74e3c41d2021,428191000124101,Documentation of current medications,,
+2011-08-20,68cde1c3-a1bb-4444-8a30-e0479c589280,bb31e551-ad66-42b6-8b7b-1978119aad19,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2012-05-21,68cde1c3-a1bb-4444-8a30-e0479c589280,60889b6a-b56d-4965-9729-0e6c1158e4f8,274474001,Bone immobilization,33737001,Fracture of rib
+2012-06-17,68cde1c3-a1bb-4444-8a30-e0479c589280,37b6e1f0-9c5d-4f9f-ae92-8c918b41ddd7,428191000124101,Documentation of current medications,,
+2012-10-05,68cde1c3-a1bb-4444-8a30-e0479c589280,6477ac47-75f4-4758-a3b4-0c035001d6d2,428191000124101,Documentation of current medications,,
+2013-04-27,68cde1c3-a1bb-4444-8a30-e0479c589280,d8ea3c0c-3f27-4aea-9acc-5e57cc13ea1c,428191000124101,Documentation of current medications,,
+2013-10-30,68cde1c3-a1bb-4444-8a30-e0479c589280,5bb87901-4c0e-4cab-97ba-2e0f253e855d,428191000124101,Documentation of current medications,,
+2016-04-28,68cde1c3-a1bb-4444-8a30-e0479c589280,aa0df64a-ece6-4d3a-9bbb-ef8b40f4c3bc,428191000124101,Documentation of current medications,,
+2017-04-01,68cde1c3-a1bb-4444-8a30-e0479c589280,c9fd062b-49aa-4c64-9daa-8950334e93ae,428191000124101,Documentation of current medications,,
+2011-06-12,3c378218-7e88-4d53-9eec-ab8bfe80135e,d8578456-1578-4483-a1a8-688610a02a5b,73761001,Colonoscopy,,
+2011-06-18,3c378218-7e88-4d53-9eec-ab8bfe80135e,9703c764-944e-4c38-8bf8-6e33a1edb142,428191000124101,Documentation of current medications,,
+2013-10-20,3c378218-7e88-4d53-9eec-ab8bfe80135e,9506af19-7ad1-4268-87ec-62fb73f61156,23426006,Measurement of respiratory function (procedure),10509002,Acute bronchitis (disorder)
+2014-03-23,3c378218-7e88-4d53-9eec-ab8bfe80135e,1cf0e396-ddca-42f5-99bd-615fa117e59f,428191000124101,Documentation of current medications,,
+2016-03-29,3c378218-7e88-4d53-9eec-ab8bfe80135e,ae22b4bd-9762-4976-ab9d-3ffa13b22f3c,428191000124101,Documentation of current medications,,
+2016-06-12,3c378218-7e88-4d53-9eec-ab8bfe80135e,5f3182ed-ccd5-4ffb-83d6-b07c4276a704,73761001,Colonoscopy,,
+2016-11-20,3c378218-7e88-4d53-9eec-ab8bfe80135e,5842b213-c95e-41f7-9ac1-24bce78d1be6,433112001,Percutaneous mechanical thrombectomy of portal vein using fluoroscopic guidance,,
+2007-11-22,4bd778fc-9537-45d5-b3d5-67006b5609d3,b5d7a780-8e98-4c36-b950-ae98de784687,428191000124101,Documentation of current medications,,
+2008-11-06,4bd778fc-9537-45d5-b3d5-67006b5609d3,88ae6c0d-6f9d-4873-959c-49f6fb109d5d,428191000124101,Documentation of current medications,,
+2012-02-25,4bd778fc-9537-45d5-b3d5-67006b5609d3,daf7f236-f45e-4f7e-8483-abc8b00c01f7,428191000124101,Documentation of current medications,,
+2014-11-26,4bd778fc-9537-45d5-b3d5-67006b5609d3,8e18d980-e943-4e50-9546-4aeef9a2bd9e,428191000124101,Documentation of current medications,,
+2007-06-08,03c2f4e8-d54d-4c90-bc5a-cb288e09eaf1,044e5b1f-a0ba-412e-a8f1-68690f739c8c,428191000124101,Documentation of current medications,,
+2007-11-03,c8f9335c-21b0-4602-a513-31d33d2f2943,3d0e8e52-e34f-413e-a01c-9490359c17d6,428191000124101,Documentation of current medications,,
+2009-10-29,c8f9335c-21b0-4602-a513-31d33d2f2943,a70f3ff0-4af6-4ff3-bb47-7515a921d690,428191000124101,Documentation of current medications,,
+2011-10-20,c8f9335c-21b0-4602-a513-31d33d2f2943,9e4f7628-701e-4bd5-9f2a-778aa878c3e7,428191000124101,Documentation of current medications,,
+2012-11-12,c8f9335c-21b0-4602-a513-31d33d2f2943,eff5dc63-fa99-4a03-add1-154a7e4e56fe,428191000124101,Documentation of current medications,,
+2013-10-22,c8f9335c-21b0-4602-a513-31d33d2f2943,0acd21d2-cf65-4f71-bf22-c932b5aefd74,428191000124101,Documentation of current medications,,
+2016-12-23,c8f9335c-21b0-4602-a513-31d33d2f2943,830581a5-a525-46a4-9d26-011c8d2934f0,117015009,Throat culture (procedure) ,43878008,Streptococcal sore throat (disorder)
+2010-04-05,57231ccb-4f20-409f-99c7-b30fbda28ac4,9b264236-4311-42c3-910b-b6d8b06341e1,428191000124101,Documentation of current medications,,
+2012-01-06,57231ccb-4f20-409f-99c7-b30fbda28ac4,d0031c8f-0935-409f-ad82-13fe2d0130ce,428191000124101,Documentation of current medications,,
+2013-06-13,57231ccb-4f20-409f-99c7-b30fbda28ac4,f7c0ac14-1d22-42cf-9e0d-75616a3446ae,428191000124101,Documentation of current medications,,
+2013-07-14,57231ccb-4f20-409f-99c7-b30fbda28ac4,ec092cfa-bc57-482d-8479-1a08ebdcb9fe,117015009,Throat culture (procedure) ,195662009,Acute viral pharyngitis (disorder)
+2011-11-25,3feda4af-741e-4f29-b41c-1c401cbc24d1,93dcc881-80d9-4c17-8510-8f1db3868f50,428191000124101,Documentation of current medications,,
+2012-12-12,3feda4af-741e-4f29-b41c-1c401cbc24d1,254d3655-5ca8-4140-be3d-aa45874a6f90,428191000124101,Documentation of current medications,,
+2013-12-11,3feda4af-741e-4f29-b41c-1c401cbc24d1,af4256ba-a94d-4190-8cfa-b5ca07720aaf,428191000124101,Documentation of current medications,,
+2010-02-03,72633a49-9f49-405b-b5e0-0ebab6dae7b2,fb6c213c-0c4b-4e9d-8504-57f19cfe2efa,428191000124101,Documentation of current medications,,
+2015-03-05,72633a49-9f49-405b-b5e0-0ebab6dae7b2,851fa664-a301-40b2-8862-4c25177ccf58,73761001,Colonoscopy,,
+2015-03-05,72633a49-9f49-405b-b5e0-0ebab6dae7b2,851fa664-a301-40b2-8862-4c25177ccf58,1015401000000102,Fecal occult blood test,68496003,Polyp of colon
+2015-03-05,72633a49-9f49-405b-b5e0-0ebab6dae7b2,851fa664-a301-40b2-8862-4c25177ccf58,274031008,Rectal polypectomy,68496003,Polyp of colon
+2016-08-23,72633a49-9f49-405b-b5e0-0ebab6dae7b2,301c8f43-ee04-4a1b-aaa0-88513e238abc,73761001,Colonoscopy,,
+2008-01-23,9c434300-f402-4060-b8da-b81ef4678ac5,bbc3521b-d12d-460d-adc6-2c5bcfff99c7,428191000124101,Documentation of current medications,,
+2011-01-09,9c434300-f402-4060-b8da-b81ef4678ac5,cfda0f78-5fab-44b7-adcd-0bd64de462aa,428191000124101,Documentation of current medications,,
+2012-04-11,9c434300-f402-4060-b8da-b81ef4678ac5,8bc508d0-6cc5-4861-956c-226b481a9943,428191000124101,Documentation of current medications,,
+2016-06-07,9c434300-f402-4060-b8da-b81ef4678ac5,c8b269b8-c738-40ee-a945-fc68b5733d46,428191000124101,Documentation of current medications,,
+2014-04-22,b137e321-3591-4d21-a8c3-df51df60a067,d955deb2-d100-456d-8e18-d554d85a9825,428191000124101,Documentation of current medications,,
+2014-07-05,b137e321-3591-4d21-a8c3-df51df60a067,75a3ff07-c868-4485-ae5d-65919e6a916c,428191000124101,Documentation of current medications,,
+2015-07-13,b137e321-3591-4d21-a8c3-df51df60a067,865260c5-b719-4122-9ea8-a11d89f6a822,428191000124101,Documentation of current medications,,
+2016-02-20,b137e321-3591-4d21-a8c3-df51df60a067,9ef12622-1e29-4407-8a1e-66b5cbf3337f,428191000124101,Documentation of current medications,,
+2016-02-20,b137e321-3591-4d21-a8c3-df51df60a067,4d8d5fc7-5113-4125-b143-50309c568595,305428000,Admission to orthopedic department,359817006,Closed fracture of hip
+2016-08-30,b137e321-3591-4d21-a8c3-df51df60a067,719f06f4-fb1f-479d-a3a3-74e0cee11406,428191000124101,Documentation of current medications,,
+2017-01-28,b137e321-3591-4d21-a8c3-df51df60a067,7b0369ca-a0c5-457c-9973-49b6a0a1b11a,428191000124101,Documentation of current medications,,
+2017-05-13,b137e321-3591-4d21-a8c3-df51df60a067,103eb3a1-a672-4fab-b018-f0b9bd1f0848,288086009,Suture open wound,284551006,Laceration of foot

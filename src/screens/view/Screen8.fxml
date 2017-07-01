@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: aliceblue;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="197.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit Confirmation">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button id="yes_button" layoutX="110.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #a4d4ff;" text="Yes">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button id="no_button" layoutX="270.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #a4d4ff;" text="No">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <ImageView layoutX="76.0" layoutY="136.0">
+         <image>
+            <Image url="@../glyphicons_free/glyphicons/png/glyphicons-196-info-sign.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="130.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to save the current progress?" wrappingWidth="291.74609375">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+   </children>
+</Pane>

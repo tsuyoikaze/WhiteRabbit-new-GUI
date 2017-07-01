@@ -7,44 +7,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="332.0" prefWidth="512.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: aliceblue;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="124.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Need to Scan Database">
+      <Text layoutX="163.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Database Information" wrappingWidth="173.00000596046448">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="14.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <ComboBox id="combo_type" layoutX="63.0" layoutY="91.0" prefHeight="27.0" prefWidth="159.0" />
-      <Text layoutX="14.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <TextField id="password_field" layoutX="102.0" layoutY="165.0" prefHeight="29.0" prefWidth="117.0" />
-      <Text layoutX="228.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database Name:" wrappingWidth="150.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <TextField id="dbname_field" layoutX="366.0" layoutY="91.0" prefHeight="27.0" prefWidth="132.0" />
-      <Text layoutX="228.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <TextField id="username_field" layoutX="366.0" layoutY="166.0" prefHeight="27.0" prefWidth="132.0" />
-      <Text layoutX="27.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <TextField id="ip_field" layoutX="62.0" layoutY="231.0" prefHeight="27.0" prefWidth="351.0" />
-      <Button id="ok_button" layoutX="220.0" layoutY="278.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: white;" text="NEXT">
+      <Text layoutX="15.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database Type" />
+      <ComboBox id="combo_type" layoutX="120.0" layoutY="67.0" prefHeight="15.0" prefWidth="365.0" style="-fx-background-color: #a4d4ff;" />
+      <Text layoutX="15.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database Name" wrappingWidth="87.11718767881393" />
+      <TextField id="dbname_field" layoutX="120.0" layoutY="101.0" prefHeight="27.0" prefWidth="365.0" />
+      <Text layoutX="15.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <TextField id="username_field" layoutX="120.0" layoutY="136.0" prefHeight="27.0" prefWidth="365.0" />
+      <Text layoutX="15.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <TextField id="password_field" layoutX="120.0" layoutY="170.0" prefHeight="29.0" prefWidth="365.0" />
+      <Text layoutX="15.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+      <TextField id="ip_field" layoutX="120.0" layoutY="206.0" prefHeight="27.0" prefWidth="365.0" />
+      <Button id="ok_button" layoutX="220.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #a4d4ff;" text="Next">
          <font>
             <Font size="14.0" />
          </font></Button>
