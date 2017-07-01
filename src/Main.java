@@ -170,6 +170,10 @@ public class Main extends Application{
 	private double height;
 	
 	private LinkedList<Line> line_array;
+	private LinkedList<TreeItem> src_expand_array;
+	private LinkedList<TreeItem> target_expand_array;
+	private LinkedList<TreeItem> src_all_array;
+	private LinkedList<TreeItem> target_all_array;
 	
 	
 	 
@@ -240,6 +244,11 @@ public class Main extends Application{
 				targetTreeView = (TreeView) myPane.getChildren().get(1);
 				
 				line_array = new LinkedList<Line>();
+				
+				src_expand_array = new LinkedList<TreeItem>();
+				target_expand_array = new LinkedList<TreeItem>();
+				src_all_array = new LinkedList<TreeItem>();
+				target_all_array = new LinkedList<TreeItem>();
 				
 				//get the height of the targetTreeView
 				
@@ -386,17 +395,31 @@ public class Main extends Application{
 				targetTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
+						
+						
+						
+						
 						Node node = event.getPickResult().getIntersectedNode();
 						String name = "";
 					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
 					    if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
 //					        name = (String) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue();
 					        name = ((Text) ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+					        TreeItem curr = (TreeItem)targetTreeView.getSelectionModel().getSelectedItem();
 					        TreeItem parent = ((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getParent();
 					        if (((TreeItem)targetTreeView.getSelectionModel().getSelectedItem()).getParent() != root) {
 					        	System.out.println("Node click: " + name);
 					        	
-					        	
+					        	if (event.getClickCount() == 2) {
+									//if in the linked list
+					        		if (target_expand_array.indexOf(curr) == -1) {
+					        			target_expand_array.add(curr);
+					        		}
+					        		else {
+					        			target_expand_array.remove(curr);
+					        		}
+					        		reLoadTreeExpand();
+								}
 					        	//find the currentSourceTable
 					        	int flag = 0;
 					        	List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
@@ -504,20 +527,28 @@ public class Main extends Application{
 					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
 					    if (node instanceof Text || (node instanceof TreeCell && ((TreeCell) node).getText() != null)) {
 //					        name = (String) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue();
-					    	if (targetTreeView.getSelectionModel() == null) System.out.print("It is really nul");
-					    	else System.out.println("This is NOTT null");
 					    	
 //
 //					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedItem());
 //					    	System.out.println("Selected TreeItem: " + targetTreeView.getSelectionModel().getSelectedIndex());
 					    	name = ((Text) ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getValue()).getText();
+					    	TreeItem curr = (TreeItem)srcTreeView.getSelectionModel().getSelectedItem();
 					    	TreeItem parent = ((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getParent();
 					    	
 					    	
 					    	System.out.println("name of the field is " + name);
 					    	
 					        //newly added for arrows
-					       
+					    	if (event.getClickCount() == 2) {
+								//if in the linked list
+				        		if (src_expand_array.indexOf(curr) == -1) {
+				        			src_expand_array.add(curr);
+				        		}
+				        		else {
+				        			src_expand_array.remove(curr);
+				        		}
+				        		reLoadTreeExpand();
+							}
 					        
 					        if (((TreeItem)srcTreeView.getSelectionModel().getSelectedItem()).getParent() != root) {
 					        	System.out.println("Node click: " + name);
@@ -837,7 +868,179 @@ public class Main extends Application{
 		primaryStage.show();
 	}
 	
-
+	private void reLoadTreeExpand() {
+		
+		//remove all lines
+		int length = line_array.size();
+		for (int i = 0; i < length; i++) {
+			Line theLine = line_array.removeFirst();
+			myPane.getChildren().remove(theLine);
+		}
+		
+		//prepare to add new lines
+		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
+		System.out.println(target_expand_array.size());
+		for (Table t : targetTable) {
+			
+			//check if the current target is expanded
+			int curr_target_expand = 0;
+			int curr_src_expand = 0;
+			for (int i = 0; i < target_expand_array.size(); i++) {
+				System.out.println("t.getName is " + t.getName());
+				System.out.println("target expand array is " + ((Text)((TreeItem)target_expand_array.get(i)).getValue()).getText());
+				//if the current target is expanded
+				if (((Text)((TreeItem)target_expand_array.get(i)).getValue()).getText().equals(t.getName())) {
+					curr_target_expand = 1;
+					break;
+				}
+			}
+			
+			System.out.println("curr_target_expand" + curr_target_expand);
+			//check if has connection with src
+			int get_src_table_name = 0;
+			String src_table_name = "";
+			for (int i = 0; i < t.getFields().size(); i++) {
+				System.out.println("target table name is " + t.getFields().get(i).getDisplayName());
+				if (t.getFields().get(i).getDisplayName().contains("<")) {
+					get_src_table_name = 1;
+					src_table_name = t.getFields().get(i).getDisplayName();
+					src_table_name = src_table_name.substring(src_table_name.indexOf("<") + 1);
+					src_table_name = src_table_name.substring(0, src_table_name.indexOf("."));
+				}
+			}
+			
+			System.out.println("get_src_table_name is " + get_src_table_name);
+			//no connection
+			if (get_src_table_name == 0) {
+				break;
+			} 
+			
+			
+			//if the current target is not expanded
+			TreeItem target_treeItem = null;
+			TreeItem src_treeItem = null;
+			if (curr_target_expand == 0) {
+				
+				//find the TreeItem for target
+				for (int j = 0; j < target_all_array.size(); j++) {
+					if (((Text)((TreeItem)target_all_array.get(j)).getValue()).getText().equals(t.getName())) {
+						target_treeItem = target_all_array.get(j);
+					}
+				}
+				for (int j = 0; j < src_all_array.size(); j++) {
+					if (((Text)((TreeItem)src_all_array.get(j)).getValue()).getText().equals(src_table_name)) {
+						src_treeItem = src_all_array.get(j);
+					}
+				}
+				//draw line between table names
+				Line line = new Line();
+				line.setStartX(((Text)src_treeItem.getValue()).localToScene(0, 0).getX());
+				line.setStartY(((Text)src_treeItem.getValue()).localToScene(0, 0).getY() - 170);
+				line.setEndX(((Text)target_treeItem.getValue()).localToScene(0, 0).getX());
+				line.setEndY(((Text)target_treeItem.getValue()).localToScene(0, 0).getY() - 70);
+				line_array.add(line);
+				myPane.getChildren().add(line);
+				
+				
+			} else {
+				
+				//if the current target is expanded
+				
+				
+				//check if the current src is expanded
+				int src_expand = 0;
+				for (int i = 0; i < src_expand_array.size(); i++) {
+					if (((Text)((TreeItem)src_expand_array.get(i)).getValue()).getText().equals(src_table_name)) {
+						src_expand = 1;
+						break;
+					}
+					
+				}
+				
+				System.out.print("Checking if src is expanded " + src_expand);
+				//if not expand
+				if (src_expand == 0) {
+					for (int j = 0; j < target_all_array.size(); j++) {
+						if (((Text)((TreeItem)target_all_array.get(j)).getValue()).getText().equals(t.getName())) {
+							target_treeItem = target_all_array.get(j);
+					
+						}
+					}
+					for (int j = 0; j < src_all_array.size(); j++) {
+						if (((Text)((TreeItem)src_all_array.get(j)).getValue()).getText().equals(src_table_name)) {
+							src_treeItem = src_all_array.get(j);
+						}
+					}
+					//draw line between table names
+					Line line = new Line();
+					line.setStartX(((Text)src_treeItem.getValue()).localToScene(0, 0).getX());
+					line.setStartY(((Text)src_treeItem.getValue()).localToScene(0, 0).getY() - 170);
+					line.setEndX(((Text)target_treeItem.getValue()).localToScene(0, 0).getX());
+					line.setEndY(((Text)target_treeItem.getValue()).localToScene(0, 0).getY() - 70);
+					line_array.add(line);
+					myPane.getChildren().add(line);
+				} else {
+					//if the src table is expanded
+					
+					for (int j = 0; j < target_all_array.size(); j++) {
+						if (((Text)((TreeItem)target_all_array.get(j)).getValue()).getText().equals(t.getName())) {
+							target_treeItem = target_all_array.get(j);
+					
+						}
+					}
+					for (int j = 0; j < src_all_array.size(); j++) {
+						if (((Text)((TreeItem)src_all_array.get(j)).getValue()).getText().equals(src_table_name)) {
+							src_treeItem = src_all_array.get(j);
+						}
+					}
+					
+					String src_item_name = "";
+					for (int k = 0; k < target_treeItem.getChildren().size(); k++) {
+						System.out.println("target_item name is " + ((Text)((TreeItem)target_treeItem.getChildren().get(k)).getValue()).getText());
+						System.out.println("target table name is " + t.getFields().get(k).getDisplayName());
+						if (t.getFields().get(k).getDisplayName().contains("<")) {
+						//if (((Text)((TreeItem)target_treeItem.getChildren().get(k)).getValue()).getText().contains("<")) {
+							src_item_name = t.getFields().get(k).getDisplayName();
+							//src_item_name = ((Text)((TreeItem)target_treeItem.getChildren().get(k)).getValue()).getText();
+							src_item_name = src_item_name.substring(src_item_name.indexOf(".") + 1);
+							System.out.println("src_item_name is " + src_item_name);
+							src_item_name = src_item_name.substring(0, src_item_name.indexOf(">"));
+							System.out.println("src_item_name now is " + src_item_name);
+							System.out.println("src_item_name is " + src_item_name);
+							for (int l = 0; l < src_treeItem.getChildren().size(); l++) {
+								System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+								System.out.println("src_treeItem is " + ((Text)((TreeItem)src_treeItem.getChildren().get(l)).getValue()).getText());
+								if (((Text)((TreeItem)src_treeItem.getChildren().get(l)).getValue()).getText().equals(src_item_name)) {
+									System.out.println("Reach this line");
+									Line line = new Line();
+									Text text1 = ((Text)((TreeItem)src_treeItem.getChildren().get(l)).getValue());
+									Text text2 = ((Text)((TreeItem)target_treeItem.getChildren().get(k)).getValue());
+									
+									System.out.println("text1 is " + text1.getText());
+									System.out.println("text2 is " + text2.getText());
+									
+									
+									line.setStartX(text1.localToScene(0, 0).getX());
+									line.setStartY(text1.localToScene(0, 0).getY());
+									line.setEndX(text2.localToScene(0, 0).getX());
+									line.setEndY(text2.localToScene(0, 0).getY());
+									System.out.println("start x is " + text1.localToScene(0, 0).getX() + "start y is " + (text1.localToScene(0, 0).getY() - 170) + "end x is " + text2.localToScene(0, 0).getX() + "end y is " + (text2.localToScene(0, 0).getY() - 70));
+									line_array.add(line);
+									myPane.getChildren().add(line);
+								}
+							}
+						}
+					}
+					
+					
+				}
+			}
+			
+			
+			
+			
+		}
+	}
 	
 
 	private void reLoadTreeView(Field currentSourceField) {
@@ -925,6 +1128,7 @@ public class Main extends Application{
 			//newly added
 			Text parent = new Text(t.getName());
 			TreeItem<Text> item = new TreeItem<>(parent);
+			target_all_array.add(item);
 			count_parent++;
 			//newly added end
 			
@@ -963,6 +1167,7 @@ public class Main extends Application{
 			//newly added
 			Text parent = new Text(t.getName());
 			TreeItem<Text> item = new TreeItem<>(parent);
+			src_all_array.add(item);
 			//newly added end
 			
 //			TreeItem<String> item = new TreeItem<>(t.getName());
