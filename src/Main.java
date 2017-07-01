@@ -288,14 +288,16 @@ public class Main extends Application{
 				myMenuBar.prefHeightProperty().bind(thePane.heightProperty());
 				myHBox.prefWidthProperty().bind(thePane.widthProperty());
 				myHBox.prefHeightProperty().bind(thePane.heightProperty());
-//				srcTreeView.prefWidthProperty().bind(thePane.widthProperty());
-//				srcTreeView.prefHeightProperty().bind(thePane.heightProperty());
-//				targetTreeView.prefWidthProperty().bind(thePane.widthProperty());
-//				targetTreeView.prefHeightProperty().bind(thePane.heightProperty());
+				srcTreeView.prefWidthProperty().bind(thePane.widthProperty().divide(3));
+				srcTreeView.prefHeightProperty().bind(thePane.heightProperty());
+				targetTreeView.prefWidthProperty().bind(thePane.widthProperty().divide(3));
+				targetTreeView.prefHeightProperty().bind(thePane.heightProperty());
 				progressBar.prefWidthProperty().bind(thePane.widthProperty());
 				progressBar.prefHeightProperty().bind(thePane.heightProperty());
 //				addPane.prefWidthProperty().bind(thePane.widthProperty());
 //				addPane.prefHeightProperty().bind(thePane.heightProperty());
+				
+				
 				
 				saveFile.setOnAction(new EventHandler<ActionEvent>(){
 
@@ -803,8 +805,12 @@ public class Main extends Application{
 							okayButton = (Button) newScene.lookup("#okay_button");
 							mainPane_3 = (Pane) newScene.lookup("#thePane");
 							
-//							conceptTable.prefHeightProperty().bind(mainPane_3.heightProperty());
-//							conceptTable.prefWidthProperty().bind(mainPane_3.widthProperty());
+							
+							
+//							conceptTable.prefHeightProperty().bind(mainPane_3.heightProperty().divide(2));
+//							conceptTable.prefWidthProperty().bind(mainPane_3.widthProperty().divide(1.3));
+							conceptTable.getColumns().get(0).prefWidthProperty().bind(conceptTable.widthProperty().divide(2));
+							conceptTable.getColumns().get(1).prefWidthProperty().bind(conceptTable.widthProperty().divide(2));
 							
 							ObservableList<myConceptTable> data = FXCollections.observableArrayList();
 							
@@ -933,15 +939,17 @@ public class Main extends Application{
 												
 											}
 											
-											nextButton.setOnAction(new EventHandler<ActionEvent>() {
+										
+//											nextButton.setOnAction(new EventHandler<ActionEvent>() {
 												/* (non-Javadoc)
 												 * @see javafx.event.EventHandler#handle(javafx.event.Event)
 												 */
-												@SuppressWarnings("unchecked")
-												public void handle (ActionEvent e) {
+		//										@SuppressWarnings("unchecked")
+	//											public void handle (ActionEvent e) {
 													TableView manualEnterTable = null;
 													try {
-														Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
+														newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
+														//Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen6_try.fxml")));
 														//TODO: add in table
 														manualEnterTable = (TableView) newScene.lookup("#conceptTable");
 														manualEnterButton = (Button) newScene.lookup("#manually_enter");
@@ -1015,12 +1023,12 @@ public class Main extends Application{
 														
 													});
 													
-												}
+												//}
 												
-											});
+											//});
 											
 											System.out.println("done");
-											nextButton.fire();
+											//nextButton.fire();
 										}catch (SQLException e1) {
 											e1.printStackTrace();
 										} catch (IOException e1) {
@@ -1546,7 +1554,7 @@ public class Main extends Application{
 		while (set.next()) {
 			count++;
 		}
-		
+		set = con.createStatement().executeQuery("SELECT " + ETLSQLGenerator.getUniqueSourceField(table, targetTable).getName() + "," + field.getName() + " FROM " + table.getName() + ";");
 		while (set.next()) {
 			result.add(new org.ohdsi.utilities.collections.Pair<>(set.getString(1), set.getString(2)));
 			
