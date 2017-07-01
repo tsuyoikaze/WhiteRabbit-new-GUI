@@ -312,7 +312,7 @@ public class Main extends Application{
 					public void handle(WindowEvent event) {
 						
 
-try {
+						try {
 							
 							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen8.fxml")));
 							toSaveWindow = new Stage();
@@ -339,7 +339,17 @@ try {
 								
 								@Override
 								public void handle(ActionEvent args) {
+									
+									System.out.print("can still save the file");
 									//save the process
+									
+									toSaveWindow.close();
+									if (newWindow != null) {
+										newWindow.close();
+									}
+									if (primaryStage != null) {
+										primaryStage.close();
+									}
 								}
 							});
 							
@@ -385,7 +395,16 @@ try {
 								
 								@Override
 								public void handle(ActionEvent args) {
+									System.out.print("can still save the file");
 									//save the process
+									
+									toSaveWindow.close();
+									if (newWindow != null) {
+										newWindow.close();
+									}
+									if (primaryStage != null) {
+										primaryStage.close();
+									}
 								}
 							});
 							
