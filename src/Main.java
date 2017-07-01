@@ -54,6 +54,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.SplitPane;
@@ -106,6 +107,8 @@ public class Main extends Application{
 	private Button manualEnterButton;
 	private Button ignoreButton;
 	private Button saveSQL;
+	
+	private ProgressBar progressBar;
 	
 	private ComboBox typeButton;
 
@@ -238,10 +241,11 @@ public class Main extends Application{
 				thePane = (Pane) newScene.lookup("#thePane");
 				myPane = (Pane) newScene.lookup("#myPane");
 				myScrollPane = (ScrollPane) newScene.lookup("#myScrollPane");
+				progressBar = (ProgressBar) newScene.lookup("#progress_bar");
 				
 				myPane = (Pane) myScrollPane.getContent();
-				srcTreeView = (TreeView) myPane.getChildren().get(0);
-				targetTreeView = (TreeView) myPane.getChildren().get(1);
+				srcTreeView = (TreeView) myPane.getChildren().get(2);
+				targetTreeView = (TreeView) myPane.getChildren().get(3);
 				
 				line_array = new LinkedList<Line>();
 				
@@ -472,8 +476,8 @@ public class Main extends Application{
 						        							System.out.println("theText is " + theText + "with length " + theText.length());
 						        							System.out.println("theText2 is " + theText2 + "with length " + theText2.length());
 						        							if (theText.equals(theText2)) {
-						        								targetX = subText.localToScene(0,0).getX();
-						        								targetY = subText.localToScene(0, 0).getY();
+						        								targetX = subText.localToScene(subText.getBoundsInLocal()).getMinX() - 10;
+						        								targetY = subText.localToScene(subText.getBoundsInLocal()).getMaxY() + 12;
 						        								System.out.print("Reach this line");
 						        								break;
 						        							}
@@ -517,11 +521,11 @@ public class Main extends Application{
 				});
 				
 				
-				
 				srcTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
 						Node node = event.getPickResult().getIntersectedNode();
+						System.err.println("Event Type is: " + ((TreeItem)((TreeItem)srcTreeView.getSelectionModel().getSelectedItem())));
 						
 						String name = "";
 					    // Accept clicks only on node cells, and not on empty spaces of the TreeView
@@ -573,7 +577,6 @@ public class Main extends Application{
 					        		}
 					        	}
 					        	
-					        	
 		        				//Testing
 		        				ObservableList<TreeItem> firstLevel= srcTreeView.getRoot().getChildren();
 		        				for (TreeItem treeItem : firstLevel) {
@@ -597,9 +600,9 @@ public class Main extends Application{
 		        							
 		        							
 		        							if (theText.equals(subText.getText())) {
-		        								srcX = subText.localToScene(100, 100).getX();
-		        								srcY = subText.localToScene(100, 100).getY();
-		        								System.out.println("Reach the src line and srcX and srcY are " + srcX + srcY);
+		        								srcX = subText.localToScene(subText.getBoundsInLocal()).getMaxX() + 10;
+		        								srcY = subText.localToScene(subText.getBoundsInLocal()).getMaxY() + 112;
+		        								System.out.println("Reach the src line and srcX and srcY are " + srcX + "\t" + srcY);
 		        								break;
 		        							}
 		        						}
@@ -661,6 +664,7 @@ public class Main extends Application{
 							conceptTable.setItems(data);
 							
 							newWindow.show();
+							progressBar.setProgress(0.67);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -724,44 +728,6 @@ public class Main extends Application{
 										type = (String) typeButton.getValue();
 										System.out.println("here is the answer: " +  password +  "  "+ username +  "  "+ dbName+ "   "+ ipName);
 									
-										try {
-											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try_2.fxml")));
-											nextButton = (Button) newScene.lookup("#next_button");
-											showType = (Text) newScene.lookup("#showType");
-											showIP = (Text) newScene.lookup("#showIP");
-											showScanningPath = (Text) newScene.lookup("#showPath");
-											showIP.setText(ipName);
-											showType.setText(type);
-											
-											newWindow.setScene(newScene);
-											DbType myDBType = new DbType(type);
-											int percent = 100;
-											for (Map.Entry<Field, Field> item : ObjectExchange.conceptIDFieldMap.entrySet()) {
-												List<org.ohdsi.utilities.collections.Pair<String, String>> list = doScanTable(myDBType, ipName, "", username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
-												LinkedList<String> l = new LinkedList<>();
-												for (org.ohdsi.utilities.collections.Pair<String, String> item2 : list) {
-													if (!l.contains(item2.getItem2())) {
-														l.add(item2.getItem2());
-													}
-												}
-												Map<String, Integer> conceptIDMap = ConceptIDFetcher.fetchConceptIDs(l, "src/org/ohdsi/rabbitInAHat/dataModel/CONCEPT_TRUNCATED.csv.gz");
-												ObjectExchange.conceptIDString += ETLSQLGenerator.getConceptIDMap(item.getValue(), conceptIDMap, list);
-												
-											}
-											
-											System.out.println("done");
-											
-											
-										
-										
-										}catch (SQLException e1) {
-											e1.printStackTrace();
-										} catch (IOException e1) {
-											e1.printStackTrace();
-										} catch (InterruptedException e1) {
-											e1.printStackTrace();
-										}
-										
 										nextButton.setOnAction(new EventHandler<ActionEvent>() {
 											public void handle (ActionEvent e) {
 												try {
@@ -817,16 +783,43 @@ public class Main extends Application{
 											
 										});
 										
-									
+										try {
+											Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen5_try_2.fxml")));
+											nextButton = (Button) newScene.lookup("#next_button");
+											showType = (Text) newScene.lookup("#showType");
+											showIP = (Text) newScene.lookup("#showIP");
+											showScanningPath = (Text) newScene.lookup("#showPath");
+											showIP.setText(ipName);
+											showType.setText(type);
+											
+											newWindow.setScene(newScene);
+											DbType myDBType = new DbType(type);
+											int percent = 100;
+											for (Map.Entry<Field, Field> item : ObjectExchange.conceptIDFieldMap.entrySet()) {
+												showScanningPath.setText(item.getKey().getTable().getName() + "." + item.getKey().getName());
+												List<org.ohdsi.utilities.collections.Pair<String, String>> list = doScanTable(myDBType, ipName, "", username, password, dbName, item.getKey().getTable(), item.getKey(), item.getValue().getTable());
+												LinkedList<String> l = new LinkedList<>();
+												for (org.ohdsi.utilities.collections.Pair<String, String> item2 : list) {
+													if (!l.contains(item2.getItem2())) {
+														l.add(item2.getItem2());
+													}
+												}
+												Map<String, Integer> conceptIDMap = ConceptIDFetcher.fetchConceptIDs(l, "src/org/ohdsi/rabbitInAHat/dataModel/CONCEPT_TRUNCATED.csv.gz");
+												ObjectExchange.conceptIDString += ETLSQLGenerator.getConceptIDMap(item.getValue(), conceptIDMap, list);
+												
+											}
+											
+											System.out.println("done");
+											nextButton.fire();
+										}catch (SQLException e1) {
+											e1.printStackTrace();
+										} catch (IOException e1) {
+											e1.printStackTrace();
+										} catch (InterruptedException e1) {
+											e1.printStackTrace();
+										}
 									}
-									
-									
 								});
-								
-								
-								
-								
-								
 								primaryStage.show();
 								
 								

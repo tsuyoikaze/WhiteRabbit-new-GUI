@@ -8,10 +8,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: aliceblue;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView accessibleText="LOGO" fitHeight="80.0" fitWidth="180.0" layoutX="37.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
-      <VBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="100.0" maxHeight="139.0" maxWidth="217.0" prefHeight="80.0" prefWidth="220.0">
+      <ImageView accessibleText="LOGO" fitHeight="63.0" fitWidth="180.0" layoutX="37.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="100.0" maxHeight="140.0" maxWidth="220.0" prefHeight="80.0" prefWidth="220.0" style="-fx-background-color: #EEEEEE;">
          <children>
             <Button id="new_project_btn" mnemonicParsing="false" style="-fx-background-color: #EEEEEE;" text="New From Database" textFill="#222222">
                <font>

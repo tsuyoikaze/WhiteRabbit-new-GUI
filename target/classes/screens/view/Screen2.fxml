@@ -5,15 +5,13 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="thePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <MenuBar id="menu" prefHeight="25.0" prefWidth="600.0">
         <menus>
@@ -36,45 +34,25 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ProgressBar layoutY="25.0" prefHeight="40.0" prefWidth="600.0" progress="0.33" />
-      <HBox alignment="TOP_CENTER" layoutY="25.0" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: rgba(153, 153, 153, 0.5);">
+      <ProgressBar id="progress_bar" layoutY="25.0" prefHeight="20.0" prefWidth="600.0" progress="0.33" style="-fx-background-color: linear-gradient( from 0px .75em to .75em 0px, repeat, -fx-accent 0%, -fx-accent 49%, derive(-fx-accent, 30%) 50%, derive(-fx-accent, 30%) 99% );;" />
+      <HBox alignment="TOP_CENTER" layoutY="25.0" prefHeight="20.0" prefWidth="600.0" style="-fx-background-color: rgba(153, 153, 153, 0.5);">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link databases" textAlignment="CENTER" wrappingWidth="200.0" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets bottom="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text id="confirm" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" textAlignment="CENTER" wrappingWidth="200.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="10.0" top="10.0" />
-               </HBox.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Done" textAlignment="CENTER" wrappingWidth="200.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="10.0" top="10.0" />
-               </HBox.margin>
-            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Map Database" textAlignment="CENTER" wrappingWidth="200.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Handle Standard Vocab" textAlignment="CENTER" wrappingWidth="200.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Done" textAlignment="CENTER" wrappingWidth="200.0" />
          </children>
       </HBox>
-      <ScrollBar disable="true" layoutX="586.0" layoutY="65.0" orientation="VERTICAL" prefHeight="335.0" prefWidth="14.0" />
-      <ScrollPane id="myScrollPane" layoutY="65.0" prefHeight="335.0" prefWidth="588.0">
+      <ScrollPane id="myScrollPane" layoutY="45.0" prefHeight="355.0" prefWidth="600.0">
          <content>
-            <Pane id="myPane" prefHeight="336.0" prefWidth="587.0">
+            <Pane id="myPane" prefHeight="353.0" prefWidth="598.0" style="-fx-background-color: aliceblue;">
                <children>
-                  <TreeView id="treeView_1" layoutX="27.0" layoutY="14.0" prefHeight="293.0" prefWidth="215.0" />
-                  <TreeView id="treeView_2" layoutX="342.0" layoutY="14.0" prefHeight="292.0" prefWidth="200.0" />
+                  <Text layoutX="30.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source" textAlignment="CENTER" wrappingWidth="200.0" y="2.0" />
+                  <Text layoutX="358.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Target (CDM V5.0.1)" textAlignment="CENTER" wrappingWidth="200.0" y="2.0" />
+                  <TreeView id="treeView_1" layoutX="30.0" layoutY="30.0" prefHeight="308.0" prefWidth="200.0" />
+                  <TreeView id="treeView_2" layoutX="358.0" layoutY="30.0" prefHeight="308.0" prefWidth="200.0" />
                </children>
             </Pane>
          </content>
