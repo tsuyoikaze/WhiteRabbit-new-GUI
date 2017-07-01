@@ -54,6 +54,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.SplitPane;
@@ -72,6 +73,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -165,7 +167,12 @@ public class Main extends Application{
 	
 	private Pane myPane;
 	private Pane thePane;
+	private Pane addPane;
 	private ScrollPane myScrollPane;
+	private HBox myHBox;
+	private ProgressBar myProgressBar;
+	
+	private Pane mainPane_3;
 	
 	private double height;
 	
@@ -238,10 +245,15 @@ public class Main extends Application{
 				thePane = (Pane) newScene.lookup("#thePane");
 				myPane = (Pane) newScene.lookup("#myPane");
 				myScrollPane = (ScrollPane) newScene.lookup("#myScrollPane");
+				myHBox = (HBox) newScene.lookup("#myHBox");
+				myProgressBar = (ProgressBar) newScene.lookup("#myProgressBar");
+				addPane = (Pane) newScene.lookup("#add_pane");
 				
+				thePane = (Pane)myScrollPane.getParent();
 				myPane = (Pane) myScrollPane.getContent();
 				srcTreeView = (TreeView) myPane.getChildren().get(0);
 				targetTreeView = (TreeView) myPane.getChildren().get(1);
+				addPane = (Pane) myPane.getChildren().get(2);
 				
 				line_array = new LinkedList<Line>();
 				
@@ -250,7 +262,25 @@ public class Main extends Application{
 				src_all_array = new LinkedList<TreeItem>();
 				target_all_array = new LinkedList<TreeItem>();
 				
-				//get the height of the targetTreeView
+				if (thePane == null) System.out.println("the pane is null");
+				if (myPane == null) System.out.println("the pane is null1");
+				if (myScrollPane == null) System.out.println("the pane is null2");
+				myScrollPane.prefWidthProperty().bind(thePane.widthProperty());
+				myScrollPane.prefHeightProperty().bind(thePane.heightProperty());
+				myPane.prefWidthProperty().bind(thePane.widthProperty());
+				myPane.prefHeightProperty().bind(thePane.heightProperty());
+				myMenuBar.prefWidthProperty().bind(thePane.widthProperty());
+				myMenuBar.prefHeightProperty().bind(thePane.heightProperty());
+				myHBox.prefWidthProperty().bind(thePane.widthProperty());
+				myHBox.prefHeightProperty().bind(thePane.heightProperty());
+				srcTreeView.prefWidthProperty().bind(thePane.widthProperty());
+				srcTreeView.prefHeightProperty().bind(thePane.heightProperty());
+				targetTreeView.prefWidthProperty().bind(thePane.widthProperty());
+				targetTreeView.prefHeightProperty().bind(thePane.heightProperty());
+				myProgressBar.prefWidthProperty().bind(thePane.widthProperty());
+				myProgressBar.prefHeightProperty().bind(thePane.heightProperty());
+				addPane.prefWidthProperty().bind(thePane.widthProperty());
+				addPane.prefHeightProperty().bind(thePane.heightProperty());
 				
 				
 				
@@ -391,7 +421,8 @@ public class Main extends Application{
 				
 				// srcTreeView part (if put into onMouseClick, then only expand when click)
 				loadTreeView();
-				myPane.setPrefHeight(height);
+				myPane.setMinHeight(height);
+				//myPane.setPrefHeight(height);
 				targetTreeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
@@ -627,6 +658,10 @@ public class Main extends Application{
 							Scene newScene = new Scene((Pane) FXMLLoader.load(Main.class.getResource("screens/view/Screen3.fxml")));
 							conceptTable = (TableView) newScene.lookup("#conceptTable");
 							okayButton = (Button) newScene.lookup("#okay_button");
+							mainPane_3 = (Pane) newScene.lookup("#thePane");
+							
+							conceptTable.prefHeightProperty().bind(mainPane_3.heightProperty());
+							conceptTable.prefWidthProperty().bind(mainPane_3.widthProperty());
 							
 							ObservableList<myConceptTable> data = FXCollections.observableArrayList();
 							
@@ -1155,7 +1190,8 @@ public class Main extends Application{
 		System.out.println("height is " + height);
 		
 		System.out.println("count_parent and count_child are " + count_parent + " " + count_child);
-		targetTreeView.setPrefHeight(height);
+//		targetTreeView.setPrefHeight(height);
+		targetTreeView.setMinHeight(height);
 		
 		targetTreeView.setRoot(root_2);
 		
@@ -1188,7 +1224,8 @@ public class Main extends Application{
 			
 		}
 		
-		srcTreeView.setPrefHeight(height);
+//		srcTreeView.setPrefHeight(height);
+		srcTreeView.setMinHeight(height);
 		
 		srcTreeView.setRoot(root);
 		
