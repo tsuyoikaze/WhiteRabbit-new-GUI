@@ -343,7 +343,8 @@ public class Main extends Application{
 								public void handle(ActionEvent args) {
 									
 									System.out.print("can still save the file");
-									//save the process
+									
+									doSave(chooseFile(true, FILTER_GZ));
 									
 									toSaveWindow.close();
 									if (newWindow != null) {
@@ -399,6 +400,7 @@ public class Main extends Application{
 								public void handle(ActionEvent args) {
 									System.out.print("can still save the file");
 									//save the process
+									doSave(chooseFile(true, FILTER_GZ));
 									
 									toSaveWindow.close();
 									if (newWindow != null) {
