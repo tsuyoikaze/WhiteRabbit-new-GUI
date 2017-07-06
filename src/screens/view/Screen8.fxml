@@ -7,30 +7,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: aliceblue;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="350.0" style="-fx-background-color: aliceblue;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="197.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit Confirmation">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <Button id="yes_button" layoutX="110.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #a4d4ff;" text="Yes">
+      <Button id="yes_button" layoutX="27.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #a4d4ff;" text="Yes">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button id="no_button" layoutX="270.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #a4d4ff;" text="No">
+      <Button id="no_button" layoutX="127.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #a4d4ff;" text="No">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <ImageView layoutX="76.0" layoutY="136.0">
+      <ImageView layoutX="20.0" layoutY="28.0">
          <image>
             <Image url="@../glyphicons_free/glyphicons/png/glyphicons-196-info-sign.png" />
          </image>
       </ImageView>
-      <Text layoutX="130.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to save the current progress?" wrappingWidth="291.74609375">
+      <Text layoutX="70.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to save the current progress?" wrappingWidth="265.24609375">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font></Text>
+      <Button id="cancel_button" layoutX="227.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #a4d4ff;" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

@@ -115,6 +115,7 @@ public class Main extends Application{
 	
 	private Button yesButton;
 	private Button noButton;
+	private Button cancelButton;
 	
 	private ProgressBar progressBar;
 	
@@ -155,6 +156,7 @@ public class Main extends Application{
 	private String ipName;
 	private String typeName;
 	private String type;
+	private boolean isClosed;
 	
 	private MenuBar myMenuBar;
 	private Menu fileMenu;
@@ -313,6 +315,13 @@ public class Main extends Application{
 					@Override
 					public void handle(WindowEvent event) {
 						
+						if (isClosed) {
+							return;
+						}
+						else {
+							event.consume();
+						}
+						
 
 						try {
 							
@@ -320,8 +329,9 @@ public class Main extends Application{
 							toSaveWindow = new Stage();
 							yesButton = (Button) newScene.lookup("#yes_button");
 							noButton = (Button) newScene.lookup("#no_button");
+							cancelButton = (Button) newScene.lookup("#cancel_button");
 							
-							toSaveWindow.setTitle("Exit Confirmation");
+							toSaveWindow.setTitle("");
 							toSaveWindow.setScene(newScene);
 							toSaveWindow.show();
 							
@@ -331,6 +341,7 @@ public class Main extends Application{
 								public void handle(ActionEvent args) {
 									toSaveWindow.close();
 									if (newWindow != null) {
+										isClosed = true;
 										newWindow.close();
 									}
 									primaryStage.close();
@@ -348,6 +359,7 @@ public class Main extends Application{
 									
 									toSaveWindow.close();
 									if (newWindow != null) {
+										isClosed = true;
 										newWindow.close();
 									}
 									if (primaryStage != null) {
@@ -355,6 +367,16 @@ public class Main extends Application{
 									}
 								}
 							});
+							
+							cancelButton.setOnAction(new EventHandler<ActionEvent>(){
+
+								@Override
+								public void handle(ActionEvent arg0) {
+									toSaveWindow.close();
+								}
+								
+							});
+							
 							
 							
 						
