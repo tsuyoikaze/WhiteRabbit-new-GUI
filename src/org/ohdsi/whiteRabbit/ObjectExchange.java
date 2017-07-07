@@ -36,5 +36,4 @@ public class ObjectExchange {
 	public static Map<Field, Field> conceptIDFieldMap;
 	public static Map<String, Integer> conceptIDDataMap;
 	public static List<org.ohdsi.utilities.collections.Pair<String, String>> dbScanResult;
-	
 }

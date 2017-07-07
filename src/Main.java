@@ -210,7 +210,8 @@ public class Main extends Application{
     private Path arrowIni;
     private Path arrowEnd;
 	
-	
+	public static LinkedList<SourceTableRectangle> sourceTableRects = new LinkedList<>();
+	public static LinkedList<TargetTableRectangle> targetTableRects = new LinkedList<>();
 	 
 	
 	
@@ -253,6 +254,7 @@ public class Main extends Application{
 				alert.setContentText("Invalid File Format");
 				alert.showAndWait();
 			}
+			
 			
 			 mainLayout.setCursor(Cursor.DEFAULT);
 			 try {
@@ -297,9 +299,9 @@ public class Main extends Application{
 				if (myPane == null) System.out.println("the pane is null1");
 				if (myScrollPane == null) System.out.println("the pane is null2");
 				myScrollPane.prefWidthProperty().bind(thePane.widthProperty());
-				myScrollPane.prefHeightProperty().bind(thePane.heightProperty());
-				myPane.prefWidthProperty().bind(thePane.widthProperty());
-				myPane.prefHeightProperty().bind(thePane.heightProperty());
+				myScrollPane.prefHeightProperty().bind(thePane.heightProperty().subtract(20));
+				myPane.prefWidthProperty().bind(myScrollPane.widthProperty());
+				//myPane.prefHeightProperty().bind(myScrollPane.heightProperty().subtract(20));
 				myMenuBar.prefWidthProperty().bind(thePane.widthProperty());
 				myMenuBar.prefHeightProperty().bind(thePane.heightProperty());
 				myHBox.prefWidthProperty().bind(thePane.widthProperty());
@@ -309,7 +311,6 @@ public class Main extends Application{
 //				targetTreeView.prefWidthProperty().bind(thePane.widthProperty().divide(3));
 //				targetTreeView.prefHeightProperty().bind(thePane.heightProperty());
 				progressBar.prefWidthProperty().bind(thePane.widthProperty());
-				progressBar.prefHeightProperty().bind(thePane.heightProperty());
 //				addPane.prefWidthProperty().bind(thePane.widthProperty());
 //				addPane.prefHeightProperty().bind(thePane.heightProperty());
 				
@@ -895,6 +896,14 @@ public class Main extends Application{
 							
 							newWindow.show();
 							progressBar.setProgress(0.67);
+							newWindow.setOnCloseRequest(new EventHandler<WindowEvent>() {
+
+								@Override
+								public void handle(WindowEvent arg0) {
+									progressBar.setProgress(0.33);
+								}
+								
+							});
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -1131,41 +1140,37 @@ public class Main extends Application{
 	
 	private void loadRectangle() {
 		//put src table into myPane
-		int xVal = 70;
-		int yVal = 30;
-		int width = 150;
-		int height = 30;
+		int yVal = 50;
+		
+		int maxHeight = 0;
+		
+		SourceTableRectangle.displayPane = myPane;
+		SourceTableRectangle.sourceTableRects = sourceTableRects;
+		TargetTableRectangle.displayPane = myPane;
+		TargetTableRectangle.targetTableRects = targetTableRects;
 		
 		List<Table> sourceTable = ObjectExchange.etl.getSourceDatabase().getTables();
 		for (Table t : sourceTable) {
-			Rectangle srcRect = new Rectangle (xVal, yVal, width, height);
-			srcRect.setFill(Color.YELLOW);
-			yVal += height + 10;
-			System.out.println("xVal is " + yVal);
-			Text myText = new Text(t.getName());
-			StackPane stack = new StackPane();
-			stack.getChildren().addAll(srcRect, myText);
-			stack.setLayoutX(xVal);
-			stack.setLayoutY(yVal);
-			
-			myPane.getChildren().add(stack);
-			
+			SourceTableRectangle newNode = new SourceTableRectangle(yVal, t);
+			sourceTableRects.add(newNode);
+			myPane.getChildren().add(newNode);
+			yVal += 30 + 10;
 		}
 		
-		xVal = 370;
-		yVal = 30;
+		maxHeight = Math.max(maxHeight, yVal + 90);
+		
+		yVal = 50;
 		List<Table> targetTable = ObjectExchange.etl.getTargetDatabase().getTables();
 		for (Table t : targetTable) {
-			Rectangle targetRect =new Rectangle(xVal, yVal, width, height);
-			targetRect.setFill(Color.YELLOW);
-			yVal += height + 10;
-			Text myText = new Text(t.getName());
-			StackPane stack = new StackPane();
-			stack.getChildren().addAll(targetRect, myText);
-			stack.setLayoutX(xVal);
-			stack.setLayoutY(yVal);
-			myPane.getChildren().add(stack);
+			TargetTableRectangle newNode = new TargetTableRectangle(yVal, t);
+			targetTableRects.add(newNode);
+			myPane.getChildren().add(newNode);
+			yVal += 30 + 10;
 		}
+		
+		maxHeight = Math.max(maxHeight, yVal + 60);
+		
+		myPane.setPrefHeight(maxHeight);
 		
 //		srcRect1 = new Rectangle(100,100,50,50);
 //	    dstRect1 = new Rectangle(300,300,50,50);
