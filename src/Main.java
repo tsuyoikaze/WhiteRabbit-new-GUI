@@ -91,6 +91,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -257,7 +258,6 @@ public class Main extends Application{
 				thePane = (Pane) newScene.lookup("#thePane");
 				myPane = (Pane) newScene.lookup("#myPane");
 				myScrollPane = (ScrollPane) newScene.lookup("#myScrollPane");
-
 				myHBox = (HBox) newScene.lookup("#myHBox");
 //				myProgressBar = (ProgressBar) newScene.lookup("#myProgressBar");
 				addPane = (Pane) newScene.lookup("#add_pane");
@@ -296,6 +296,7 @@ public class Main extends Application{
 				progressBar.prefHeightProperty().bind(thePane.heightProperty());
 //				addPane.prefWidthProperty().bind(thePane.widthProperty());
 //				addPane.prefHeightProperty().bind(thePane.heightProperty());
+				
 				
 				
 				
@@ -344,13 +345,15 @@ public class Main extends Application{
 									
 									System.out.print("can still save the file");
 									
-									doSave(chooseFile(true, FILTER_GZ));
 									
 									toSaveWindow.close();
 									if (newWindow != null) {
 										newWindow.close();
 									}
 									if (primaryStage != null) {
+										doSave(chooseFile(true, FILTER_GZ));
+										
+										System.out.println("Finish the saving function");
 										primaryStage.close();
 									}
 								}
@@ -400,13 +403,15 @@ public class Main extends Application{
 								public void handle(ActionEvent args) {
 									System.out.print("can still save the file");
 									//save the process
-									doSave(chooseFile(true, FILTER_GZ));
 									
 									toSaveWindow.close();
 									if (newWindow != null) {
 										newWindow.close();
 									}
 									if (primaryStage != null) {
+										doSave(chooseFile(true, FILTER_GZ));
+										
+										System.out.println("Finish the saving function");
 										primaryStage.close();
 									}
 								}
@@ -459,6 +464,7 @@ public class Main extends Application{
 	
 	public void start(final Stage primaryStage) throws IOException {
 		
+		final SwingNode swingNode = new SwingNode();
 		this.primaryStage = primaryStage;
 		//this.primaryStage.setTitle("Rabbit Catcher");
 		FXMLLoader loader = new FXMLLoader();
