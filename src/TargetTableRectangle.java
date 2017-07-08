@@ -5,8 +5,7 @@ import java.util.List;
 import org.ohdsi.rabbitInAHat.dataModel.Field;
 import org.ohdsi.rabbitInAHat.dataModel.Table;
 import org.ohdsi.whiteRabbit.ObjectExchange;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -89,11 +88,8 @@ public class TargetTableRectangle extends StackPane implements Expandable {
 							ObjectExchange.etl.getTableToTableMapping().addSourceToTargetMap(SourceTableRectangle.selectingField.field.getTable(), TargetTableRectangle.selectingField.field.getTable());
 						}
 						ObjectExchange.etl.getFieldToFieldMapping(SourceTableRectangle.selectingField.field.getTable(), TargetTableRectangle.selectingField.field.getTable()).addSourceToTargetMap(SourceTableRectangle.selectingField.field, TargetTableRectangle.selectingField.field);
-						System.out.println("Clicked");
 						TargetTableRectangle.selectingField.field.setDisplayName(TargetTableRectangle.selectingField.field.getName() + " <" + SourceTableRectangle.selectingField.field.getTable().getName() + "." + SourceTableRectangle.selectingField.field.getName() + ">");
 
-						System.out.println("Starting point: (" + SourceTableRectangle.selectingField.getBoundsInParent().getMaxX() + "," + (SourceTableRectangle.selectingField.getBoundsInParent().getMinY() + 0.5 * SourceTableRectangle.selectingField.getHeight()) + ")");
-						System.out.println("Ending   point: (" + TargetTableRectangle.selectingField.getBoundsInParent().getMinX() + "," + (TargetTableRectangle.selectingField.getBoundsInParent().getMinY() + 0.5 * TargetTableRectangle.selectingField.getHeight()) + ")");
 						if (Arrow.displayPane == null) {
 							Arrow.displayPane = displayPane;
 						}
@@ -212,11 +208,9 @@ public class TargetTableRectangle extends StackPane implements Expandable {
 
 	@Override
 	public void expand() {
-		System.out.println("Expanding itself...");
 		expandingTable = this;
 		double currY = y + height;
 		for (Field fd : table.getFields()) {
-			System.out.println("Processing " + fd.getName());
 			currY += FIELD_INTERVAL;
 			FieldRectangle newNode = new FieldRectangle(currY, fd);
 			fieldRectList.add(newNode);

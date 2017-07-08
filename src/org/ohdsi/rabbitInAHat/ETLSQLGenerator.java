@@ -1,16 +1,10 @@
 package org.ohdsi.rabbitInAHat;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import org.ohdsi.databases.DbType;
 import org.ohdsi.rabbitInAHat.dataModel.DataType;
@@ -24,8 +18,6 @@ import org.ohdsi.utilities.exception.DuplicateTargetException;
 import org.ohdsi.utilities.exception.TypeMismatchException;
 import org.ohdsi.utilities.exception.UnsupportedDataTypeException;
 import org.ohdsi.whiteRabbit.ObjectExchange;
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 public class ETLSQLGenerator {
 	
@@ -205,7 +197,6 @@ public class ETLSQLGenerator {
 		if (uniqueField == null) {
 			return null;
 		}
-		Field sourceField = null;
 		List<Mapping<Field>> allMaps = ObjectExchange.etl.getAllMaps();
 		List<MappableItem> sourceFields = new ArrayList<>();
 		for (Mapping<Field> map_ : allMaps) {

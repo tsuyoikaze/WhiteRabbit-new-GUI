@@ -3,12 +3,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.ohdsi.rabbitInAHat.dataModel.Field;
-import org.ohdsi.rabbitInAHat.dataModel.ItemToItemMap;
 import org.ohdsi.rabbitInAHat.dataModel.Table;
-import org.ohdsi.whiteRabbit.ObjectExchange;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -195,11 +191,9 @@ public class SourceTableRectangle extends StackPane implements Expandable {
 
 	@Override
 	public void expand() {
-		System.out.println("Expanding itself...");
 		expandingTable = this;
 		double currY = y + height;
 		for (Field fd : table.getFields()) {
-			System.out.println("Processing " + fd.getName());
 			currY += FIELD_INTERVAL;
 			FieldRectangle newNode = new FieldRectangle(currY, fd);
 			fieldRectList.add(newNode);
