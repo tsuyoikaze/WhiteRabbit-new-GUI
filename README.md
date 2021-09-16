@@ -1,4 +1,4 @@
-![alt text](https://github.com/OHDSI/WhiteRabbit/blob/master/src/org/ohdsi/whiteRabbit/WhiteRabbit64.png) WhiteRabbit
+![alt text](https://github.com/tsuyoikaze/WhiteRabbit-new-GUI/blob/master/src/org/ohdsi/whiteRabbit/WhiteRabbit64.png) WhiteRabbit
 ===========
 
 Introduction
@@ -19,10 +19,10 @@ Screenshots
 <table border = "">
 <tr valign="top">
 <td width = 50%>
-  <img src="https://github.com/OHDSI/WhiteRabbit/blob/master/man/WRScreenshot.png" alt="White Rabbit" title="White Rabbit" />
+  <img src="https://github.com/tsuyoikaze/WhiteRabbit-new-GUI/blob/master/man/WRScreenshot.png" alt="White Rabbit" title="White Rabbit" />
 </td>
 <td width = 50%>
- <img src="https://github.com/OHDSI/WhiteRabbit/blob/master/man/RIAHScreenshot.png" alt="Rabbit in a Hat" title="Rabbit in a Hat" />
+ <img src="https://github.com/tsuyoikaze/WhiteRabbit-new-GUI/blob/master/man/RIAHScreenshot.png" alt="Rabbit in a Hat" title="Rabbit in a Hat" />
 </td>
 </tr><tr>
 <td>White Rabbit</td><td>Rabbit in a Hat</td>
@@ -46,7 +46,7 @@ Getting Started
 ===============
 WhiteRabbit
 
-1. Under the [Releases](https://github.com/OHDSI/WhiteRabbit/releases) tab, download WhiteRabbit*.zip
+1. Under the [Releases](https://github.com/tsuyoikaze/WhiteRabbit-new-GUI/WhiteRabbit/releases) tab, download WhiteRabbit*.zip
 2. Unzip the download
 3. Double-click on WhiteRabbit.jar to start White Rabbit.
 
